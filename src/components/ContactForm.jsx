@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 
 export default function ContactForm() {
@@ -11,14 +9,14 @@ export default function ContactForm() {
     message: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Here you would typically send the form data to your backend
     console.log('Form submitted:', formData);

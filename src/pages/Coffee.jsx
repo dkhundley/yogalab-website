@@ -1,10 +1,4 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
-
-export const metadata: Metadata = {
-  title: 'Lab Coffee - Yoga Lab',
-  description: 'Lab Coffee exists to allow our community to build relationships. Enjoy our full menu of coffee, teas, and açai bowls.',
-};
+import { Link } from 'react-router-dom';
 
 const menuItems = [
   {
@@ -36,7 +30,7 @@ const menuItems = [
   }
 ];
 
-export default function CoffeePage() {
+export default function Coffee() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -121,7 +115,7 @@ export default function CoffeePage() {
             Visit us at our Bloomington location for the full Lab Coffee experience.
           </p>
           <Link
-            href="/contact"
+            to="/contact"
             className="rounded-md bg-indigo-600 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
           >
             Visit Us Today

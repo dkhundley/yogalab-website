@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yoga Lab Website
 
-## Getting Started
+A modern, responsive website for Yoga Lab built with React, Vite, and JavaScript.
 
-First, run the development server:
+## 🚀 Tech Stack
+
+- **React 19.2** - Modern React with latest features
+- **Vite 6** - Fast build tool and dev server
+- **React Router 6** - Client-side routing
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **Heroicons** - Beautiful hand-crafted SVG icons
+- **Framer Motion** - Production-ready animation library
+- **JavaScript (ES6+)** - No TypeScript, pure JavaScript
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The development server will start at `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+yogalab-website/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # Reusable React components
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── ServiceCard.jsx
+│   │   └── ContactForm.jsx
+│   ├── pages/          # Page components
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Yoga.jsx
+│   │   ├── Coffee.jsx
+│   │   ├── Contact.jsx
+│   │   ├── FAQ.jsx
+│   │   └── Book.jsx
+│   ├── app/
+│   │   └── globals.css # Global styles with Tailwind directives
+│   ├── App.jsx         # Main app component with routing
+│   └── main.jsx        # Application entry point
+├── index.html          # HTML entry point
+├── vite.config.js      # Vite configuration
+├── package.json        # Dependencies and scripts
+└── README.md          # This file
+```
 
-## Learn More
+## 🎨 Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Responsive Design** - Mobile-first approach with Tailwind CSS
+- **Fast Development** - Hot Module Replacement (HMR) with Vite
+- **Client-Side Routing** - Seamless navigation with React Router
+- **Modern JavaScript** - ES6+ features, no build complexity
+- **Component-Based** - Reusable, maintainable components
+- **SEO Friendly** - Proper meta tags and semantic HTML
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Home** - Hero section, services overview, contact form
+- **About** - Mission statement, philosophy, location
+- **Yoga** - Class descriptions and benefits
+- **Lab Coffee** - Menu and coffee shop details
+- **Contact** - Contact information and form
+- **FAQ** - Frequently asked questions
+- **Book** - Class schedule and booking information
 
-## Deploy on Vercel
+## 🛠️ Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build locally
+npm run lint     # Run ESLint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔧 Configuration
+
+### Vite
+
+The project uses Vite for fast builds and development. Configuration is in `vite.config.js`:
+
+- React plugin for JSX support
+- Path aliases (`@/` maps to `./src/`)
+- Dev server on port 3000
+
+### Tailwind CSS
+
+Tailwind CSS v4 is configured via PostCSS. The configuration uses the new `@tailwindcss/postcss` plugin.
+
+### ESLint
+
+ESLint is configured for React with modern JavaScript. Configuration includes:
+- React and React Hooks plugins
+- React Refresh for HMR
+- ES6+ support
+
+## 📝 License
+
+Copyright 2021 Community Wellness Lab, LLC; Yoga Lab, DBA
+
+## 📧 Contact
+
+For questions or support, contact us at [info@theyogalab.org](mailto:info@theyogalab.org)
+
+Visit us at:  
+207 S. Prospect Road, Suite 2  
+Bloomington, IL 61704
+
+Follow us on Instagram: [@yogalab.bn](http://www.instagram.com/yogalab.bn)

@@ -1,12 +1,6 @@
-import { Metadata } from 'next';
-import ContactForm from '@/components/ContactForm';
+import ContactForm from '../components/ContactForm';
 
-export const metadata: Metadata = {
-  title: 'Contact - Yoga Lab',
-  description: 'Get in touch with Yoga Lab. Visit us in Bloomington, IL or send us a message.',
-};
-
-export default function ContactPage() {
+export default function Contact() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Hero from '@/components/Hero';
-import ServiceCard from '@/components/ServiceCard';
-import ContactForm from '@/components/ContactForm';
+import { Link } from 'react-router-dom';
+import Hero from '../components/Hero';
+import ServiceCard from '../components/ServiceCard';
+import ContactForm from '../components/ContactForm';
 
 export default function Home() {
   return (

@@ -1,10 +1,3 @@
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'FAQ - Yoga Lab',
-  description: 'Frequently asked questions about Yoga Lab classes, coffee shop, and community space.',
-};
-
 const faqs = [
   {
     question: 'What types of yoga classes do you offer?',
@@ -56,7 +49,7 @@ const faqs = [
   }
 ];
 
-export default function FAQPage() {
+export default function FAQ() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -1,5 +1,3 @@
-'use client';
-
 const classSchedule = [
   {
     day: 'Monday',
@@ -59,7 +57,7 @@ const classSchedule = [
   },
 ];
 
-export default function BookPage() {
+export default function Book() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

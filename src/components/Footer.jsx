@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 const navigation = {
   main: [
@@ -13,7 +13,7 @@ const navigation = {
     {
       name: 'Instagram',
       href: 'http://www.instagram.com/yogalab.bn',
-      icon: (props: any) => (
+      icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -49,7 +49,7 @@ export default function Footer() {
         <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
           {navigation.main.map((item) => (
             <div key={item.name} className="pb-6">
-              <Link href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+              <Link to={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
                 {item.name}
               </Link>
             </div>
@@ -58,10 +58,10 @@ export default function Footer() {
         
         <div className="mt-10 flex justify-center space-x-10">
           {navigation.social.map((item) => (
-            <Link key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500" target="_blank" rel="noopener noreferrer">
+            <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500" target="_blank" rel="noopener noreferrer">
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
-            </Link>
+            </a>
           ))}
         </div>
         

@@ -1,12 +1,6 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
-export const metadata: Metadata = {
-  title: 'About - Yoga Lab',
-  description: 'Learn about Yoga Lab\'s mission to free people to do the work they love through regulation and connection.',
-};
-
-export default function AboutPage() {
+export default function About() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -98,13 +92,13 @@ export default function AboutPage() {
             <p className="text-lg text-gray-700 mb-6">Bloomington, IL 61704</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/yoga"
+                to="/yoga"
                 className="rounded-md bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
               >
                 Explore Yoga Classes
               </Link>
               <Link
-                href="/coffee"
+                to="/coffee"
                 className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-indigo-600 shadow-sm ring-1 ring-inset ring-indigo-600 hover:bg-indigo-50 transition-colors"
               >
                 Visit Lab Coffee
