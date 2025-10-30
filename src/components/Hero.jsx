@@ -4,6 +4,20 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 export default function Hero() {
   return (
     <div className="relative isolate px-6 pt-14 lg:px-8">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 -z-20 h-full w-full object-cover"
+      >
+        <source src="/test.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Video Overlay for text readability */}
+      <div className="absolute inset-0 -z-10 bg-white/60" />
+      
       {/* Background gradient */}
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
