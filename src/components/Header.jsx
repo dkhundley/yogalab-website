@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useBrand, BRANDS } from '../context/BrandContext';
 
 const yogaLabNavigation = [
@@ -90,83 +91,122 @@ export default function Header() {
         </div>
       </nav>
       {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden">
-          <div className="fixed inset-0 z-50" />
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
-              <Link to="/" className="-m-1.5 p-2.5" onClick={() => setMobileMenuOpen(false)}>
-                {isLabCoffee ? (
-                  <div className="flex items-center gap-3">
-                    <img 
-                      src="/icons/lab-coffee-logo.png" 
-                      alt="Lab Coffee Logo" 
-                      className="h-7 w-auto -mt-1"
-                    />
-                    <span className="text-xl font-lulo-bold text-gray-900">
-                      Lab Coffee
-                    </span>
-                  </div>
-                ) : (
-                  <div className="flex items-center gap-3">
-                    <img 
-                      src="/icons/yoga-lab-logo.png" 
-                      alt="Yoga Lab Logo" 
-                      className="h-9 w-auto -mt-1"
-                    />
-                    <span className="text-xl font-lulo-bold text-gray-900">
-                      Yoga Lab
-                    </span>
-                  </div>
-                )}
-              </Link>
-              <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                onClick={() => setMobileMenuOpen(false)}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <div className="lg:hidden">
+            {/* Backdrop with fade-in animation */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-50 bg-gray-900/50 backdrop-blur-sm" 
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            {/* Menu panel with slide-in animation */}
+            <motion.div 
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+            >
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1, duration: 0.3 }}
+                className="flex items-center justify-between"
               >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-                <div className="py-6">
+                <Link to="/" className="-m-1.5 p-2.5" onClick={() => setMobileMenuOpen(false)}>
                   {isLabCoffee ? (
-                    <Link
-                      to="/contact"
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Visit Us
-                    </Link>
+                    <div className="flex items-center gap-3">
+                      <img 
+                        src="/icons/lab-coffee-logo.png" 
+                        alt="Lab Coffee Logo" 
+                        className="h-7 w-auto -mt-1"
+                      />
+                      <span className="text-xl font-lulo-bold text-gray-900">
+                        Lab Coffee
+                      </span>
+                    </div>
                   ) : (
-                    <Link
-                      to="/book"
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Book Your Class
-                    </Link>
+                    <div className="flex items-center gap-3">
+                      <img 
+                        src="/icons/yoga-lab-logo.png" 
+                        alt="Yoga Lab Logo" 
+                        className="h-9 w-auto -mt-1"
+                      />
+                      <span className="text-xl font-lulo-bold text-gray-900">
+                        Yoga Lab
+                      </span>
+                    </div>
                   )}
+                </Link>
+                <button
+                  type="button"
+                  className="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-100 transition-all duration-200"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="sr-only">Close menu</span>
+                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
+              </motion.div>
+              <div className="mt-6 flow-root">
+                <div className="-my-6 divide-y divide-gray-500/10">
+                  <div className="space-y-2 py-6">
+                    {navigation.map((item, index) => (
+                      <motion.div
+                        key={item.name}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ 
+                          delay: index * 0.1 + 0.2,
+                          duration: 0.4 
+                        }}
+                      >
+                        <Link
+                          to={item.href}
+                          className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 hover:translate-x-1"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ 
+                      delay: navigation.length * 0.1 + 0.2,
+                      duration: 0.4 
+                    }}
+                    className="py-6"
+                  >
+                    {isLabCoffee ? (
+                      <Link
+                        to="/contact"
+                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 hover:translate-x-1"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Visit Us
+                      </Link>
+                    ) : (
+                      <Link
+                        to="/book"
+                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 hover:translate-x-1"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Book Your Class
+                      </Link>
+                    )}
+                  </motion.div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </header>
   );
 }
