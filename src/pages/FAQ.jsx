@@ -86,13 +86,13 @@ export default function FAQ() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="rounded-md bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+                className="rounded-md bg-black px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
               >
                 Contact Us
               </a>
               <a
                 href="mailto:info@theyogalab.org"
-                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-indigo-600 shadow-sm ring-1 ring-inset ring-indigo-600 hover:bg-indigo-50 transition-colors"
+                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-black shadow-sm ring-1 ring-inset ring-black hover:bg-gray-50 transition-colors"
               >
                 Email Us Directly
               </a>

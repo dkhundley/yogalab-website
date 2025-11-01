@@ -8,7 +8,7 @@ export default function ServiceCard({ title, description, linkText, linkHref }) 
       <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
       <Link 
         to={linkHref}
-        className="inline-flex items-center gap-2 text-indigo-600 font-semibold hover:text-indigo-500 transition-colors"
+        className="inline-flex items-center gap-2 text-black font-semibold hover:text-gray-700 transition-colors"
       >
         {linkText}
         <ArrowRightIcon className="h-4 w-4" />

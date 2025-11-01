@@ -35,7 +35,7 @@ export default function Coffee() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">RELATE</h2>
+          <h2 className="text-base font-semibold leading-7 text-black">RELATE</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             LAB COFFEE
           </p>
@@ -49,7 +49,7 @@ export default function Coffee() {
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
             <div className="flex flex-col">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-black">
                 <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
                 </svg>
@@ -61,7 +61,7 @@ export default function Coffee() {
             </div>
 
             <div className="flex flex-col">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-black">
                 <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                 </svg>
@@ -73,7 +73,7 @@ export default function Coffee() {
             </div>
 
             <div className="flex flex-col">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-black">
                 <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -116,7 +116,7 @@ export default function Coffee() {
           </p>
           <Link
             to="/contact"
-            className="rounded-md bg-indigo-600 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+            className="rounded-md bg-black px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
           >
             Visit Us Today
           </Link>

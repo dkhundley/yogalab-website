@@ -76,12 +76,12 @@ export default function Book() {
           <div className="bg-white border border-gray-200 rounded-lg p-6">
             <div className="flex">
               <div className="flex-shrink-0">
-                <svg className="h-5 w-5 text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
+                <svg className="h-5 w-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                 </svg>
               </div>
               <div className="ml-3">
-                <p className="text-sm text-indigo-700">
+                <p className="text-sm text-gray-700">
                   <strong>Booking Information:</strong> This is a demo version of the Yoga Lab website. 
                   To book actual classes, please contact us directly at{' '}
                   <a href="mailto:info@theyogalab.org" className="font-medium underline">
@@ -111,14 +111,14 @@ export default function Book() {
                           <h4 className="font-semibold text-gray-900">{classInfo.name}</h4>
                           <p className="text-sm text-gray-600">with {classInfo.instructor}</p>
                         </div>
-                        <span className="text-sm font-medium text-indigo-600">{classInfo.time}</span>
+                        <span className="text-sm font-medium text-black">{classInfo.time}</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
                           {classInfo.level}
                         </span>
                         <button 
-                          className="text-sm text-indigo-600 hover:text-indigo-500 font-medium"
+                          className="text-sm text-black hover:text-gray-700 font-medium"
                           onClick={() => alert('Please contact us directly to book this class!')}
                         >
                           Book Class
@@ -169,7 +169,7 @@ export default function Book() {
 
         {/* Contact CTA */}
         <div className="mx-auto max-w-2xl mt-16 text-center">
-          <div className="bg-indigo-600 rounded-2xl p-8 text-white">
+          <div className="bg-black rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Ready to Start Your Journey?</h3>
             <p className="mb-6">
               Contact us to book your first class or learn more about our community.
@@ -177,13 +177,13 @@ export default function Book() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-gray-50 transition-colors"
+                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-black shadow-sm hover:bg-gray-50 transition-colors"
               >
                 Contact Us
               </a>
               <a
                 href="mailto:info@theyogalab.org"
-                className="rounded-md border border-white px-6 py-3 text-sm font-semibold text-white hover:bg-indigo-700 transition-colors"
+                className="rounded-md border border-white px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800 transition-colors"
               >
                 Email Us
               </a>
