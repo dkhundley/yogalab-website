@@ -1,54 +1,60 @@
 /**
  * MomenceReviews Component
  * 
- * This component handles the embedding of the Momence reviews widget.
+ * This component embeds the Momence reviews widget using their JavaScript plugin.
+ * Based on the implementation from the existing Yoga Lab website.
  * 
- * Integration Instructions:
- * 1. Log into your Momence account dashboard
- * 2. Navigate to Settings > Website Plugins > Reviews Widget
- * 3. Copy the embed code provided by Momence
- * 4. Replace the MOMENCE_BUSINESS_ID with your actual business ID
- * 5. Set USE_MOCK to false to display the actual reviews
- * 
- * Typical Momence reviews embed format:
- * <iframe 
- *   src="https://momence.com/reviews/[YOUR-BUSINESS-ID]" 
- *   width="100%" 
- *   height="600px"
- *   frameBorder="0"
- * />
- * 
- * Or:
- * <script src="https://momence.com/plugin/reviews-[YOUR-BUSINESS-ID].js"></script>
- * <div id="momence-reviews"></div>
+ * The actual embed code from theyogalab.org:
+ * <script
+ *   async
+ *   type="module"
+ *   host_id="21508"
+ *   is_profile_picture_enabled="true"
+ *   is_text_only_enabled="true"
+ *   layout="vertical"
+ *   signature="4ccf0200f660489ed45d70b20658c345ef55e5e3d3217bc8c421cc738e6d07da"
+ *   src="https://momence.com/plugin/reviews/reviews.js">
+ * </script>
+ * <div id="momence-plugin-reviews"></div>
  */
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function MomenceReviews() {
-  // TODO: Replace with actual Momence business ID once available
-  const MOMENCE_BUSINESS_ID = 'YOUR-BUSINESS-ID-HERE';
-  const USE_MOCK = true; // Set to false once real credentials are added
+  const MOMENCE_BUSINESS_ID = '21508';
+  const SIGNATURE = '4ccf0200f660489ed45d70b20658c345ef55e5e3d3217bc8c421cc738e6d07da';
+  const USE_MOCK = false; // Set to true to show placeholder
+  const scriptRef = useRef(null);
 
   useEffect(() => {
-    if (!USE_MOCK) {
-      // Load Momence reviews script dynamically
+    if (!USE_MOCK && !scriptRef.current) {
+      // Load Momence reviews script dynamically with all required attributes
       const script = document.createElement('script');
-      script.src = `https://momence.com/plugin/reviews-${MOMENCE_BUSINESS_ID}.js`;
       script.async = true;
+      script.type = 'module';
+      script.setAttribute('host_id', MOMENCE_BUSINESS_ID);
+      script.setAttribute('is_profile_picture_enabled', 'true');
+      script.setAttribute('is_text_only_enabled', 'true');
+      script.setAttribute('layout', 'vertical');
+      script.setAttribute('signature', SIGNATURE);
+      script.src = 'https://momence.com/plugin/reviews/reviews.js';
+      
       document.body.appendChild(script);
+      scriptRef.current = script;
 
       return () => {
         // Cleanup script on unmount
-        document.body.removeChild(script);
+        if (scriptRef.current && document.body.contains(scriptRef.current)) {
+          document.body.removeChild(scriptRef.current);
+          scriptRef.current = null;
+        }
       };
     }
-  }, [MOMENCE_BUSINESS_ID, USE_MOCK]);
+  }, [MOMENCE_BUSINESS_ID, SIGNATURE, USE_MOCK]);
 
   if (USE_MOCK) {
     return (
       <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
-        {/* Mock Widget Notice */}
         <div className="bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-4 text-white">
           <h3 className="text-lg font-semibold">Momence Reviews Widget</h3>
           <p className="text-sm text-purple-100 mt-1">Live reviews will display here</p>
@@ -61,48 +67,9 @@ export default function MomenceReviews() {
             </svg>
             
             <h4 className="text-lg font-semibold text-gray-900 mb-2">Reviews Widget Placeholder</h4>
-            <p className="text-gray-600 mb-4 max-w-md mx-auto">
-              Your authentic Momence reviews will appear here once integrated with your account.
+            <p className="text-gray-600 mb-4">
+              Set USE_MOCK = false to display actual Momence reviews
             </p>
-            
-            <div className="bg-white rounded-md p-6 max-w-2xl mx-auto text-left space-y-4">
-              <div>
-                <p className="text-sm font-semibold text-gray-900 mb-2">Integration Options:</p>
-                
-                <div className="space-y-3">
-                  <div className="bg-gray-50 p-3 rounded">
-                    <p className="text-xs font-medium text-gray-700 mb-1">Option 1: iframe Embed</p>
-                    <code className="text-xs text-gray-600 block whitespace-pre-wrap break-all">
-{`<iframe 
-  src="https://momence.com/reviews/[YOUR-BUSINESS-ID]" 
-  width="100%" 
-  height="600px"
-  frameBorder="0"
-/>`}
-                    </code>
-                  </div>
-                  
-                  <div className="bg-gray-50 p-3 rounded">
-                    <p className="text-xs font-medium text-gray-700 mb-1">Option 2: JavaScript Widget</p>
-                    <code className="text-xs text-gray-600 block whitespace-pre-wrap break-all">
-{`<script src="https://momence.com/plugin/reviews-[YOUR-BUSINESS-ID].js"></script>
-<div id="momence-reviews"></div>`}
-                    </code>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="border-t pt-4">
-                <p className="text-xs font-semibold text-gray-700 mb-2">Setup Steps:</p>
-                <ol className="text-xs text-gray-600 space-y-1 list-decimal list-inside">
-                  <li>Log into your Momence dashboard</li>
-                  <li>Go to Settings → Website Plugins → Reviews Widget</li>
-                  <li>Copy your business ID or embed code</li>
-                  <li>Update MOMENCE_BUSINESS_ID in MomenceReviews.jsx</li>
-                  <li>Set USE_MOCK = false</li>
-                </ol>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -110,32 +77,20 @@ export default function MomenceReviews() {
   }
 
   // Actual Momence reviews implementation
-  // Method 1: Using iframe embed
-  return (
-    <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
-      <iframe 
-        src={`https://momence.com/reviews/${MOMENCE_BUSINESS_ID}`}
-        width="100%" 
-        height="600px"
-        frameBorder="0"
-        title="Momence Reviews Widget"
-        className="w-full"
-        allow="fullscreen"
-      />
-    </div>
-  );
-
-  // Method 2: Using JavaScript widget (alternative implementation)
-  // Uncomment this section if Momence provides a JavaScript-based widget instead
-  /*
+  // The script is loaded in useEffect, and it will populate this div
   return (
     <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden p-6">
-      <div id="momence-reviews" className="min-h-[400px]">
-        <div className="text-center py-12 text-gray-500">
-          Loading reviews...
-        </div>
-      </div>
+      <style>
+        {`
+          :root {
+            --momenceReviewColorBackground: #FBFBFB;
+            --momenceBorder: 1px solid rgba(0, 0, 0, 0.08);
+            --momenceBorderRadius: 8px;
+            --momenceBoxShadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+          }
+        `}
+      </style>
+      <div id="momence-plugin-reviews" className="min-h-[400px]"></div>
     </div>
   );
-  */
 }
