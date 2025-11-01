@@ -13,6 +13,40 @@ export default function Order() {
               for pickup at our Bloomington location.
             </p>
           </div>
+
+          {/* Order Information */}
+          <div className="mx-auto max-w-2xl mt-12">
+            <div className="bg-gray-50 rounded-lg p-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Order Information</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start">
+                  <svg className="h-6 w-6 text-black mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Orders are typically ready in 10-15 minutes during regular hours</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-6 w-6 text-black mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  <span>Pick up at our Downtown Bloomington or Prospect Road locations</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-6 w-6 text-black mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                  </svg>
+                  <span>Secure payment through Square</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-6 w-6 text-black mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                  <span>You'll receive an email confirmation with your order details</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -41,44 +75,6 @@ export default function Order() {
               style={{ minHeight: '800px' }}
               allowFullScreen
             />
-          </div>
-        </div>
-      </div>
-
-      {/* Helpful Information */}
-      <div className="py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl">
-            <div className="bg-gray-50 rounded-lg p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Order Information</h3>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-black mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>Orders are typically ready in 10-15 minutes during regular hours</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-black mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                  </svg>
-                  <span>Pick up at our Bloomington location</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-black mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
-                  </svg>
-                  <span>Secure payment through Square</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-black mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                  </svg>
-                  <span>You'll receive an email confirmation with your order details</span>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
