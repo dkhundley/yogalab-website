@@ -66,8 +66,8 @@ export default function Home() {
                 <ServiceCard
                   title="YOGA CLASSES"
                   description="Your yoga mat is a laboratory. How you show up on your yoga mat, is how you show up in your life. Strength in your yoga practice translates to strength in your life."
-                  linkText="Yoga"
-                  linkHref="/yoga"
+                  linkText="Class Offerings"
+                  linkHref="/classes"
                 />
                 
                 <ServiceCard

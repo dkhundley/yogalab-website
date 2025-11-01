@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Yoga from './pages/Yoga';
+import Classes from './pages/Classes';
 import Coffee from './pages/Coffee';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
@@ -35,6 +36,7 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/yoga" element={<Yoga />} />
+          <Route path="/classes" element={<Classes />} />
           <Route path="/coffee" element={<Coffee />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
