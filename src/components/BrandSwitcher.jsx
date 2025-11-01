@@ -1,15 +1,20 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useBrand, BRANDS } from '../context/BrandContext';
 
 const brands = [
-  { name: 'Yoga Lab', href: '/', description: 'Yoga Classes & Wellness' },
-  { name: 'Lab Coffee', href: '/coffee', description: 'Artisan Coffee Shop' },
+  { name: 'Yoga Lab', value: BRANDS.YOGA_LAB, description: 'Yoga Classes & Wellness' },
+  { name: 'Lab Coffee', value: BRANDS.LAB_COFFEE, description: 'Artisan Coffee Shop' },
 ];
 
 export default function BrandSwitcher() {
-  const location = useLocation();
+  const { activeBrand, setActiveBrand } = useBrand();
+  const navigate = useNavigate();
   
-  // Determine active brand based on current path
-  const isLabCoffee = location.pathname === '/coffee';
+  const handleBrandSwitch = (brandValue) => {
+    setActiveBrand(brandValue);
+    // Navigate to home page when switching brands
+    navigate('/');
+  };
   
   return (
     <div className="bg-black text-white relative z-50">
@@ -18,19 +23,19 @@ export default function BrandSwitcher() {
           {/* Brand Links */}
           <div className="flex items-center gap-6">
             {brands.map((brand) => {
-              const isActive = brand.href === '/coffee' ? isLabCoffee : !isLabCoffee && location.pathname !== '/coffee';
+              const isActive = brand.value === activeBrand;
               
               return (
-                <Link
+                <button
                   key={brand.name}
-                  to={brand.href}
+                  onClick={() => handleBrandSwitch(brand.value)}
                   className={`font-medium transition-colors hover:text-gray-300 ${
                     isActive ? 'text-white underline underline-offset-4' : 'text-gray-400'
                   }`}
                   title={brand.description}
                 >
                   {brand.name}
-                </Link>
+                </button>
               );
             })}
           </div>
