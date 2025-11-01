@@ -7,17 +7,21 @@ import Map from '../components/Map';
 import { useBrand, BRANDS } from '../context/BrandContext';
 
 export default function Home() {
+  // Accessing the active brand from context
   const { activeBrand } = useBrand();
   const isLabCoffee = activeBrand === BRANDS.LAB_COFFEE;
 
   return (
     <>
+      {/* Hero Section */}
       <Hero />
       
       {/* Services Section */}
       <section className="py-24 bg-gray-50 font-montserrat">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Setting the rendering of the screen based on the brand selected (Yoga Lab vs. Lab Coffee) */}
           {isLabCoffee ? (
+            // Displaying Lab Coffee Services
             <>
               <div className="mx-auto max-w-2xl text-center mb-16">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -52,6 +56,7 @@ export default function Home() {
               </div>
             </>
           ) : (
+            // Displaying Yoga Lab Services
             <>
               <div className="mx-auto max-w-2xl text-center mb-16">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

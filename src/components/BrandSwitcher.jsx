@@ -7,9 +7,11 @@ const brands = [
 ];
 
 export default function BrandSwitcher() {
+  // Instantiating the state and navigation
   const { activeBrand, setActiveBrand } = useBrand();
   const navigate = useNavigate();
   
+  // Setting a handler for brand switching
   const handleBrandSwitch = (brandValue) => {
     setActiveBrand(brandValue);
     // Navigate to home page when switching brands
@@ -17,6 +19,7 @@ export default function BrandSwitcher() {
   };
   
   return (
+    // Setting the brand switcher container
     <div className="bg-black text-white relative z-50 font-montserrat">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex items-center justify-between py-2 text-sm">

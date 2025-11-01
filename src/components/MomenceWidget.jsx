@@ -40,6 +40,16 @@ export default function MomenceWidget() {
           document.body.removeChild(scriptRef.current);
           scriptRef.current = null;
         }
+        
+        // Clean up any Momence-injected stylesheets
+        const momenceStyles = document.querySelectorAll('link[href*="momence"], style[data-momence], style:has([class*="momence"])');
+        momenceStyles.forEach(style => style.remove());
+        
+        // Clean up the widget container content
+        const widgetContainer = document.getElementById('ribbon-schedule');
+        if (widgetContainer) {
+          widgetContainer.innerHTML = '';
+        }
       };
     }
   }, [MOMENCE_BUSINESS_ID, MOMENCE_TOKEN, USE_MOCK]);
