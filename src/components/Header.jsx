@@ -100,7 +100,7 @@ export default function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-50 bg-gray-900/50 backdrop-blur-sm" 
+              className="fixed inset-0 z-[9998] bg-gray-900/50 backdrop-blur-sm" 
               onClick={() => setMobileMenuOpen(false)}
             />
             {/* Menu panel with slide-in animation */}
@@ -109,7 +109,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+              className="fixed inset-y-0 right-0 z-[9999] w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
             >
               <motion.div 
                 initial={{ opacity: 0 }}
