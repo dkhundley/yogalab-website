@@ -45,7 +45,7 @@ export default function Header() {
                 <img 
                   src="/icons/yoga-lab-logo.png" 
                   alt="Yoga Lab Logo" 
-                  className="h-8 w-auto -mt-1"
+                  className="h-10 w-auto -mt-1"
                 />
                 <span className="text-2xl font-lulo-bold text-gray-900">
                   Yoga Lab
@@ -112,7 +112,7 @@ export default function Header() {
                     <img 
                       src="/icons/yoga-lab-logo.png" 
                       alt="Yoga Lab Logo" 
-                      className="h-7 w-auto -mt-1"
+                      className="h-9 w-auto -mt-1"
                     />
                     <span className="text-xl font-lulo-bold text-gray-900">
                       Yoga Lab
