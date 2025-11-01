@@ -32,6 +32,8 @@ export default function Hero() {
   <div className="max-w-5xl py-32 sm:py-48 lg:py-56 px-4 sm:px-8 md:px-16 lg:pl-40 font-montserrat">
         <div className="text-left">
           {isLabCoffee ? (
+
+            // Setting the rendering for the Lab Coffee brand
             <>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-lulo-bold">
                 CONNECT, SIP, AND THRIVE AT LAB COFFEE
@@ -52,7 +54,9 @@ export default function Hero() {
                 </Link>
               </div>
             </>
+            
           ) : (
+            // Setting the rendering for the Yoga Lab brand
             <>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-lulo-bold">
                 FREEING PEOPLE TO DO THE WORK THEY LOVE THROUGH REGULATION + CONNECTION
