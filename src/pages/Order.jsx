@@ -17,15 +17,31 @@ export default function Order() {
       </div>
 
       {/* Square Online Ordering Embed - Full Width */}
-      <div className="w-full">
-        <div className="relative w-full" style={{ paddingBottom: '100%', minHeight: '800px' }}>
-          <iframe
-            src="https://labcoffeebn.square.site"
-            className="absolute top-0 left-0 w-full h-full border-0"
-            title="Lab Coffee Online Ordering"
-            style={{ minHeight: '800px' }}
-            allowFullScreen
-          />
+      <div className="w-full px-4 sm:px-6 lg:px-8 pb-8">
+        <div className="max-w-[1600px] mx-auto">
+          {/* Frame Header - indicates embedded ordering system */}
+          <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-t-xl px-6 py-4 flex items-center justify-between shadow-lg">
+            <div className="flex items-center gap-3">
+              <span className="text-white text-sm font-semibold">Square Online Ordering</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-400">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+              <span className="text-xs hidden sm:inline">Secure Checkout</span>
+            </div>
+          </div>
+          
+          {/* Iframe Container with border */}
+          <div className="relative w-full bg-white rounded-b-xl shadow-2xl border-4 border-gray-900 border-t-0" style={{ paddingBottom: '100%', minHeight: '800px' }}>
+            <iframe
+              src="https://labcoffeebn.square.site"
+              className="absolute top-0 left-0 w-full h-full rounded-b-xl"
+              title="Lab Coffee Online Ordering"
+              style={{ minHeight: '800px' }}
+              allowFullScreen
+            />
+          </div>
         </div>
       </div>
 
