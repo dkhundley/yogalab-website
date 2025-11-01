@@ -1,131 +1,34 @@
 # Yoga Lab Website
+This README is intended to serve as source of documentation in order to educate an individual on the core functionalities of this site in the case that the original site creator (David Hundley) is no longer able to support the stack. I, David Hundley, will attempt to provide you with as much information as possible!
 
-A modern, responsive website for Yoga Lab built with React, Vite, and JavaScript.
+## Technical Stack
+This website is built largely using the JavaScript framework known as `Next.js` and deployed to the `Vercel` platform. Next.js is built on top of another JavaScript framework known as `React`. In order to make alterations to this site on your local machine, you will need to install **Node.js**. This is the core package manager for installing `Next.js` and JavaScript packages in general. I personally used **Visual Studio Code (VS Code)** as an IDE to help me build this site, but VS Code is not a hard dependency. For transparency, I largely made use of **GitHub Copilot** as an AI coding tool to help build this website. To ensure transparency and understandability of this code base, I personally reviewed all AI-generated code and annotated all code appropriately with human readable comments that I wrote myself.
 
-## 🚀 Tech Stack
+## Project Structure
+This website's repository is largely structured as any typical Next.js / React website, but to be extra clear, let's cover the directory structure of this repository:
 
-- **React 19.2** - Modern React with latest features
-- **Vite 6** - Fast build tool and dev server
-- **React Router 6** - Client-side routing
-- **Tailwind CSS 4** - Utility-first CSS framework
-- **Heroicons** - Beautiful hand-crafted SVG icons
-- **Framer Motion** - Production-ready animation library
-- **JavaScript (ES6+)** - No TypeScript, pure JavaScript
+- **/public**: This is where all artifacts supporting the website are stored
+    - **/fonts/**: This is where any proprietary fonts are stored that are used across the website. For example, the Lulo Clean font is stored in this directory.
+    - **/icons/**: This directory contains any icons use across the website, including the favicon.
+    - **/images/**: This directory contains any images that are displayed on the website.
+    - **/videos/**: This directory contains any videos that are displayed on the website.
+- **/src**: This directory contains all the source code that builds this website.
+    - **main.jsx**: This is the primary "entrypoint" script for the website.
+    - **App.jsx**: Referenced by `main.jsx`, this is the primary script that sets up the primary homepage of the website and how the user may navigate to other sites.
+    - **/pages/**: This directory contains all the respective sites that may be displayed across the Yoga Lab / Lab Coffee sites, such as class offerings, coffee menu offerings, and more.
+    - **/context/**: This directory contains how the site manages its state so that it knows things like when a user is navigating the Yoga Lab side of things vs. the Lab Coffee things.
+    - **/components/**: This directory contains the individual "building blocks" that are leveraged by files within the `/pages` directory.
 
-## 📦 Getting Started
+## Previewing the Website
+In order to preview the website on your local machine, you will need to have `Node.js` installed. I'm not going to replicate instructions here. Essentially, all you need to do is to Google how to install Node.js. If you are on a macOS device, this is as simple as running a Homebrew command.
 
-### Prerequisites
+Once you have Node.js installed, you will be able to locally preview this website, you will first need to sync all the dependencies by running the following command:
 
-- Node.js 18+ 
-- npm or yarn
+`npm install`
 
-### Installation
+Once these Node dependencies have been installed, you will be able to review the website by running the following command:
 
-```bash
-# Install dependencies
-npm install
+`npm run dev`
 
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-The development server will start at `http://localhost:3000`
-
-## 🏗️ Project Structure
-
-```
-yogalab-website/
-├── public/              # Static assets
-├── src/
-│   ├── components/      # Reusable React components
-│   │   ├── Header.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Hero.jsx
-│   │   ├── ServiceCard.jsx
-│   │   └── ContactForm.jsx
-│   ├── pages/          # Page components
-│   │   ├── Home.jsx
-│   │   ├── About.jsx
-│   │   ├── Yoga.jsx
-│   │   ├── Coffee.jsx
-│   │   ├── Contact.jsx
-│   │   ├── FAQ.jsx
-│   │   └── Book.jsx
-│   ├── app/
-│   │   └── globals.css # Global styles with Tailwind directives
-│   ├── App.jsx         # Main app component with routing
-│   └── main.jsx        # Application entry point
-├── index.html          # HTML entry point
-├── vite.config.js      # Vite configuration
-├── package.json        # Dependencies and scripts
-└── README.md          # This file
-```
-
-## 🎨 Features
-
-- **Responsive Design** - Mobile-first approach with Tailwind CSS
-- **Fast Development** - Hot Module Replacement (HMR) with Vite
-- **Client-Side Routing** - Seamless navigation with React Router
-- **Modern JavaScript** - ES6+ features, no build complexity
-- **Component-Based** - Reusable, maintainable components
-- **SEO Friendly** - Proper meta tags and semantic HTML
-
-## 📄 Pages
-
-- **Home** - Hero section, services overview, contact form
-- **About** - Mission statement, philosophy, location
-- **Yoga** - Class descriptions and benefits
-- **Lab Coffee** - Menu and coffee shop details
-- **Contact** - Contact information and form
-- **FAQ** - Frequently asked questions
-- **Book** - Class schedule and booking information
-
-## 🛠️ Scripts
-
-```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run preview  # Preview production build locally
-npm run lint     # Run ESLint
-```
-
-## 🔧 Configuration
-
-### Vite
-
-The project uses Vite for fast builds and development. Configuration is in `vite.config.js`:
-
-- React plugin for JSX support
-- Path aliases (`@/` maps to `./src/`)
-- Dev server on port 3000
-
-### Tailwind CSS
-
-Tailwind CSS v4 is configured via PostCSS. The configuration uses the new `@tailwindcss/postcss` plugin.
-
-### ESLint
-
-ESLint is configured for React with modern JavaScript. Configuration includes:
-- React and React Hooks plugins
-- React Refresh for HMR
-- ES6+ support
-
-## 📝 License
-
-Copyright 2021 Community Wellness Lab, LLC; Yoga Lab, DBA
-
-## 📧 Contact
-
-For questions or support, contact us at [info@theyogalab.org](mailto:info@theyogalab.org)
-
-Visit us at:  
-207 S. Prospect Road, Suite 2  
-Bloomington, IL 61704
-
-Follow us on Instagram: [@yogalab.bn](http://www.instagram.com/yogalab.bn)
+## External Dependencies
+The Yoga Lab website relies on two external dependencies: **Momence** and **Square**. Momence is the platform Yoga Lab uses to book customers into classes and display reviews from those customers, and Square is the platform in which customers are able to order food / drink items from Lab Coffee. In order to integrate each of these respective items, no special authentication was required. I did have to embed these respectively as `iframes`, which caused a bit of tenstion given that these embedded iframes had the tendency to overwrite other CSS, but otherwise, you should have no issue embedding these elements without any need for authorization credentials.
