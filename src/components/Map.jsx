@@ -46,7 +46,7 @@ export default function Map({
         />
         <Marker position={[latitude, longitude]}>
           <Popup>
-            <div className="text-center">
+            <div className="text-center font-montserrat">
               <strong className="text-gray-900">{markerTitle}</strong>
               <p className="text-sm text-gray-600 mt-1">{markerDescription}</p>
             </div>

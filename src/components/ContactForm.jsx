@@ -32,7 +32,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-xl">
+    <form onSubmit={handleSubmit} className="mx-auto max-w-xl font-montserrat">
       <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
         <div>
           <label htmlFor="firstName" className="block text-sm font-semibold leading-6 text-gray-900">

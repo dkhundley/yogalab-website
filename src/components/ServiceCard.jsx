@@ -3,7 +3,7 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 export default function ServiceCard({ title, description, linkText, linkHref }) {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 font-montserrat">
       <h3 className="text-xl font-bold text-gray-900 mb-4">{title}</h3>
       <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
       <Link 

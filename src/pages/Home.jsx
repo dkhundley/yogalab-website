@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       
       {/* Services Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50 font-montserrat">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {isLabCoffee ? (
             <>
@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* Location & Contact Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white font-montserrat">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
