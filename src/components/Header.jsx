@@ -30,9 +30,16 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-2.5">
             {isLabCoffee ? (
-              <span className="text-2xl font-bold text-gray-900">
-                Lab Coffee
-              </span>
+              <div className="flex items-center gap-4">
+                <img 
+                  src="/icons/lab-coffee-logo.png" 
+                  alt="Lab Coffee Logo" 
+                  className="h-8 w-auto -mt-1"
+                />
+                <span className="text-2xl font-lulo-bold text-gray-900">
+                  Lab Coffee
+                </span>
+              </div>
             ) : (
               <div className="flex items-center gap-4">
                 <img 
@@ -90,9 +97,16 @@ export default function Header() {
             <div className="flex items-center justify-between">
               <Link to="/" className="-m-1.5 p-2.5">
                 {isLabCoffee ? (
-                  <span className="text-xl font-bold text-gray-900">
-                    Lab Coffee
-                  </span>
+                  <div className="flex items-center gap-3">
+                    <img 
+                      src="/icons/lab-coffee-logo.png" 
+                      alt="Lab Coffee Logo" 
+                      className="h-7 w-auto -mt-1"
+                    />
+                    <span className="text-xl font-lulo-bold text-gray-900">
+                      Lab Coffee
+                    </span>
+                  </div>
                 ) : (
                   <div className="flex items-center gap-3">
                     <img 
