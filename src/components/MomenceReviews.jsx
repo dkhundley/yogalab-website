@@ -24,31 +24,52 @@ export default function MomenceReviews() {
   const MOMENCE_BUSINESS_ID = '21508';
   const SIGNATURE = '4ccf0200f660489ed45d70b20658c345ef55e5e3d3217bc8c421cc738e6d07da';
   const USE_MOCK = false; // Set to true to show placeholder
-  const scriptRef = useRef(null);
+  const iframeRef = useRef(null);
 
   useEffect(() => {
-    if (!USE_MOCK && !scriptRef.current) {
-      // Load Momence reviews script dynamically with all required attributes
-      const script = document.createElement('script');
-      script.async = true;
-      script.type = 'module';
-      script.setAttribute('host_id', MOMENCE_BUSINESS_ID);
-      script.setAttribute('is_profile_picture_enabled', 'true');
-      script.setAttribute('is_text_only_enabled', 'true');
-      script.setAttribute('layout', 'vertical');
-      script.setAttribute('signature', SIGNATURE);
-      script.src = 'https://momence.com/plugin/reviews/reviews.js';
+    if (!USE_MOCK && iframeRef.current) {
+      const iframeDoc = iframeRef.current.contentDocument || iframeRef.current.contentWindow.document;
       
-      document.body.appendChild(script);
-      scriptRef.current = script;
-
-      return () => {
-        // Cleanup script on unmount
-        if (scriptRef.current && document.body.contains(scriptRef.current)) {
-          document.body.removeChild(scriptRef.current);
-          scriptRef.current = null;
-        }
-      };
+      // Build the HTML content with the Momence embed
+      const htmlContent = `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+              body {
+                margin: 0;
+                padding: 0;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+              }
+              :root {
+                --momenceReviewColorBackground: #FBFBFB;
+                --momenceBorder: 1px solid rgba(0, 0, 0, 0.08);
+                --momenceBorderRadius: 8px;
+                --momenceBoxShadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+              }
+            </style>
+          </head>
+          <body>
+            <div id="momence-plugin-reviews"></div>
+            <script
+              async
+              type="module"
+              host_id="${MOMENCE_BUSINESS_ID}"
+              is_profile_picture_enabled="true"
+              is_text_only_enabled="true"
+              layout="vertical"
+              signature="${SIGNATURE}"
+              src="https://momence.com/plugin/reviews/reviews.js">
+            </script>
+          </body>
+        </html>
+      `;
+      
+      iframeDoc.open();
+      iframeDoc.write(htmlContent);
+      iframeDoc.close();
     }
   }, [MOMENCE_BUSINESS_ID, SIGNATURE, USE_MOCK]);
 
@@ -76,21 +97,16 @@ export default function MomenceReviews() {
     );
   }
 
-  // Actual Momence reviews implementation
-  // The script is loaded in useEffect, and it will populate this div
+  // Actual Momence reviews implementation using an iframe
+  // This ensures the widget fully reloads each time the component mounts
   return (
     <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden p-6">
-      <style>
-        {`
-          :root {
-            --momenceReviewColorBackground: #FBFBFB;
-            --momenceBorder: 1px solid rgba(0, 0, 0, 0.08);
-            --momenceBorderRadius: 8px;
-            --momenceBoxShadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-          }
-        `}
-      </style>
-      <div id="momence-plugin-reviews" className="min-h-[400px]"></div>
+      <iframe
+        ref={iframeRef}
+        title="Momence Reviews"
+        className="w-full min-h-[500px] border-0"
+        style={{ height: '600px' }}
+      />
     </div>
   );
 }

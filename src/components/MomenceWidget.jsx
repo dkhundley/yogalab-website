@@ -23,7 +23,13 @@ export default function MomenceWidget() {
   const scriptRef = useRef(null);
 
   useEffect(() => {
-    if (!USE_MOCK && !scriptRef.current) {
+    if (!USE_MOCK) {
+      // Clear the container before loading
+      const widgetContainer = document.getElementById('ribbon-schedule');
+      if (widgetContainer) {
+        widgetContainer.innerHTML = '';
+      }
+
       // Load Momence hybrid plugin v2 script dynamically
       const script = document.createElement('script');
       script.id = 'ribbon-schedule-view-scriptroot';
@@ -38,8 +44,8 @@ export default function MomenceWidget() {
         // Cleanup script on unmount
         if (scriptRef.current && document.body.contains(scriptRef.current)) {
           document.body.removeChild(scriptRef.current);
-          scriptRef.current = null;
         }
+        scriptRef.current = null;
         
         // Clean up any Momence-injected stylesheets
         const momenceStyles = document.querySelectorAll('link[href*="momence"], style[data-momence], style:has([class*="momence"])');
