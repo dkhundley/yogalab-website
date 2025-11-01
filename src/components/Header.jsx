@@ -75,10 +75,10 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           {isLabCoffee ? (
             <Link
-              to="/contact"
+              to="/order"
               className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
             >
-              Visit Us
+              Order Now
             </Link>
           ) : (
             <Link
@@ -185,11 +185,11 @@ export default function Header() {
                   >
                     {isLabCoffee ? (
                       <Link
-                        to="/contact"
+                        to="/order"
                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 hover:translate-x-1 font-montserrat"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        Visit Us
+                        Order Now
                       </Link>
                     ) : (
                       <Link

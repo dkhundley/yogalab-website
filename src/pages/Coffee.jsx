@@ -112,14 +112,22 @@ export default function Coffee() {
 
         <div className="mt-16 text-center">
           <p className="text-lg text-gray-600 mb-8">
-            Visit us at our Bloomington location for the full Lab Coffee experience.
+            Order ahead for pickup or visit us at our Bloomington location for the full Lab Coffee experience.
           </p>
-          <Link
-            to="/contact"
-            className="rounded-md bg-black px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
-          >
-            Visit Us Today
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              to="/order"
+              className="rounded-md bg-black px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
+            >
+              Order Online
+            </Link>
+            <Link
+              to="/contact"
+              className="rounded-md border-2 border-black px-8 py-3 text-base font-semibold text-black shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
+            >
+              Visit Us Today
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -12,6 +12,7 @@ import Coffee from './pages/Coffee';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Book from './pages/Book';
+import Order from './pages/Order';
 
 function AppContent() {
   const { activeBrand } = useBrand();
@@ -41,6 +42,7 @@ function AppContent() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/book" element={<Book />} />
+          <Route path="/order" element={<Order />} />
         </Routes>
       </main>
       <Footer />
