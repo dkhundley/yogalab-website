@@ -21,7 +21,7 @@ export default function Book() {
         </div>
 
         {/* Momence Booking Widget */}
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-4xl w-full">
           <MomenceWidget />
         </div>
 

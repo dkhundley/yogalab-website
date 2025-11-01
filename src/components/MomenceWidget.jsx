@@ -21,6 +21,7 @@ export default function MomenceWidget() {
   const MOMENCE_TOKEN = '635f931146';
   const USE_MOCK = false; // Set to true to show placeholder
   const scriptRef = useRef(null);
+  const styleRef = useRef(null);
 
   useEffect(() => {
     if (!USE_MOCK) {
@@ -29,6 +30,64 @@ export default function MomenceWidget() {
       if (widgetContainer) {
         widgetContainer.innerHTML = '';
       }
+
+      // Add custom CSS to fix mobile responsiveness issues with Momence widget
+      const style = document.createElement('style');
+      style.textContent = `
+        /* Force Momence widget to be responsive on mobile */
+        #ribbon-schedule {
+          min-width: 100% !important;
+          max-width: 100% !important;
+          overflow-x: auto !important;
+        }
+        
+        /* Ensure the widget container is responsive */
+        #ribbon-schedule > * {
+          min-width: 100% !important;
+          width: 100% !important;
+        }
+        
+        /* Fix navigation arrows visibility on mobile */
+        #ribbon-schedule .ribbon-nav,
+        #ribbon-schedule [class*="nav"],
+        #ribbon-schedule [class*="arrow"],
+        #ribbon-schedule button[class*="prev"],
+        #ribbon-schedule button[class*="next"] {
+          min-width: 40px !important;
+          min-height: 40px !important;
+          padding: 8px !important;
+          flex-shrink: 0 !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+        
+        /* Ensure week navigation controls are visible on mobile */
+        @media (max-width: 640px) {
+          #ribbon-schedule [class*="header"],
+          #ribbon-schedule [class*="navigation"],
+          #ribbon-schedule [class*="week-nav"] {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            gap: 8px !important;
+          }
+          
+          #ribbon-schedule button,
+          #ribbon-schedule [role="button"] {
+            flex-shrink: 0 !important;
+            min-width: 44px !important;
+            min-height: 44px !important;
+            touch-action: manipulation !important;
+          }
+          
+          /* Add more spacing for touch targets on mobile */
+          #ribbon-schedule .ribbon-schedule-container {
+            padding: 8px !important;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+      styleRef.current = style;
 
       // Load Momence hybrid plugin v2 script dynamically
       const script = document.createElement('script');
@@ -46,6 +105,12 @@ export default function MomenceWidget() {
           document.body.removeChild(scriptRef.current);
         }
         scriptRef.current = null;
+        
+        // Cleanup custom styles
+        if (styleRef.current && document.head.contains(styleRef.current)) {
+          document.head.removeChild(styleRef.current);
+        }
+        styleRef.current = null;
         
         // Clean up any Momence-injected stylesheets
         const momenceStyles = document.querySelectorAll('link[href*="momence"], style[data-momence], style:has([class*="momence"])');
@@ -86,8 +151,10 @@ export default function MomenceWidget() {
   // Actual Momence booking widget implementation
   // The script is loaded in useEffect, and it will populate this div
   return (
-    <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden p-6">
-      <div id="ribbon-schedule" className="min-h-[600px]"></div>
+    <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+      <div className="p-4 sm:p-6">
+        <div id="ribbon-schedule" className="min-h-[600px] w-full"></div>
+      </div>
     </div>
   );
 }
