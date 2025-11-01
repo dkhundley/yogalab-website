@@ -29,9 +29,16 @@ export default function BrandSwitcher() {
                 <button
                   key={brand.name}
                   onClick={() => handleBrandSwitch(brand.value)}
-                  className={`font-medium transition-colors hover:text-gray-300 ${
+                  className={`font-medium transition-colors hover:text-gray-300 bg-transparent border-0 p-0 ${
                     isActive ? 'text-white underline underline-offset-4' : 'text-gray-400'
                   }`}
+                  style={{ 
+                    background: 'transparent',
+                    border: 'none',
+                    padding: '0',
+                    borderRadius: '0',
+                    color: isActive ? '#ffffff' : '#9ca3af'
+                  }}
                   title={brand.description}
                 >
                   {brand.name}
