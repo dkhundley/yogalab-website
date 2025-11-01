@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
+import MomenceReviews from '../components/MomenceReviews';
 import ContactForm from '../components/ContactForm';
 import Map from '../components/Map';
 import { useBrand, BRANDS } from '../context/BrandContext';
@@ -88,8 +89,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Reviews Section - Only for Yoga Lab */}
+      {!isLabCoffee && (
+        <section className="py-24 bg-white font-montserrat">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                What Our Community Says
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-gray-600">
+                Hear from our students about their transformative experiences at Yoga Lab.
+              </p>
+            </div>
+            
+            {/* Momence Reviews Widget Embed */}
+            <div className="mx-auto max-w-5xl">
+              <MomenceReviews />
+            </div>
+            
+            <div className="mt-8 text-center">
+              <p className="text-sm text-gray-500">
+                Reviews powered by{' '}
+                <a 
+                  href="https://www.momence.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-semibold text-gray-700 hover:text-gray-900 transition-colors"
+                >
+                  Momence
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Location & Contact Section */}
-      <section className="py-24 bg-white font-montserrat">
+      <section className={`py-24 font-montserrat ${isLabCoffee ? 'bg-white' : 'bg-gray-50'}`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
