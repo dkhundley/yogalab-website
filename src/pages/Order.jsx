@@ -1,26 +1,72 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Order() {
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const [isFullscreenSupported, setIsFullscreenSupported] = useState(true);
   const iframeContainerRef = useRef(null);
 
+  useEffect(() => {
+    // Check if fullscreen API is supported
+    const element = iframeContainerRef.current;
+    const supported = !!(
+      element?.requestFullscreen ||
+      element?.webkitRequestFullscreen ||
+      element?.mozRequestFullScreen ||
+      element?.msRequestFullscreen
+    );
+    setIsFullscreenSupported(supported);
+  }, []);
+
   const toggleFullScreen = () => {
-    if (!document.fullscreenElement) {
-      iframeContainerRef.current?.requestFullscreen().then(() => {
+    const element = iframeContainerRef.current;
+    if (!element) return;
+
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+      // Try standard fullscreen API first
+      if (element.requestFullscreen) {
+        element.requestFullscreen().then(() => {
+          setIsFullScreen(true);
+        }).catch((err) => {
+          console.error('Error attempting to enable fullscreen:', err);
+        });
+      }
+      // Fallback for Safari/iOS
+      else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
         setIsFullScreen(true);
-      }).catch((err) => {
-        console.error('Error attempting to enable fullscreen:', err);
-      });
+      }
+      // Fallback for Firefox
+      else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+        setIsFullScreen(true);
+      }
+      // Fallback for IE/Edge
+      else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+        setIsFullScreen(true);
+      }
     } else {
-      document.exitFullscreen().then(() => {
+      // Exit fullscreen
+      if (document.exitFullscreen) {
+        document.exitFullscreen().then(() => {
+          setIsFullScreen(false);
+        });
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
         setIsFullScreen(false);
-      });
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+        setIsFullScreen(false);
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+        setIsFullScreen(false);
+      }
     }
   };
 
   // Listen for fullscreen changes (e.g., user presses ESC)
   const handleFullScreenChange = () => {
-    setIsFullScreen(!!document.fullscreenElement);
+    setIsFullScreen(!!(document.fullscreenElement || document.webkitFullscreenElement));
   };
 
   return (
@@ -89,28 +135,30 @@ export default function Order() {
                 </svg>
                 <span className="text-xs hidden sm:inline">Secure Checkout</span>
               </div>
-              {/* Fullscreen Toggle Button */}
-              <button
-                onClick={toggleFullScreen}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-gray-700 hover:bg-gray-600 transition-colors text-white text-xs font-medium"
-                title={isFullScreen ? "Exit Fullscreen" : "Enter Fullscreen"}
-              >
-                {isFullScreen ? (
-                  <>
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5l5.25 5.25" />
-                    </svg>
-                    <span className="hidden sm:inline">Exit Fullscreen</span>
-                  </>
-                ) : (
-                  <>
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
-                    </svg>
-                    <span className="hidden sm:inline">Fullscreen</span>
-                  </>
-                )}
-              </button>
+              {/* Fullscreen Toggle Button - Only show if supported */}
+              {isFullscreenSupported && (
+                <button
+                  onClick={toggleFullScreen}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-gray-700 hover:bg-gray-600 transition-colors text-white text-xs font-medium"
+                  title={isFullScreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+                >
+                  {isFullScreen ? (
+                    <>
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5l5.25 5.25" />
+                      </svg>
+                      <span className="hidden sm:inline">Exit Fullscreen</span>
+                    </>
+                  ) : (
+                    <>
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                      </svg>
+                      <span className="hidden sm:inline">Fullscreen</span>
+                    </>
+                  )}
+                </button>
+              )}
             </div>
           </div>
           
@@ -120,6 +168,7 @@ export default function Order() {
             className="relative w-full bg-white rounded-b-xl shadow-2xl border-4 border-gray-900 border-t-0" 
             style={{ paddingBottom: '100%', minHeight: '800px' }}
             onFullscreenChange={handleFullScreenChange}
+            onWebkitFullscreenChange={handleFullScreenChange}
           >
             <iframe
               src="https://labcoffeebn.square.site"
@@ -127,6 +176,7 @@ export default function Order() {
               title="Lab Coffee Online Ordering"
               style={{ minHeight: '800px' }}
               allowFullScreen
+              allow="fullscreen"
             />
           </div>
         </div>
