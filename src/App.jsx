@@ -4,6 +4,7 @@ import { BrandProvider, useBrand, BRANDS } from './context/BrandContext';
 import BrandSwitcher from './components/BrandSwitcher';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Yoga from './pages/Yoga';
@@ -30,6 +31,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-white">
+      <ScrollToTop />
       <BrandSwitcher />
       <Header />
       <main>
