@@ -44,10 +44,10 @@ export default function Hero() {
               </p>
               <div className="mt-10 flex items-center justify-start gap-x-6">
                 <Link
-                  to="/coffee"
+                  to="/order"
                   className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
                 >
-                  Explore Our Menu
+                  Order Now
                 </Link>
                 <Link to="/contact" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500 transition-colors font-montserrat">
                   Visit Us <ArrowRightIcon className="h-4 w-4" />
