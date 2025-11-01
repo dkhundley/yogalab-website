@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import ContactForm from '../components/ContactForm';
+import Map from '../components/Map';
 import { useBrand, BRANDS } from '../context/BrandContext';
 
 export default function Home() {
@@ -87,21 +88,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Location & Contact Section */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {isLabCoffee ? 'Visit Us' : 'Connect With Us'}
+              {isLabCoffee ? 'Visit Us' : 'Find Us & Connect'}
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               {isLabCoffee 
                 ? 'Stop by Lab Coffee and experience our welcoming community atmosphere.' 
-                : 'Ready to start your journey with Yoga Lab? Get in touch with us today.'}
+                : 'Visit our studio or get in touch with us today.'}
             </p>
           </div>
           
-          <ContactForm />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {/* Map Section */}
+            <div className="order-2 lg:order-1">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Location</h3>
+              <Map 
+                latitude={40.4783244}
+                longitude={-88.9507216}
+                markerTitle="Yoga Lab"
+                markerDescription="207 S. Prospect Road, Suite 2, Bloomington, IL 61704"
+              />
+              <div className="mt-4 text-sm text-gray-600">
+                <p className="font-medium">207 S. Prospect Road, Suite 2</p>
+                <p>Bloomington, IL 61704</p>
+              </div>
+            </div>
+            
+            {/* Contact Form Section */}
+            <div className="order-1 lg:order-2">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Get In Touch</h3>
+              <ContactForm />
+            </div>
+          </div>
         </div>
       </section>
     </>
