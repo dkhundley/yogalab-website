@@ -1,4 +1,28 @@
+import { useState, useRef } from 'react';
+
 export default function Order() {
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const iframeContainerRef = useRef(null);
+
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      iframeContainerRef.current?.requestFullscreen().then(() => {
+        setIsFullScreen(true);
+      }).catch((err) => {
+        console.error('Error attempting to enable fullscreen:', err);
+      });
+    } else {
+      document.exitFullscreen().then(() => {
+        setIsFullScreen(false);
+      });
+    }
+  };
+
+  // Listen for fullscreen changes (e.g., user presses ESC)
+  const handleFullScreenChange = () => {
+    setIsFullScreen(!!document.fullscreenElement);
+  };
+
   return (
     <div className="bg-white font-montserrat">
       <div className="py-16 sm:py-20">
@@ -58,16 +82,45 @@ export default function Order() {
             <div className="flex items-center gap-3">
               <span className="text-white text-sm font-semibold">Square Online Ordering</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-400">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-              </svg>
-              <span className="text-xs hidden sm:inline">Secure Checkout</span>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 text-gray-400">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                </svg>
+                <span className="text-xs hidden sm:inline">Secure Checkout</span>
+              </div>
+              {/* Fullscreen Toggle Button */}
+              <button
+                onClick={toggleFullScreen}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-gray-700 hover:bg-gray-600 transition-colors text-white text-xs font-medium"
+                title={isFullScreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+              >
+                {isFullScreen ? (
+                  <>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5l5.25 5.25" />
+                    </svg>
+                    <span className="hidden sm:inline">Exit Fullscreen</span>
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                    </svg>
+                    <span className="hidden sm:inline">Fullscreen</span>
+                  </>
+                )}
+              </button>
             </div>
           </div>
           
           {/* Iframe Container with border */}
-          <div className="relative w-full bg-white rounded-b-xl shadow-2xl border-4 border-gray-900 border-t-0" style={{ paddingBottom: '100%', minHeight: '800px' }}>
+          <div 
+            ref={iframeContainerRef}
+            className="relative w-full bg-white rounded-b-xl shadow-2xl border-4 border-gray-900 border-t-0" 
+            style={{ paddingBottom: '100%', minHeight: '800px' }}
+            onFullscreenChange={handleFullScreenChange}
+          >
             <iframe
               src="https://labcoffeebn.square.site"
               className="absolute top-0 left-0 w-full h-full rounded-b-xl"
