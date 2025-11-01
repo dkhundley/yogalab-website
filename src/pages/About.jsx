@@ -5,7 +5,7 @@ export default function About() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">OUR MISSION</h2>
+          <h2 className="text-base font-semibold leading-7 text-black">OUR MISSION</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             About Yoga Lab
           </p>
@@ -35,7 +35,7 @@ export default function About() {
               </div>
               
               <div className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-indigo-600 mb-4">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-black mb-4">
                   <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                   </svg>
@@ -86,20 +86,20 @@ export default function About() {
 
         {/* Location */}
         <div className="mx-auto mt-16 max-w-4xl">
-          <div className="bg-indigo-50 rounded-2xl p-8 text-center">
+          <div className="bg-white rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Visit Us</h3>
             <p className="text-lg text-gray-700 mb-2">207 S. Prospect Road, Suite 2</p>
             <p className="text-lg text-gray-700 mb-6">Bloomington, IL 61704</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/yoga"
-                className="rounded-md bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+                className="rounded-md bg-black px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
               >
                 Explore Yoga Classes
               </Link>
               <Link
                 to="/coffee"
-                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-indigo-600 shadow-sm ring-1 ring-inset ring-indigo-600 hover:bg-indigo-50 transition-colors"
+                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-black shadow-sm ring-1 ring-inset ring-black hover:bg-gray-50 transition-colors"
               >
                 Visit Lab Coffee
               </Link>

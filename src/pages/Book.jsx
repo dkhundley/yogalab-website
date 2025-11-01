@@ -73,7 +73,7 @@ export default function Book() {
 
         {/* Booking Notice */}
         <div className="mx-auto max-w-4xl mb-12">
-          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+          <div className="bg-white border border-gray-200 rounded-lg p-6">
             <div className="flex">
               <div className="flex-shrink-0">
                 <svg className="h-5 w-5 text-indigo-400" viewBox="0 0 20 20" fill="currentColor">

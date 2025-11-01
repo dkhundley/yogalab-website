@@ -31,13 +31,13 @@ export default function Hero() {
             Yoga Lab creates an experience for each and every person to access the foundational tools of yoga in a unique way.
           </p>
           <div className="mt-10 flex items-center justify-start gap-x-6">
-            <Link
-              to="/book"
-              className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
+                  <Link
+                    to="/book"
+                    className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
             >
               Regulate with Us
             </Link>
-            <Link to="/about" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500  transition-colors">
+                  <Link to="/about" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500  transition-colors font-montserrat">
               Learn more <ArrowRightIcon className="h-4 w-4" />
             </Link>
           </div>

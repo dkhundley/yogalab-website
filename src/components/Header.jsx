@@ -34,7 +34,7 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <Link key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600 transition-colors">
+            <Link key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-gray-900 hover:text-black transition-colors">
               {item.name}
             </Link>
           ))}
@@ -42,7 +42,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
             to="/book"
-            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+            className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
           >
             Book Your Class
           </Link>
