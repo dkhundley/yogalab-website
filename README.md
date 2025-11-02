@@ -4,7 +4,9 @@ This README is intended to serve as source of documentation in order to educate 
 
 
 ## Technical Stack
-This website is built largely using the JavaScript framework known as `Next.js` and deployed to the `Vercel` platform. Next.js is built on top of another JavaScript framework known as `React`. In order to make alterations to this site on your local machine, you will need to install **Node.js**. This is the core package manager for installing `Next.js` and JavaScript packages in general. I personally used **Visual Studio Code (VS Code)** as an IDE to help me build this site, but VS Code is not a hard dependency. For transparency, I largely made use of **GitHub Copilot** as an AI coding tool to help build this website. To ensure transparency and understandability of this code base, I personally reviewed all AI-generated code and annotated all code appropriately with human readable comments that I wrote myself.
+This website is built largely using the JavaScript framework known as `Next.js` and deployed to the `Vercel` platform. Next.js is built on top of another JavaScript framework known as `React`. In addition to `Next.js` and `React`, this site makes heavy use of `Tailwind CSS` to help manage the look and feel of the site.
+
+In order to make alterations to this site on your local machine, you will need to install **Node.js**. This is the core package manager for installing `Next.js` and JavaScript packages in general. I personally used **Visual Studio Code (VS Code)** as an IDE to help me build this site, but VS Code is not a hard dependency. For transparency, I largely made use of **GitHub Copilot** as an AI coding tool to help build this website. To ensure transparency and understandability of this code base, I personally reviewed all AI-generated code and annotated all code appropriately with human readable comments that I wrote myself.
 
 
 
@@ -43,6 +45,16 @@ Once these Node dependencies have been installed, you will be able to review the
 
 `npm run dev`
 
+
+
+## Deployment to Vercel
+Deploying this website to Vercel is relatively easy, and most of the configuration is done outside this repository's code on Vercel's platform itself. Generally speaking, if you want to deploy this site to Vercel in your own Vercel account, you would need to take the following steps:
+
+1. Create a new Vercel project.
+2. In the "New Project" wizard form, point Vercel to your this project on GitHub.
+3. Ensure that Vercel is building from the `main` branch.
+
+At the root of this repo is a file called `vercel.json`, which essentially gives Vercel the "blueprint" of how it should build the site. Because it is pointing at the `main` branch, this means that any time you push changes to the `main` branch on the repository that Vercel is pointing to in GitHub, this means that Vercel will rebuild the website any time it detects new changes. This means ***you should be extra careful when working on the `main` branch***. It is advised that any time you need to make changes to the site to do so in a different Git branch and later merge in your changes to `main` when you're ready to formally update the website.
 
 
 ## External Integrations
