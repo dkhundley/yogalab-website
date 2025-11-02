@@ -1,5 +1,7 @@
+/* Importing Tailwind CSS base styles */
 @import "tailwindcss";
 
+/* Defining the custom Lulu Clean One Bold font */
 @font-face {
 	font-family: 'LuloCleanOneBold';
 	src: url('/fonts/LuloCleanOneBold.otf') format('opentype');
@@ -7,10 +9,7 @@
 	font-style: normal;
 }
 
-.font-lulo-bold {
-	font-family: 'LuloCleanOneBold', sans-serif;
-}
-
+/* Defining the custom Lulu Clean One font */
 @font-face {
 	font-family: 'LuloCleanOne';
 	src: url('/fonts/LuloCleanOne.otf') format('opentype');
@@ -18,10 +17,17 @@
 	font-style: normal;
 }
 
+/* Defining a CSS class for the Lulu Clean One font */
 .font-lulo {
 	font-family: 'LuloCleanOne', sans-serif;
 }
 
+/* Defining a CSS class for the Lulu Clean One Bold font */
+.font-lulo-bold {
+	font-family: 'LuloCleanOneBold', sans-serif;
+}
+
+/* Defining a CSS class for the Montserrat font */
 .font-montserrat {
 	font-family: 'Montserrat', sans-serif;
 }

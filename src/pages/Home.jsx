@@ -1,4 +1,6 @@
+// Importing necessary libraries and components
 import { Link } from 'react-router-dom';
+
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import MomenceReviews from '../components/MomenceReviews';
@@ -6,23 +8,29 @@ import ContactForm from '../components/ContactForm';
 import Map from '../components/Map';
 import { useBrand, BRANDS } from '../context/BrandContext';
 
+
+
+// Defining the Home component which essentially serves as the homepage for the website (contextually aware based on the active brand, whether Yoga Lab or Lab Coffee)
 export default function Home() {
+
   // Accessing the active brand from context
   const { activeBrand } = useBrand();
   const isLabCoffee = activeBrand === BRANDS.LAB_COFFEE;
 
   return (
     <>
-      {/* Hero Section */}
+      {/* Loading in the Hero section */}
       <Hero />
       
-      {/* Services Section */}
+      {/* Setting the rendering of the homepage screen based on the brand selected (Yoga Lab vs. Lab Coffee) */}
       <section className="py-24 bg-gray-50 font-montserrat">
+
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          {/* Setting the rendering of the screen based on the brand selected (Yoga Lab vs. Lab Coffee) */}
+
           {isLabCoffee ? (
             // Displaying Lab Coffee Services
             <>
+              {/* Setting the "header" text over the various services offered by Lab Coffee */}
               <div className="mx-auto max-w-2xl text-center mb-16">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                   What We Offer
@@ -32,6 +40,7 @@ export default function Home() {
                 </p>
               </div>
               
+              {/* Displaying the various services offered by Lab Coffee */}
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <ServiceCard
                   title="ARTISAN COFFEE"
@@ -58,6 +67,7 @@ export default function Home() {
           ) : (
             // Displaying Yoga Lab Services
             <>
+              {/* Setting the "header" text over the various services offered by Yoga Lab */}
               <div className="mx-auto max-w-2xl text-center mb-16">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                   Our Services
@@ -67,6 +77,7 @@ export default function Home() {
                 </p>
               </div>
               
+              {/* Displaying the various services offered by Yoga Lab */}
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <ServiceCard
                   title="YOGA CLASSES"
@@ -94,7 +105,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reviews Section - Only for Yoga Lab */}
+      {/* Setting up the Reviews section (only displays when active brand is Yoga Lab) */}
       {!isLabCoffee && (
         <section className="py-24 bg-white font-montserrat">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -107,11 +118,12 @@ export default function Home() {
               </p>
             </div>
             
-            {/* Momence Reviews Widget Embed */}
+            {/* Loading in the Momence embedding widget */}
             <div className="mx-auto max-w-5xl">
               <MomenceReviews />
             </div>
-            
+
+            {/* Setting the "footer" text noting that reviews are powered by Momence */}
             <div className="mt-8 text-center">
               <p className="text-sm text-gray-500">
                 Reviews powered by{' '}
@@ -129,7 +141,7 @@ export default function Home() {
         </section>
       )}
 
-      {/* Location & Contact Section */}
+      {/* Setting the Location & Contact Section */}
       <section className={`py-24 font-montserrat ${isLabCoffee ? 'bg-white' : 'bg-gray-50'}`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
@@ -143,8 +155,8 @@ export default function Home() {
             </p>
           </div>
           
+          {/* Setting up the "Map" section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Map Section */}
             <div className="order-2 lg:order-1">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Location</h3>
               <Map 
@@ -159,7 +171,7 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Contact Form Section */}
+            {/* Loading in the contact form */}
             <div className="order-1 lg:order-2">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Get In Touch</h3>
               <ContactForm />
