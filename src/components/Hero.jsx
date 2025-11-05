@@ -39,7 +39,7 @@ export default function Hero() {
                 EVERY INTERACTION IS A LAB FOR SOMETHING GREATER
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Coffee and acai bowls, made well, so you can BE WELL.
+                Coffee and açai bowls, made well, so you can BE WELL.
               </p>
               <div className="mt-10 flex items-center justify-start gap-x-6">
                 <Link
