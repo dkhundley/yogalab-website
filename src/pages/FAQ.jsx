@@ -1,51 +1,30 @@
+import { Link } from 'react-router-dom';
+
 const faqs = [
   {
-    question: 'What types of yoga classes do you offer?',
-    answer: 'We offer a variety of yoga classes suitable for all levels, from beginner-friendly sessions to more advanced practices. Our classes focus on regulated movement and breathwork to promote physical and mental health.'
+    question: 'I\'m interested in taking classes. How does that work?',
+    answer: 'We\'d love to meet you, give you a tour of our studio, and make you a cup of coffee or an açai bowl before or after your class.',
+    link: { text: 'Click here to book.', to: '/book' }
   },
   {
-    question: 'Do I need to bring my own yoga mat?',
-    answer: 'While we encourage you to bring your own mat for hygiene and comfort, we do have mats available for use at the studio. We also have props like blocks and straps available for all students.'
+    question: 'What is your pricing structure?',
+    answer: 'We keep everything very simple. We do not think you should have to use a calculator to figure out how much your purchase is worth. We know the value of our classes, and we believe you should always feel clear on what you buy. That also means we will never offer discounts on memberships for holidays or promotions. We want you to feel confident in your purchase no matter what time of year you sign up. \n\n$15 Drop In // $115 Monthly Membership // $1100 Yearly Membership.\n\nYou can cancel the monthly membership at any time, no strings attached. We do not have a fee or cancellation window for the monthly memberships. Yearly memberships are paid for in a lump sump at the time the membership is purchased and will not be refunded in part if you decide to stop coming.'
   },
   {
-    question: 'What can I expect during my first class?',
-    answer: 'Your first class will begin with a brief introduction and any necessary modifications for your practice. Our instructors create a welcoming environment where you can practice at your own pace and comfort level.'
+    question: 'What should I know before coming to class?',
+    answer: 'Arrive 10-15 minutes early so your teacher can give you a tour of the space and set you up for success!\n\nYou are welcome to bring your own mat. If you don\'t own a mat, we have mats available for rental for $5. Your teacher will help you with the rental, so you don\'t need to do anything for mat rentals ahead of time.\n\nBring a water bottle and hand towel.\n\nWear comfortable clothes you can move in.\n\nPlease follow the steps in the link below if you need to cancel your booking at the Yoga Lab. You must cancel 12+ hours before class time to avoid cancellation fees.',
   },
   {
-    question: 'What are your coffee shop hours?',
-    answer: 'Lab Coffee operates alongside our yoga schedule, providing a space for community connection before and after classes. Please check our current schedule or contact us for specific hours.'
+    question: 'I have never done yoga before. Where should I start?',
+    answer: 'Our "Fundamentals of Power Yoga" class is the best place for you to begin your practice at Yoga Lab; however, all of our classes are appropriate for beginners. Our teachers are experts in modifications and accommodations, and they will support you in making the practice your own no matter your level of expertise or experience. Fundamentals classes are held the first Tuesday of every month. \n\nHead to our Beginner\'s Resource page to learn more.'
   },
   {
-    question: 'Do you offer any food options besides coffee?',
-    answer: 'Yes! In addition to our coffee and tea selection, we offer nutritious açai bowls with various toppings. Our menu is designed to nourish and energize our community.'
+    question: 'What are your classes like?',
+    answer: 'You won\'t hear fancy "traditional yoga" words nor complicated theories about your life. We don\'t complicate the poses with our own jargon. We make yoga clear and simple! We will ask you to get on your mat, to feel your feet on the ground, and to see the possibility in your life.\n\nExperienced practitioners: you will have space to flow and build your practice. New practitioners: you will be fully supported with the tools to explore yoga in your own way.'
   },
   {
-    question: 'What is "The Lab" community space?',
-    answer: 'The Lab is our community space designed for reasoning and critical thinking. It\'s where community members can share knowledge, host workshops, and engage in meaningful dialogue that supports our collective growth.'
-  },
-  {
-    question: 'How do I book a yoga class?',
-    answer: 'You can book classes through our online booking system. We recommend booking in advance as our classes tend to fill up, especially during peak times.'
-  },
-  {
-    question: 'Do you offer private yoga sessions?',
-    answer: 'Yes, we offer private and semi-private yoga sessions for those who prefer personalized instruction or have specific needs. Contact us to schedule a private session.'
-  },
-  {
-    question: 'Is parking available?',
-    answer: 'Yes, we have convenient parking available at our Bloomington location on Prospect Road. The studio is easily accessible with ample parking space.'
-  },
-  {
-    question: 'What should I wear to yoga class?',
-    answer: 'Wear comfortable, breathable clothing that allows you to move freely. Avoid overly loose clothing that might get in the way during poses. Most students prefer athletic wear or yoga-specific clothing.'
-  },
-  {
-    question: 'Can beginners attend any class?',
-    answer: 'We welcome beginners and offer classes suitable for all levels. Our instructors are skilled at providing modifications and alternatives to ensure everyone can participate safely and comfortably.'
-  },
-  {
-    question: 'How does the "regulate, relate, reason" philosophy work in practice?',
-    answer: 'Our space is designed to follow this natural brain sequence. You regulate through yoga practice, relate through coffee shop connections, and reason in our community lab space. This progression supports optimal learning and growth.'
+    question: 'Do I have to take a yoga class to enjoy the coffee?',
+    answer: 'Nope! We operate as a full coffee shop as well as a yoga studio. You are welcome to come for coffee, tea, or an açai bowl even if you don\'t come for a class. You are welcome to grab your coffee and go, or you are welcome to stay and hang out in our coffee shop.'
   }
 ];
 
@@ -69,8 +48,17 @@ export default function FAQ() {
                 <dt className="text-lg font-semibold leading-7 text-gray-900 mb-4">
                   {faq.question}
                 </dt>
-                <dd className="text-base leading-7 text-gray-600">
+                <dd className="text-base leading-7 text-gray-600 whitespace-pre-line">
                   {faq.answer}
+                  {faq.link && (
+                    <>
+                      <br />
+                      <br />
+                      <Link to={faq.link.to} className="font-semibold text-gray-700 hover:text-black underline">
+                        {faq.link.text}
+                      </Link>
+                    </>
+                  )}
                 </dd>
               </div>
             ))}
