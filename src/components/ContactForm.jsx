@@ -1,6 +1,9 @@
+// Importing necessary dependencies from React
 import { useState } from 'react';
 
 export default function ContactForm() {
+
+  // Initializing the form data state
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -9,6 +12,7 @@ export default function ContactForm() {
     message: ''
   });
 
+  // Defining a handler for form input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -16,11 +20,13 @@ export default function ContactForm() {
     });
   };
 
+  // Defining a handler for form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you would typically send the form data to your backend
     console.log('Form submitted:', formData);
-    // Reset form
+
+    // Resetting the form data after submission
     setFormData({
       firstName: '',
       lastName: '',
@@ -28,12 +34,17 @@ export default function ContactForm() {
       subject: '',
       message: ''
     });
+
+    // Displaying an alert message to the user
     alert('Thank you for your message! We\'ll get back to you soon.');
   };
 
+  // Setting up the contact form structure
   return (
     <form onSubmit={handleSubmit} className="mx-auto max-w-xl font-montserrat">
       <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+
+        {/* Setting up the "First Name" field */}
         <div>
           <label htmlFor="firstName" className="block text-sm font-semibold leading-6 text-gray-900">
             First name *
@@ -50,7 +61,8 @@ export default function ContactForm() {
             />
           </div>
         </div>
-        
+
+        {/* Setting up the "Last Name" field */}
         <div>
           <label htmlFor="lastName" className="block text-sm font-semibold leading-6 text-gray-900">
             Last name *
@@ -67,7 +79,8 @@ export default function ContactForm() {
             />
           </div>
         </div>
-        
+
+        {/* Setting up the "Email" field */}
         <div className="sm:col-span-2">
           <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
             Email *
@@ -84,7 +97,8 @@ export default function ContactForm() {
             />
           </div>
         </div>
-        
+
+        {/* Setting up the "Subject" field */}
         <div className="sm:col-span-2">
           <label htmlFor="subject" className="block text-sm font-semibold leading-6 text-gray-900">
             Subject *
@@ -101,7 +115,8 @@ export default function ContactForm() {
             />
           </div>
         </div>
-        
+
+        {/* Setting up the "Message" field */}
         <div className="sm:col-span-2">
           <label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-900">
             Message *
@@ -119,7 +134,8 @@ export default function ContactForm() {
           </div>
         </div>
       </div>
-      
+
+      {/* Setting up the submit button */}
       <div className="mt-10">
         <button
           type="submit"

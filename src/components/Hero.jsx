@@ -36,11 +36,10 @@ export default function Hero() {
             // Setting the rendering for the Lab Coffee brand
             <>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-lulo-bold">
-                CONNECT, SIP, AND THRIVE AT LAB COFFEE
+                EVERY INTERACTION IS A LAB FOR SOMETHING GREATER
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                More than just a coffee shop, Lab Coffee is a community hub where relationships flourish. 
-                Enjoy artisan coffee, organic teas, and nourishing açai bowls in a space designed for connection and wellness.
+                Coffee and acai bowls, made well, so you can BE WELL.
               </p>
               <div className="mt-10 flex items-center justify-start gap-x-6">
                 <Link
@@ -50,7 +49,7 @@ export default function Hero() {
                   Order Now
                 </Link>
                 <Link to="/contact" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500 transition-colors font-montserrat">
-                  Visit Us <ArrowRightIcon className="h-4 w-4" />
+                  Sit with Us <ArrowRightIcon className="h-4 w-4" />
                 </Link>
               </div>
             </>
@@ -59,11 +58,10 @@ export default function Hero() {
             // Setting the rendering for the Yoga Lab brand
             <>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-lulo-bold">
-                FREEING PEOPLE TO DO THE WORK THEY LOVE THROUGH REGULATION + CONNECTION
+                YOUR EXPERIENCE AT THE LAB
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Yoga Lab offers the transformational power of yoga on and off the mat. Through classes, coffee, and community, 
-                Yoga Lab creates an experience for each and every person to access the foundational tools of yoga in a unique way.
+                Through classes, coffee, and community, we create an experience for each and every person to access the foundational tools of regulation + connection.
               </p>
               <div className="mt-10 flex items-center justify-start gap-x-6">
                 <Link
