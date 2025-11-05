@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const faqs = [
@@ -29,6 +30,12 @@ const faqs = [
 ];
 
 export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <div className="bg-white py-24 sm:py-32 font-montserrat">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -42,24 +49,43 @@ export default function FAQ() {
             </p>
           </div>
 
-          <dl className="space-y-8">
+          <dl className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-gray-200 pb-8">
-                <dt className="text-lg font-semibold leading-7 text-gray-900 mb-4">
-                  {faq.question}
+              <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                <dt>
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-colors"
+                  >
+                    <span className="text-lg font-semibold leading-7 text-gray-900 pr-4">
+                      {faq.question}
+                    </span>
+                    <svg
+                      className={`w-5 h-5 text-gray-500 transition-transform duration-200 flex-shrink-0 ${
+                        openIndex === index ? 'transform rotate-180' : ''
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
                 </dt>
-                <dd className="text-base leading-7 text-gray-600 whitespace-pre-line">
-                  {faq.answer}
-                  {faq.link && (
-                    <>
-                      <br />
-                      <br />
-                      <Link to={faq.link.to} className="font-semibold text-gray-700 hover:text-black underline">
-                        {faq.link.text}
-                      </Link>
-                    </>
-                  )}
-                </dd>
+                {openIndex === index && (
+                  <dd className="px-6 py-4 text-base leading-7 text-gray-600 whitespace-pre-line border-t border-gray-200 bg-gray-50">
+                    {faq.answer}
+                    {faq.link && (
+                      <>
+                        <br />
+                        <br />
+                        <Link to={faq.link.to} className="font-semibold text-gray-700 hover:text-black underline">
+                          {faq.link.text}
+                        </Link>
+                      </>
+                    )}
+                  </dd>
+                )}
               </div>
             ))}
           </dl>
