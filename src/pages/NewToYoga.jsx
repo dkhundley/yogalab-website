@@ -269,7 +269,7 @@ export default function NewToYoga() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-gray-500">
-              Have questions? <Link to="/faq" className="font-semibold text-gray-700 hover:text-gray-900">Visit our FAQ page</Link> or <Link to="/about" className="font-semibold text-gray-700 hover:text-gray-900">reach out to our team</Link>.
+              Have questions? <Link to="/faq" className="font-semibold text-gray-700 hover:text-gray-900">Visit our FAQ page</Link> or <Link to="/about-yoga" className="font-semibold text-gray-700 hover:text-gray-900">reach out to our team</Link>.
             </p>
           </div>
         </div>

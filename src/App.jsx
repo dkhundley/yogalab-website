@@ -11,7 +11,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
-import About from './pages/About';
+import AboutYoga from './pages/AboutYoga';
+import AboutCoffee from './pages/AboutCoffee';
 import Classes from './pages/Classes';
 import PrivateClasses from './pages/PrivateClasses';
 import Coffee from './pages/Coffee';
@@ -60,7 +61,8 @@ function AppContent() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about-yoga" element={<AboutYoga />} />
+          <Route path="/about-coffee" element={<AboutCoffee />} />
           <Route path="/classes" element={<Classes />} />
           <Route path="/private-classes" element={<PrivateClasses />} />
           <Route path="/coffee" element={<Coffee />} />

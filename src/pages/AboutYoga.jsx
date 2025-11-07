@@ -266,7 +266,7 @@ export default function About() {
             <p className="text-lg text-gray-700 mb-6">Bloomington, IL 61704</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/yoga"
+                to="/classes"
                 className="rounded-md bg-black px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
               >
                 Explore Yoga Classes

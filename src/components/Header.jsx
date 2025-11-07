@@ -10,13 +10,13 @@ const yogaLabNavigation = [
   { name: 'Class Offerings', href: '/classes' },
   { name: 'Private Classes', href: '/private-classes' },
   { name: 'FAQ', href: '/faq' },
-  { name: 'About Us', href: '/about' },
+  { name: 'About Us', href: '/about-yoga' },
 ];
 
 const labCoffeeNavigation = [
   { name: 'Home', href: '/' },
   { name: 'Menu', href: '/coffee' },
-  { name: 'About', href: '/about' },
+  { name: 'About Us', href: '/about-coffee' },
 ];
 
 export default function Header() {
