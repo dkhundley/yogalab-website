@@ -58,8 +58,8 @@ export default function Header() {
   return (
     <>
       <header className={`bg-white shadow-sm sticky top-0 z-40 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-        <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
-          <div className="flex lg:flex-1">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-8 p-4 lg:px-8" aria-label="Global">
+          <div className="flex">
             <Link to="/" className="-m-1.5 p-2.5">
               {isLabCoffee ? (
                 <div className="flex items-center gap-4">
@@ -97,14 +97,14 @@ export default function Header() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:gap-x-8">
             {navigation.map((item) => (
-              <Link key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-gray-900 hover:text-black transition-colors font-montserrat">
+              <Link key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-gray-900 hover:text-black transition-colors font-montserrat tracking-wide">
                 {item.name}
               </Link>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div className="hidden lg:flex">
             {isLabCoffee ? (
               <Link
                 to="/order"
