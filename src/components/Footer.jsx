@@ -12,7 +12,6 @@ const navigation = {
     { name: 'Coffee', href: '/coffee' },
     { name: 'About', href: '/about' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'Contact', href: '/contact' },
   ],
   social: [
     {

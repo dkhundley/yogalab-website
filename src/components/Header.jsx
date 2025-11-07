@@ -9,14 +9,12 @@ const yogaLabNavigation = [
   { name: 'Class Offerings', href: '/classes' },
   { name: 'About Us', href: '/about' },
   { name: 'FAQ', href: '/faq' },
-  { name: 'Contact', href: '/contact' },
 ];
 
 const labCoffeeNavigation = [
   { name: 'Home', href: '/' },
   { name: 'Menu', href: '/coffee' },
   { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
 ];
 
 export default function Header() {
@@ -55,82 +53,86 @@ export default function Header() {
   }, [lastScrollY]);
 
   return (
-    <header className={`bg-white shadow-sm sticky top-0 z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
-        <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-2.5">
+    <>
+      <header className={`bg-white shadow-sm sticky top-0 z-40 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+        <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
+          <div className="flex lg:flex-1">
+            <Link to="/" className="-m-1.5 p-2.5">
+              {isLabCoffee ? (
+                <div className="flex items-center gap-4">
+                  <img 
+                    src="/icons/lab-coffee-logo.png" 
+                    alt="Lab Coffee Logo" 
+                    className="h-8 w-auto -mt-1"
+                  />
+                  <span className="text-2xl font-lulo-bold text-gray-900">
+                    Lab Coffee
+                  </span>
+                </div>
+              ) : (
+                <div className="flex items-center gap-4">
+                  <img 
+                    src="/icons/yoga-lab-logo.png" 
+                    alt="Yoga Lab Logo" 
+                    className="h-10 w-auto -mt-1"
+                  />
+                  <span className="text-2xl font-lulo-bold text-gray-900">
+                    Yoga Lab
+                  </span>
+                </div>
+              )}
+            </Link>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
+              style={{ backgroundColor: 'white', color: 'rgb(55, 65, 81)' }}
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-12">
+            {navigation.map((item) => (
+              <Link key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-gray-900 hover:text-black transition-colors font-montserrat">
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             {isLabCoffee ? (
-              <div className="flex items-center gap-4">
-                <img 
-                  src="/icons/lab-coffee-logo.png" 
-                  alt="Lab Coffee Logo" 
-                  className="h-8 w-auto -mt-1"
-                />
-                <span className="text-2xl font-lulo-bold text-gray-900">
-                  Lab Coffee
-                </span>
-              </div>
+              <Link
+                to="/order"
+                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
+              >
+                Order Now
+              </Link>
             ) : (
-              <div className="flex items-center gap-4">
-                <img 
-                  src="/icons/yoga-lab-logo.png" 
-                  alt="Yoga Lab Logo" 
-                  className="h-10 w-auto -mt-1"
-                />
-                <span className="text-2xl font-lulo-bold text-gray-900">
-                  Yoga Lab
-                </span>
-              </div>
+              <Link
+                to="/book"
+                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
+              >
+                Book Your Class
+              </Link>
             )}
-          </Link>
-        </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
-            style={{ backgroundColor: 'white', color: 'rgb(55, 65, 81)' }}
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
-            <Link key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-gray-900 hover:text-black transition-colors font-montserrat">
-              {item.name}
-            </Link>
-          ))}
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          {isLabCoffee ? (
-            <Link
-              to="/order"
-              className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
-            >
-              Order Now
-            </Link>
-          ) : (
-            <Link
-              to="/book"
-              className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
-            >
-              Book Your Class
-            </Link>
-          )}
-        </div>
-      </nav>
+          </div>
+        </nav>
+      </header>
+
       {/* Mobile menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <div className="lg:hidden">
+          <>
             {/* Backdrop with fade-in animation */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-[9998] bg-gray-900/50 backdrop-blur-sm" 
+              className="lg:hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm" 
+              style={{ zIndex: 9998 }}
               onClick={() => setMobileMenuOpen(false)}
             />
             {/* Menu panel with slide-in animation */}
@@ -139,7 +141,8 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 z-[9999] w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+              className="lg:hidden fixed inset-y-0 right-0 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+              style={{ zIndex: 9999 }}
             >
               <motion.div 
                 initial={{ opacity: 0 }}
@@ -234,9 +237,9 @@ export default function Header() {
                 </div>
               </div>
             </motion.div>
-          </div>
+          </>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
