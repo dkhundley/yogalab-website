@@ -28,13 +28,14 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const scrollThreshold = 50; // Require 50px of scrolling up to show header
       
       // Show header when at top of page
       if (currentScrollY < 10) {
         setIsVisible(true);
       } 
-      // Show header when scrolling up
-      else if (currentScrollY < lastScrollY) {
+      // Show header when scrolling up past threshold
+      else if (currentScrollY < lastScrollY - scrollThreshold) {
         setIsVisible(true);
       } 
       // Hide header when scrolling down
