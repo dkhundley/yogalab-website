@@ -101,8 +101,13 @@ export default function Header() {
           </div>
           <div className="hidden lg:flex lg:gap-x-8">
             {navigation.map((item) => (
-              <Link key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-gray-900 hover:text-black transition-colors font-montserrat tracking-wide">
+              <Link 
+                key={item.name} 
+                to={item.href} 
+                className="relative text-sm font-semibold leading-6 text-gray-900 hover:text-black transition-colors font-montserrat tracking-wide group"
+              >
                 {item.name}
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
             ))}
           </div>
