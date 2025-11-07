@@ -5,82 +5,242 @@ export default function About() {
     <div className="bg-white py-24 sm:py-32 font-montserrat">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-black">OUR MISSION</h2>
+          <h2 className="text-base font-semibold leading-7 text-black">ABOUT US</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            About Yoga Lab
+            People over poses. Transformation over transaction.
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            We believe in freeing people to do the work they love through regulation and connection. 
-            Our integrated approach combines yoga, coffee, and community to create transformational experiences.
+            The Yoga Lab is built on brain science and a desire for impact.
           </p>
         </div>
 
-        {/* Our Philosophy */}
+        {/* Founders Introduction */}
+        <div className="mx-auto mt-16 max-w-4xl">
+          <div className="mb-12">
+            <img 
+              src="/images/general-photos/adam-abby-about-us.jpg" 
+              alt="Abby and Adam, founders of Yoga Lab" 
+              className="w-full h-auto rounded-2xl"
+            />
+          </div>
+          <div className="prose prose-lg mx-auto">
+            <p className="text-xl text-gray-900 mb-8 font-semibold">
+              Hi, we're Abby and Adam, the founders of the Yoga Lab.
+            </p>
+            <p className="text-gray-600 mb-6">
+              The idea for The Lab started from two very different worlds: education and finance. I (Abby) spent years 
+              working in schools, supporting teachers and caregivers with systems that help students build social and 
+              emotional skills. But I noticed education didn't consider how development and context shape a person's 
+              ability to actually use those skills.
+            </p>
+            <p className="text-gray-600 mb-6">
+              At the same time, Adam was noticing similar patterns in his wealth management practice. He saw that 
+              financial stress often left people stuck, unable to feel regulated or connected, which made it harder 
+              to make thoughtful decisions and maintain healthy relationships.
+            </p>
+            <p className="text-gray-600 mb-6">
+              We both realized that real change starts when we understand how our brains are designed. Through my 
+              training in Bruce Perry's Neurosequential Model for Education (NME), I learned that the brain develops 
+              and functions in a sequence: regulate, relate, reason. That concept became the foundation for the Yoga Lab.
+            </p>
+          </div>
+        </div>
+
+        {/* How Our Space Works */}
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="bg-gray-50 rounded-2xl p-8 lg:p-16">
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-              REGULATE, RELATE, REASON
+              Our space is designed around how the brain works.
             </h3>
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-              <div className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-black mb-4">
-                  <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                  </svg>
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">REGULATE</h4>
-                <p className="text-gray-600">
-                  In the yoga studio, experience deeper physical and mental health through regulated movement and breathwork.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-black mb-4">
-                  <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                  </svg>
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">RELATE</h4>
-                <p className="text-gray-600">
-                  In the coffee shop, meet new people and experience a sense of community wellness through connection.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-black mb-4">
-                  <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75-7.478l1.838-2.197A2.25 2.25 0 0015.75 9H8.25a2.25 2.25 0 00-2.088 1.381L7.5 12.75m7.5-3v-.375c0-.621-.504-1.125-1.125-1.125h-4.5c-.621 0-1.125.504-1.125 1.125v.375m6 0H9m6 0c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125H9c-.621 0-1.125-.504-1.125-1.125v-1.5c0-.621.504-1.125 1.125-1.125" />
-                  </svg>
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">REASON</h4>
-                <p className="text-gray-600">
-                  In The Lab, share knowledge and expertise to support reasoning and critical thinking in our community.
-                </p>
-              </div>
+            <div className="space-y-6 text-center">
+              <p className="text-lg text-gray-800">
+                <span className="font-bold">Yoga Lab</span> helps people regulate — to move, breathe, and rest.
+              </p>
+              <p className="text-lg text-gray-800">
+                <span className="font-bold">Lab Coffee</span> gives people a reason to stay, connect, and relate.
+              </p>
+              <p className="text-lg text-gray-800">
+                You go out into the world and <span className="font-bold">transform each and every interaction</span> into one of connection and possibility.
+              </p>
+              <p className="text-lg text-gray-700 mt-8 italic">
+                When we're regulated and connected, our brains are ready to reason and create meaningful change.
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Our Story */}
+        {/* Our Mission */}
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="prose prose-lg mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Story</h3>
             <p className="text-gray-600 mb-6">
-              Yoga Lab was founded on the belief that everyone deserves access to the transformational power of yoga. 
-              We recognized that true wellness extends beyond the yoga mat – it encompasses how we connect with others 
-              and engage with our community.
-            </p>
-            <p className="text-gray-600 mb-6">
-              Our unique approach follows the natural sequence of the brain: regulate, relate, reason. We've designed 
-              our space to support this progression, creating an environment where physical regulation through yoga 
-              leads to social connection through coffee, which then enables deeper reasoning and learning in our 
-              community space.
+              We see you juggling work, family, and life, feeling disconnected and stressed. The Yoga Lab exists to 
+              create the conditions for the antidote to dysregulating stress, regulation and connection. We are a place 
+              where regulation and relationships come first so you can show up at your best for the people you lead and love.
             </p>
             <p className="text-gray-600">
-              At Yoga Lab, we're not just teaching yoga poses or serving coffee – we're building a community where 
-              people can discover their strength, form meaningful relationships, and contribute their unique gifts to 
-              the collective wisdom of our community.
+              At the Yoga Lab, we focus on transformation, not transactions. We're here to support real people, not just 
+              perfect poses. We want you to feel grounded, connected, and ready to do the work you love: in the studio, 
+              at home, and in the community.
             </p>
+          </div>
+        </div>
+
+        {/* Teacher Team Gallery */}
+        <div className="mx-auto mt-16 max-w-7xl">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Our Teacher Team</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/berendt-jill.jpg" 
+                alt="Jill Berendt" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Jill Berendt</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/bradshaw-rhendy.jpg" 
+                alt="Rhendy Bradshaw" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Rhendy Bradshaw</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/busby-liv.jpg" 
+                alt="Liv Busby" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Liv Busby</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/cotton-mikayla.jpg" 
+                alt="Mikayla Cotton" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Mikayla Cotton</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/fry-alexis.jpg" 
+                alt="Alexis Fry" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Alexis Fry</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/ghantous-abby.jpg" 
+                alt="Abby Ghantous" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Abby Ghantous</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/ghantous-adam.jpg" 
+                alt="Adam Ghantous" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Adam Ghantous</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/hice-cynthia.jpg" 
+                alt="Cynthia Hice" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Cynthia Hice</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/hundley-david.jpg" 
+                alt="David Hundley" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">David Hundley</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/hundley-maggie.jpg" 
+                alt="Maggie Hundley" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Maggie Hundley</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/kaeb-tara.jpg" 
+                alt="Tara Kaeb" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Tara Kaeb</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/miller-becca.jpg" 
+                alt="Becca Miller" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Becca Miller</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/padilla-deidra.jpg" 
+                alt="Deidra Padilla" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Deidra Padilla</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/painter-chad.jpg" 
+                alt="Chad Painter" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Chad Painter</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/rusk-melissa.jpg" 
+                alt="Melissa Rusk" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Melissa Rusk</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/smith-caitlin.jpg" 
+                alt="Caitlin Smith" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Caitlin Smith</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/smith-todd.jpg" 
+                alt="Todd Smith" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Todd Smith</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/webster-sylvia.jpg" 
+                alt="Sylvia Webster" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Sylvia Webster</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/yl-teacher-team/wells-rachel.jpg" 
+                alt="Rachel Wells" 
+                className="w-full h-auto rounded-2xl mb-2"
+              />
+              <p className="text-sm font-semibold text-gray-900">Rachel Wells</p>
+            </div>
           </div>
         </div>
 
