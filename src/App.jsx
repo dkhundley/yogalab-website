@@ -12,12 +12,12 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
-import Yoga from './pages/Yoga';
 import Classes from './pages/Classes';
 import Coffee from './pages/Coffee';
 import FAQ from './pages/FAQ';
 import Book from './pages/Book';
 import Order from './pages/Order';
+import NewToYoga from './pages/NewToYoga';
 
 
 
@@ -60,12 +60,12 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/yoga" element={<Yoga />} />
           <Route path="/classes" element={<Classes />} />
           <Route path="/coffee" element={<Coffee />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/book" element={<Book />} />
           <Route path="/order" element={<Order />} />
+          <Route path="/new-to-yoga" element={<NewToYoga />} />
         </Routes>
       </main>
 

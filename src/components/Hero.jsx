@@ -70,7 +70,7 @@ export default function Hero() {
                 >
                   Book Your Class
                 </Link>
-                <Link to="/about" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500 transition-colors font-montserrat">
+                <Link to="/new-to-yoga" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500 transition-colors font-montserrat">
                   Learn more <ArrowRightIcon className="h-4 w-4" />
                 </Link>
               </div>

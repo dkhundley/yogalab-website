@@ -6,6 +6,7 @@ import { useBrand, BRANDS } from '../context/BrandContext';
 
 const yogaLabNavigation = [
   { name: 'Home', href: '/' },
+  { name: 'New to Yoga', href: '/new-to-yoga' },
   { name: 'Class Offerings', href: '/classes' },
   { name: 'About Us', href: '/about' },
   { name: 'FAQ', href: '/faq' },
