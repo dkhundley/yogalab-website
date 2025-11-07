@@ -16,7 +16,9 @@ const yogaLabNavigation = [
 const labCoffeeNavigation = [
   { name: 'Home', href: '/' },
   { name: 'Menu', href: '/coffee' },
+  { name: 'Locations', href: '/locations' },
   { name: 'About Us', href: '/about-coffee' },
+  { name: 'Work With Us', href: '/work-with-us' },
 ];
 
 export default function Header() {

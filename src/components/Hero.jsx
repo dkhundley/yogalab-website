@@ -48,7 +48,7 @@ export default function Hero() {
                 >
                   Order Now
                 </Link>
-                <Link to="/contact" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500 transition-colors font-montserrat">
+                <Link to="/locations" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500 transition-colors font-montserrat">
                   Sit with Us <ArrowRightIcon className="h-4 w-4" />
                 </Link>
               </div>
