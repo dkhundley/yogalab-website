@@ -13,6 +13,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Classes from './pages/Classes';
+import PrivateClasses from './pages/PrivateClasses';
 import Coffee from './pages/Coffee';
 import FAQ from './pages/FAQ';
 import Book from './pages/Book';
@@ -61,6 +62,7 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/classes" element={<Classes />} />
+          <Route path="/private-classes" element={<PrivateClasses />} />
           <Route path="/coffee" element={<Coffee />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/book" element={<Book />} />

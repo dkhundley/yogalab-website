@@ -8,8 +8,9 @@ const yogaLabNavigation = [
   { name: 'Home', href: '/' },
   { name: 'New to Yoga', href: '/new-to-yoga' },
   { name: 'Class Offerings', href: '/classes' },
-  { name: 'About Us', href: '/about' },
+  { name: 'Private Classes', href: '/private-classes' },
   { name: 'FAQ', href: '/faq' },
+  { name: 'About Us', href: '/about' },
 ];
 
 const labCoffeeNavigation = [
