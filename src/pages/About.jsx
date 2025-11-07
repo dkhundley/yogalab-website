@@ -15,34 +15,40 @@ export default function About() {
         </div>
 
         {/* Founders Introduction */}
-        <div className="mx-auto mt-16 max-w-4xl">
-          <div className="mb-12">
-            <img 
-              src="/images/general-photos/adam-abby-about-us.jpg" 
-              alt="Abby and Adam, founders of Yoga Lab" 
-              className="w-full h-auto rounded-2xl"
-            />
-          </div>
-          <div className="prose prose-lg mx-auto">
-            <p className="text-xl text-gray-900 mb-8 font-semibold">
-              Hi, we're Abby and Adam, the founders of the Yoga Lab.
-            </p>
-            <p className="text-gray-600 mb-6">
-              The idea for The Lab started from two very different worlds: education and finance. I (Abby) spent years 
-              working in schools, supporting teachers and caregivers with systems that help students build social and 
-              emotional skills. But I noticed education didn't consider how development and context shape a person's 
-              ability to actually use those skills.
-            </p>
-            <p className="text-gray-600 mb-6">
-              At the same time, Adam was noticing similar patterns in his wealth management practice. He saw that 
-              financial stress often left people stuck, unable to feel regulated or connected, which made it harder 
-              to make thoughtful decisions and maintain healthy relationships.
-            </p>
-            <p className="text-gray-600 mb-6">
-              We both realized that real change starts when we understand how our brains are designed. Through my 
-              training in Bruce Perry's Neurosequential Model for Education (NME), I learned that the brain develops 
-              and functions in a sequence: regulate, relate, reason. That concept became the foundation for the Yoga Lab.
-            </p>
+        <div className="mx-auto mt-16 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 lg:items-center">
+            {/* Image on the right on desktop, but first on mobile - takes up 2 columns */}
+            <div className="lg:col-span-2 lg:order-2">
+              <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl shadow-lg">
+                <img 
+                  src="/images/general-photos/adam-abby-about-us.jpg" 
+                  alt="Abby and Adam, founders of Yoga Lab" 
+                  className="absolute inset-0 w-full h-full object-cover object-[center_35%]"
+                />
+              </div>
+            </div>
+            {/* Text on the left on desktop, but second on mobile - takes up 3 columns */}
+            <div className="lg:col-span-3 lg:order-1 prose prose-lg">
+              <p className="text-xl text-gray-900 mb-8 font-semibold">
+                Hi, we're Abby and Adam, the founders of the Yoga Lab.
+              </p>
+              <p className="text-gray-600 mb-6">
+                The idea for The Lab started from two very different worlds: education and finance. I (Abby) spent years 
+                working in schools, supporting teachers and caregivers with systems that help students build social and 
+                emotional skills. But I noticed education didn't consider how development and context shape a person's 
+                ability to actually use those skills.
+              </p>
+              <p className="text-gray-600 mb-6">
+                At the same time, Adam was noticing similar patterns in his wealth management practice. He saw that 
+                financial stress often left people stuck, unable to feel regulated or connected, which made it harder 
+                to make thoughtful decisions and maintain healthy relationships.
+              </p>
+              <p className="text-gray-600 mb-6">
+                We both realized that real change starts when we understand how our brains are designed. Through my 
+                training in Bruce Perry's Neurosequential Model for Education (NME), I learned that the brain develops 
+                and functions in a sequence: regulate, relate, reason. That concept became the foundation for the Yoga Lab.
+              </p>
+            </div>
           </div>
         </div>
 
