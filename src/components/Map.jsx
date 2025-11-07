@@ -38,6 +38,12 @@ export default function Map({
         center={[latitude, longitude]}
         zoom={15}
         scrollWheelZoom={false}
+        dragging={false}
+        touchZoom={false}
+        doubleClickZoom={false}
+        zoomControl={false}
+        keyboard={false}
+        boxZoom={false}
         className="h-full w-full"
       >
         <TileLayer
