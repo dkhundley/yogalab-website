@@ -21,30 +21,54 @@ export default function Home() {
   // Refs for carousel and parallax
   const carouselRef = useRef(null);
   const parallaxRef = useRef(null);
+  const parallaxPairRef = useRef(null);
   
-  // State for parallax offset
+  // State for parallax offsets
   const [parallaxOffset, setParallaxOffset] = useState(0);
+  const [parallaxPairOffset, setParallaxPairOffset] = useState(0);
 
-  // Parallax scroll effect for single image
+  // Parallax scroll effect for both image sections
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+
+    const updateParallax = () => {
+      const isMobile = window.innerWidth < 768;
+      
+      // Update single image parallax
       if (parallaxRef.current) {
+        const range = isMobile ? 50 : 150; // 50px on mobile, 150px on desktop
         const rect = parallaxRef.current.getBoundingClientRect();
         const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
         
-        // Only apply parallax when element is in view
         if (scrollProgress >= 0 && scrollProgress <= 1) {
-          // More subtle effect on mobile, more dramatic on desktop
-          const isMobile = window.innerWidth < 768;
-          const range = isMobile ? 50 : 150; // 50px on mobile, 150px on desktop
           setParallaxOffset(scrollProgress * range * 2 - range);
         }
+      }
+      
+      // Update image pair parallax (more pronounced on mobile)
+      if (parallaxPairRef.current) {
+        const range = isMobile ? 200 : 150; // 200px on mobile, 150px on desktop
+        const rect = parallaxPairRef.current.getBoundingClientRect();
+        const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        
+        if (scrollProgress >= 0 && scrollProgress <= 1) {
+          setParallaxPairOffset(scrollProgress * range * 2 - range);
+        }
+      }
+      
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
       }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll, { passive: true });
-    handleScroll(); // Initial call
+    updateParallax(); // Initial call
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -224,24 +248,34 @@ export default function Home() {
 
       {/* Yoga Lab: Practice & Community Images - Only shows for Yoga Lab */}
       {!isLabCoffee && (
-        <section className="relative bg-white font-montserrat">
+        <section ref={parallaxPairRef} className="relative bg-white font-montserrat overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Left side image */}
-            <div className="relative h-[500px] md:h-[600px]">
-              <img 
-                src="/images/yoga/single-woman-childs-pose.jpg" 
-                alt="Peaceful yoga practice"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+              <div className="absolute inset-0 scale-110">
+                <img 
+                  src="/images/yoga/single-woman-childs-pose.jpg" 
+                  alt="Peaceful yoga practice"
+                  className="w-full h-full object-cover will-change-transform"
+                  style={{
+                    transform: `translateY(${parallaxPairOffset}px)`
+                  }}
+                />
+              </div>
             </div>
             
             {/* Right side image */}
-            <div className="relative h-[500px] md:h-[600px]">
-              <img 
-                src="/images/yoga/abby-starts-class-front-corner.jpg" 
-                alt="Yoga class beginning"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+              <div className="absolute inset-0 scale-110">
+                <img 
+                  src="/images/yoga/abby-starts-class-front-corner.jpg" 
+                  alt="Yoga class beginning"
+                  className="w-full h-full object-cover will-change-transform"
+                  style={{
+                    transform: `translateY(${parallaxPairOffset}px)`
+                  }}
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -291,10 +325,9 @@ export default function Home() {
               <img 
                 src="/images/yoga/todd-high-five.jpg" 
                 alt="Welcoming community atmosphere at Yoga Lab"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover will-change-transform"
                 style={{
-                  transform: `translateY(${parallaxOffset}px)`,
-                  transition: 'transform 0.05s ease-out'
+                  transform: `translateY(${parallaxOffset}px)`
                 }}
               />
             </div>
