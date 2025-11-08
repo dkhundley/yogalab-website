@@ -20,12 +20,62 @@ export default function Home() {
 
   // Refs for carousel and parallax
   const carouselRef = useRef(null);
+  const carouselInnerRef = useRef(null);
+  const coffeeCarouselRef = useRef(null);
+  const coffeeCarouselInnerRef = useRef(null);
   const parallaxRef = useRef(null);
   const parallaxPairRef = useRef(null);
+  const coffeeParallaxRef = useRef(null);
   
   // State for parallax offsets
   const [parallaxOffset, setParallaxOffset] = useState(0);
   const [parallaxPairOffset, setParallaxPairOffset] = useState(0);
+  const [coffeeParallaxOffset, setCoffeeParallaxOffset] = useState(0);
+  
+  // Refs for autoscroll
+  const scrollPositionRef = useRef(0);
+  const inactivityTimerRef = useRef(null);
+
+  // Carousel autoscroll effect - continuous scroll
+  useEffect(() => {
+    const activeCarouselOuter = isLabCoffee ? coffeeCarouselRef.current : carouselRef.current;
+    const activeCarouselInner = isLabCoffee ? coffeeCarouselInnerRef.current : carouselInnerRef.current;
+    
+    if (!activeCarouselOuter || !activeCarouselInner) return;
+
+    let animationFrameId;
+    
+    // Faster scroll speed on mobile, slower on desktop
+    const isMobile = window.innerWidth < 768;
+    const scrollSpeed = isMobile ? 60 : 30; // pixels per second
+
+    const animate = () => {
+      // Increment scroll position
+      scrollPositionRef.current += scrollSpeed / 60; // 60fps
+
+      // Get the width of the content (half, since we duplicated)
+      const contentWidth = activeCarouselInner.scrollWidth / 2;
+
+      // Reset position when we've scrolled through one full set
+      if (scrollPositionRef.current >= contentWidth) {
+        scrollPositionRef.current = 0;
+      }
+
+      // Apply transform for smooth scrolling
+      activeCarouselInner.style.transform = `translateX(-${scrollPositionRef.current}px)`;
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    // Start animation
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [isLabCoffee]);
 
   // Parallax scroll effect for both image sections
   useEffect(() => {
@@ -34,7 +84,7 @@ export default function Home() {
     const updateParallax = () => {
       const isMobile = window.innerWidth < 768;
       
-      // Update single image parallax
+      // Update single image parallax (Yoga Lab)
       if (parallaxRef.current) {
         const range = isMobile ? 50 : 150; // 50px on mobile, 150px on desktop
         const rect = parallaxRef.current.getBoundingClientRect();
@@ -45,7 +95,7 @@ export default function Home() {
         }
       }
       
-      // Update image pair parallax (more pronounced on mobile)
+      // Update image pair parallax (Yoga Lab - more pronounced on mobile)
       if (parallaxPairRef.current) {
         const range = isMobile ? 200 : 150; // 200px on mobile, 150px on desktop
         const rect = parallaxPairRef.current.getBoundingClientRect();
@@ -53,6 +103,17 @@ export default function Home() {
         
         if (scrollProgress >= 0 && scrollProgress <= 1) {
           setParallaxPairOffset(scrollProgress * range * 2 - range);
+        }
+      }
+      
+      // Update coffee parallax (Lab Coffee)
+      if (coffeeParallaxRef.current) {
+        const range = isMobile ? 50 : 150;
+        const rect = coffeeParallaxRef.current.getBoundingClientRect();
+        const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        
+        if (scrollProgress >= 0 && scrollProgress <= 1) {
+          setCoffeeParallaxOffset(scrollProgress * range * 2 - range);
         }
       }
       
@@ -81,6 +142,96 @@ export default function Home() {
       {/* Loading in the Hero section */}
       <Hero />
 
+      {/* Lab Coffee: Featured Images Carousel - Only shows for Lab Coffee */}
+      {isLabCoffee && (
+        <section className="py-16 bg-white font-montserrat overflow-hidden">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Experience Lab Coffee
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-gray-600">
+                Where community and quality come together
+              </p>
+            </div>
+          </div>
+          
+          {/* Carousel */}
+          <div 
+            ref={coffeeCarouselRef}
+            className="overflow-hidden"
+          >
+            <div 
+              ref={coffeeCarouselInnerRef}
+              className="flex gap-4 px-6 lg:px-8"
+              style={{ willChange: 'transform' }}
+            >
+              {/* First set of images */}
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/lab-coffee/smiling-coffeeshop.jpg" 
+                    alt="Smiling customers enjoying Lab Coffee"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/lab-coffee/berries-acai-bowl-landscape.jpg" 
+                    alt="Fresh açai bowl with berries"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/lab-coffee/getting-coffee-offsite.jpg" 
+                    alt="Customer getting coffee to go"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/lab-coffee/smiling-coffeeshop.jpg" 
+                    alt="Smiling customers enjoying Lab Coffee"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/lab-coffee/berries-acai-bowl-landscape.jpg" 
+                    alt="Fresh açai bowl with berries"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/lab-coffee/getting-coffee-offsite.jpg" 
+                    alt="Customer getting coffee to go"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Yoga Lab: Featured Community Carousel - Only shows for Yoga Lab */}
       {!isLabCoffee && (
         <section className="py-16 bg-white font-montserrat overflow-hidden">
@@ -98,65 +249,133 @@ export default function Home() {
           {/* Single row carousel */}
           <div 
             ref={carouselRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide px-6 lg:px-8"
+            className="overflow-hidden"
           >
-            <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
-              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
-                <img 
-                  src="/images/yoga/group-shot.jpg" 
-                  alt="Yoga Lab community after class"
-                  className="w-full h-full object-cover"
-                />
+            <div 
+              ref={carouselInnerRef}
+              className="flex gap-4 px-6 lg:px-8"
+              style={{ willChange: 'transform' }}
+            >
+              {/* First set of images */}
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/group-shot.jpg" 
+                    alt="Yoga Lab community after class"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            
-            <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
-              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
-                <img 
-                  src="/images/yoga/chair-pose-back.jpg" 
-                  alt="Power yoga class in chair pose"
-                  className="w-full h-full object-cover"
-                />
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/chair-pose-back.jpg" 
+                    alt="Power yoga class in chair pose"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            
-            <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
-              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
-                <img 
-                  src="/images/yoga/abby-starts-class.jpg" 
-                  alt="Yoga class beginning with instructor Abby"
-                  className="w-full h-full object-cover"
-                />
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/abby-starts-class.jpg" 
+                    alt="Yoga class beginning with instructor Abby"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            
-            <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
-              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
-                <img 
-                  src="/images/yoga/hot-namaste.jpg" 
-                  alt="Students in namaste after heated class"
-                  className="w-full h-full object-cover"
-                />
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/hot-namaste.jpg" 
+                    alt="Students in namaste after heated class"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            
-            <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
-              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
-                <img 
-                  src="/images/yoga/fitness-lab-rowing-machine.jpg" 
-                  alt="Fitness Lab strength training"
-                  className="w-full h-full object-cover"
-                />
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/fitness-lab-rowing-machine.jpg" 
+                    alt="Fitness Lab strength training"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            
-            <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
-              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
-                <img 
-                  src="/images/yoga/downward-dog.jpg" 
-                  alt="Class in downward facing dog"
-                  className="w-full h-full object-cover"
-                />
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/downward-dog.jpg" 
+                    alt="Class in downward facing dog"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/group-shot.jpg" 
+                    alt="Yoga Lab community after class"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/chair-pose-back.jpg" 
+                    alt="Power yoga class in chair pose"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/abby-starts-class.jpg" 
+                    alt="Yoga class beginning with instructor Abby"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/hot-namaste.jpg" 
+                    alt="Students in namaste after heated class"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/fitness-lab-rowing-machine.jpg" 
+                    alt="Fitness Lab strength training"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="flex-none w-[80vw] md:w-[60vw] lg:w-[45vw]">
+                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/yoga/downward-dog.jpg" 
+                    alt="Class in downward facing dog"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -245,6 +464,25 @@ export default function Home() {
           )}
         </div>
       </section>
+
+      {/* Lab Coffee: Parallax Image - Only shows for Lab Coffee */}
+      {isLabCoffee && (
+        <section ref={coffeeParallaxRef} className="bg-gray-50 font-montserrat overflow-hidden">
+          <div className="relative h-[500px] md:h-[700px]">
+            <div className="absolute inset-0 scale-110">
+              <img 
+                src="/images/lab-coffee/berries-acai-bowl-portrait.jpg" 
+                alt="Beautifully styled açai bowl"
+                className="w-full h-full object-cover will-change-transform"
+                style={{
+                  transform: `translateY(${coffeeParallaxOffset}px)`
+                }}
+              />
+            </div>
+            <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent"></div>
+          </div>
+        </section>
+      )}
 
       {/* Yoga Lab: Practice & Community Images - Only shows for Yoga Lab */}
       {!isLabCoffee && (
