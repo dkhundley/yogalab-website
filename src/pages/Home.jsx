@@ -249,34 +249,36 @@ export default function Home() {
       {/* Yoga Lab: Practice & Community Images - Only shows for Yoga Lab */}
       {!isLabCoffee && (
         <section ref={parallaxPairRef} className="relative bg-white font-montserrat overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* Left side image */}
-            <div className="relative h-[500px] md:h-[600px] overflow-hidden">
-              <div className="absolute inset-0 scale-110">
+          <div className="absolute inset-0 scale-110">
+            <div 
+              className="grid grid-cols-1 md:grid-cols-2 h-full will-change-transform"
+              style={{
+                transform: `translateY(${parallaxPairOffset}px)`
+              }}
+            >
+              {/* Left side image */}
+              <div className="relative h-[500px] md:h-[600px]">
                 <img 
                   src="/images/yoga/single-woman-childs-pose.jpg" 
                   alt="Peaceful yoga practice"
-                  className="w-full h-full object-cover will-change-transform"
-                  style={{
-                    transform: `translateY(${parallaxPairOffset}px)`
-                  }}
+                  className="w-full h-full object-cover"
                 />
               </div>
-            </div>
-            
-            {/* Right side image */}
-            <div className="relative h-[500px] md:h-[600px] overflow-hidden">
-              <div className="absolute inset-0 scale-110">
+              
+              {/* Right side image */}
+              <div className="relative h-[500px] md:h-[600px]">
                 <img 
                   src="/images/yoga/abby-starts-class-front-corner.jpg" 
                   alt="Yoga class beginning"
-                  className="w-full h-full object-cover will-change-transform"
-                  style={{
-                    transform: `translateY(${parallaxPairOffset}px)`
-                  }}
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
+          </div>
+          {/* Static container to maintain height */}
+          <div className="grid grid-cols-1 md:grid-cols-2 invisible">
+            <div className="h-[500px] md:h-[600px]"></div>
+            <div className="h-[500px] md:h-[600px]"></div>
           </div>
         </section>
       )}
