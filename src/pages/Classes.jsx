@@ -1,6 +1,47 @@
 import { Link } from 'react-router-dom';
+import { useRef, useEffect, useState } from 'react';
 
 export default function Classes() {
+  const heroParallaxRef = useRef(null);
+  const [parallaxOffset, setParallaxOffset] = useState(0);
+
+  // Parallax scroll effect for hero image
+  useEffect(() => {
+    let ticking = false;
+
+    const updateParallax = () => {
+      const isMobile = window.innerWidth < 768;
+      
+      if (heroParallaxRef.current) {
+        const range = isMobile ? 50 : 150; // 50px on mobile, 150px on desktop
+        const rect = heroParallaxRef.current.getBoundingClientRect();
+        const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        
+        if (scrollProgress >= 0 && scrollProgress <= 1) {
+          setParallaxOffset(scrollProgress * range * 2 - range);
+        }
+      }
+      
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    updateParallax(); // Initial call
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
   const generalClasses = [
     {
       title: 'Power + Heat Yoga',
@@ -52,13 +93,16 @@ export default function Classes() {
   return (
     <div className="bg-white font-montserrat">
       {/* Hero Header Section with Image */}
-      <div className="relative bg-linear-to-b from-gray-900 to-gray-800 py-24 sm:py-32 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
+      <div ref={heroParallaxRef} className="relative bg-linear-to-b from-gray-900 to-gray-800 py-24 sm:py-32 overflow-hidden">
+        {/* Background Image with Parallax */}
+        <div className="absolute inset-0 scale-110">
           <img 
             src="/images/yoga/abby-starts-class.jpg" 
             alt="Yoga class at Yoga Lab"
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-40 will-change-transform"
+            style={{
+              transform: `translateY(${parallaxOffset}px)`
+            }}
           />
           <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/70 to-gray-900/50"></div>
         </div>
