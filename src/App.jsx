@@ -22,6 +22,7 @@ import Order from './pages/Order';
 import NewToYoga from './pages/NewToYoga';
 import Locations from './pages/Locations';
 import WorkWithUs from './pages/WorkWithUs';
+import Contact from './pages/Contact';
 
 
 
@@ -74,6 +75,7 @@ function AppContent() {
           <Route path="/new-to-yoga" element={<NewToYoga />} />
           <Route path="/locations" element={<Locations />} />
           <Route path="/work-with-us" element={<WorkWithUs />} />
+          <Route path="/contact-us" element={<Contact />} />
         </Routes>
       </main>
 
