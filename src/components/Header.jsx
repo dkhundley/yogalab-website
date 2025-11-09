@@ -68,18 +68,18 @@ export default function Header() {
 
   return (
     <>
-      <header className={`bg-white shadow-sm sticky top-0 z-40 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <header className={`${isLabCoffee ? 'bg-black' : 'bg-white'} shadow-sm sticky top-0 z-40 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-x-8 p-4 lg:px-8" aria-label="Global">
           <div className="flex">
             <Link to="/" className="-m-1.5 p-2.5">
               {isLabCoffee ? (
                 <div className="flex items-center gap-4">
                   <img 
-                    src="/icons/lab-coffee-logo.png" 
+                    src="/icons/lab-coffee-logo-white.png" 
                     alt="Lab Coffee Logo" 
                     className="h-8 w-auto -mt-1"
                   />
-                  <span className="text-2xl font-lulo-bold text-gray-900">
+                  <span className="text-2xl font-lulo-bold text-white">
                     Lab Coffee
                   </span>
                 </div>
@@ -100,8 +100,12 @@ export default function Header() {
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
-              style={{ backgroundColor: 'white', color: 'rgb(55, 65, 81)' }}
+              className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors ${
+                isLabCoffee 
+                  ? 'text-white hover:bg-gray-900' 
+                  : 'text-gray-700 hover:bg-gray-50'
+              }`}
+              style={isLabCoffee ? { backgroundColor: 'black', color: 'white' } : { backgroundColor: 'white', color: 'rgb(55, 65, 81)' }}
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -118,24 +122,38 @@ export default function Header() {
               >
                 <Link 
                   to={item.href} 
-                  className="relative text-sm font-semibold leading-6 text-gray-900 hover:text-black transition-colors font-montserrat tracking-wide group flex items-center gap-1"
+                  className={`relative text-sm font-semibold leading-6 transition-colors font-montserrat tracking-wide group flex items-center gap-1 ${
+                    isLabCoffee 
+                      ? 'text-white hover:text-gray-300' 
+                      : 'text-gray-900 hover:text-black'
+                  }`}
                 >
                   {item.name}
                   {item.submenu && (
                     <ChevronDownIcon className={`h-4 w-4 transition-transform ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
                   )}
-                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 ease-out group-hover:w-full"></span>
+                  <span className={`absolute left-0 bottom-0 w-0 h-0.5 transition-all duration-300 ease-out group-hover:w-full ${
+                    isLabCoffee ? 'bg-white' : 'bg-black'
+                  }`}></span>
                 </Link>
                 
                 {/* Dropdown Menu */}
                 {item.submenu && activeDropdown === item.name && (
                   <div className="absolute left-0 top-full pt-2 z-50">
-                    <div className="bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[200px]">
+                    <div className={`rounded-lg shadow-lg border py-2 min-w-[200px] ${
+                      isLabCoffee 
+                        ? 'bg-black border-gray-700' 
+                        : 'bg-white border-gray-200'
+                    }`}>
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors font-montserrat"
+                          className={`block px-4 py-2 text-sm transition-colors font-montserrat ${
+                            isLabCoffee 
+                              ? 'text-white hover:bg-gray-900 hover:text-gray-300' 
+                              : 'text-gray-700 hover:bg-gray-50 hover:text-black'
+                          }`}
                         >
                           {subItem.name}
                         </Link>
@@ -150,7 +168,7 @@ export default function Header() {
             {isLabCoffee ? (
               <Link
                 to="/order"
-                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
+                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors font-montserrat"
               >
                 Order Now
               </Link>
@@ -186,7 +204,11 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="lg:hidden fixed inset-y-0 right-0 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+              className={`lg:hidden fixed inset-y-0 right-0 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 ${
+                isLabCoffee 
+                  ? 'bg-black sm:ring-gray-700' 
+                  : 'bg-white sm:ring-gray-900/10'
+              }`}
               style={{ zIndex: 9999 }}
             >
               <motion.div 
@@ -199,11 +221,11 @@ export default function Header() {
                   {isLabCoffee ? (
                     <div className="flex items-center gap-3">
                       <img 
-                        src="/icons/lab-coffee-logo.png" 
+                        src="/icons/lab-coffee-logo-white.png" 
                         alt="Lab Coffee Logo" 
                         className="h-7 w-auto -mt-1"
                       />
-                      <span className="text-xl font-lulo-bold text-gray-900">
+                      <span className="text-xl font-lulo-bold text-white">
                         Lab Coffee
                       </span>
                     </div>
@@ -222,7 +244,11 @@ export default function Header() {
                 </Link>
                 <button
                   type="button"
-                  className="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-100 transition-all duration-200"
+                  className={`-m-2.5 rounded-md p-2.5 transition-all duration-200 ${
+                    isLabCoffee 
+                      ? 'text-white hover:bg-gray-900' 
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="sr-only">Close menu</span>
@@ -246,7 +272,11 @@ export default function Header() {
                           <div>
                             <button
                               onClick={() => setMobileExpandedItem(mobileExpandedItem === item.name ? null : item.name)}
-                              className="-mx-3 w-full flex items-center gap-1 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 font-montserrat"
+                              className={`-mx-3 w-full flex items-center gap-1 rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-all duration-200 font-montserrat ${
+                                isLabCoffee 
+                                  ? 'text-white hover:bg-gray-900' 
+                                  : 'text-gray-900 hover:bg-gray-50'
+                              }`}
                             >
                               <span>{item.name}</span>
                               <ChevronDownIcon className={`h-5 w-5 transition-transform ${mobileExpandedItem === item.name ? 'rotate-180' : ''}`} />
@@ -257,7 +287,11 @@ export default function Header() {
                                   <Link
                                     key={subItem.name}
                                     to={subItem.href}
-                                    className="block rounded-lg px-3 py-2 text-sm font-medium leading-7 text-gray-700 hover:bg-gray-50 transition-all duration-200 font-montserrat"
+                                    className={`block rounded-lg px-3 py-2 text-sm font-medium leading-7 transition-all duration-200 font-montserrat ${
+                                      isLabCoffee 
+                                        ? 'text-gray-300 hover:bg-gray-900' 
+                                        : 'text-gray-700 hover:bg-gray-50'
+                                    }`}
                                     onClick={() => setMobileMenuOpen(false)}
                                   >
                                     {subItem.name}
@@ -269,7 +303,11 @@ export default function Header() {
                         ) : (
                           <Link
                             to={item.href}
-                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 hover:translate-x-1 font-montserrat"
+                            className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-all duration-200 hover:translate-x-1 font-montserrat ${
+                              isLabCoffee 
+                                ? 'text-white hover:bg-gray-900' 
+                                : 'text-gray-900 hover:bg-gray-50'
+                            }`}
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {item.name}
@@ -290,7 +328,11 @@ export default function Header() {
                     {isLabCoffee ? (
                       <Link
                         to="/order"
-                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 hover:translate-x-1 font-montserrat"
+                        className={`-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 transition-all duration-200 hover:translate-x-1 font-montserrat ${
+                          isLabCoffee 
+                            ? 'text-white hover:bg-gray-900' 
+                            : 'text-gray-900 hover:bg-gray-50'
+                        }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         Order Now
@@ -298,7 +340,11 @@ export default function Header() {
                     ) : (
                       <Link
                         to="/book"
-                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 hover:translate-x-1 font-montserrat"
+                        className={`-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 transition-all duration-200 hover:translate-x-1 font-montserrat ${
+                          isLabCoffee 
+                            ? 'text-white hover:bg-gray-900' 
+                            : 'text-gray-900 hover:bg-gray-50'
+                        }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         Book Your Class

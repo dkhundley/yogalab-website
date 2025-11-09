@@ -144,13 +144,13 @@ export default function Home() {
 
       {/* Lab Coffee: Featured Video Section - Only shows for Lab Coffee */}
       {isLabCoffee && (
-        <section className="py-16 bg-white font-montserrat">
+        <section className="py-16 bg-black font-montserrat">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Discover Lab Coffee
               </h2>
-              <p className="mt-4 text-lg leading-8 text-gray-600">
+              <p className="mt-4 text-lg leading-8 text-gray-300">
                 Experience the space where connection happens
               </p>
             </div>
@@ -188,13 +188,13 @@ export default function Home() {
 
       {/* Lab Coffee: Featured Images Carousel - Only shows for Lab Coffee */}
       {isLabCoffee && (
-        <section className="py-16 bg-white font-montserrat overflow-hidden">
+        <section className="py-16 bg-black font-montserrat overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Experience Lab Coffee
               </h2>
-              <p className="mt-4 text-lg leading-8 text-gray-600">
+              <p className="mt-4 text-lg leading-8 text-gray-300">
                 Where community and quality come together
               </p>
             </div>
@@ -427,7 +427,7 @@ export default function Home() {
       )}
       
       {/* Setting the rendering of the homepage screen based on the brand selected (Yoga Lab vs. Lab Coffee) */}
-      <section className="py-24 bg-gray-50 font-montserrat">
+      <section className={`py-24 font-montserrat ${isLabCoffee ? 'bg-black' : 'bg-gray-50'}`}>
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -436,10 +436,10 @@ export default function Home() {
             <>
               {/* Setting the "header" text over the various services offered by Lab Coffee */}
               <div className="mx-auto max-w-2xl text-center mb-16">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                <h2 className={`text-3xl font-bold tracking-tight sm:text-4xl ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>
                   What We Offer
                 </h2>
-                <p className="mt-4 text-lg leading-8 text-gray-600">
+                <p className={`mt-4 text-lg leading-8 ${isLabCoffee ? 'text-gray-300' : 'text-gray-600'}`}>
                   Experience quality beverages and community connection in a welcoming atmosphere.
                 </p>
               </div>
@@ -511,7 +511,7 @@ export default function Home() {
 
       {/* Lab Coffee: Parallax Image - Only shows for Lab Coffee */}
       {isLabCoffee && (
-        <section ref={coffeeParallaxRef} className="bg-gray-50 font-montserrat overflow-hidden">
+        <section ref={coffeeParallaxRef} className="bg-black font-montserrat overflow-hidden">
           <div className="relative h-[500px] md:h-[700px]">
             <div className="absolute inset-0 scale-110">
               <img 
@@ -621,13 +621,13 @@ export default function Home() {
       )}
 
       {/* Setting the Location & Contact Section */}
-      <section id="contact" className={`py-24 font-montserrat ${isLabCoffee ? 'bg-white' : 'bg-gray-50'}`}>
+      <section id="contact" className={`py-24 font-montserrat ${isLabCoffee ? 'bg-black' : 'bg-gray-50'}`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className={`text-3xl font-bold tracking-tight sm:text-4xl ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>
               {isLabCoffee ? 'Visit Us' : 'Find Us & Connect'}
             </h2>
-            <p className="mt-4 text-lg leading-8 text-gray-600">
+            <p className={`mt-4 text-lg leading-8 ${isLabCoffee ? 'text-gray-300' : 'text-gray-600'}`}>
               {isLabCoffee 
                 ? 'Stop by Lab Coffee and experience our welcoming community atmosphere.' 
                 : 'Visit our studio or get in touch with us today.'}
@@ -637,14 +637,14 @@ export default function Home() {
           {/* Setting up the "Map" section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             <div className="order-2 lg:order-1">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Location</h3>
+              <h3 className={`text-xl font-semibold mb-4 ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>Our Location</h3>
               <Map 
                 latitude={40.4783244}
                 longitude={-88.9507216}
                 markerTitle="Yoga Lab"
                 markerDescription="207 S. Prospect Road, Suite 2, Bloomington, IL 61704"
               />
-              <div className="mt-4 text-sm text-gray-600">
+              <div className={`mt-4 text-sm ${isLabCoffee ? 'text-gray-300' : 'text-gray-600'}`}>
                 <p className="font-medium">207 S. Prospect Road, Suite 2</p>
                 <p>Bloomington, IL 61704</p>
               </div>
@@ -652,7 +652,7 @@ export default function Home() {
             
             {/* Loading in the contact form */}
             <div className="order-1 lg:order-2">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Get In Touch</h3>
+              <h3 className={`text-xl font-semibold mb-4 ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>Get In Touch</h3>
               <ContactForm />
             </div>
           </div>

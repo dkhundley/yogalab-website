@@ -1,7 +1,12 @@
 // Importing necessary dependencies from React
 import { useState } from 'react';
+import { useBrand, BRANDS } from '../context/BrandContext';
 
 export default function ContactForm() {
+
+  // Accessing the active brand from context
+  const { activeBrand } = useBrand();
+  const isLabCoffee = activeBrand === BRANDS.LAB_COFFEE;
 
   // Initializing the form data state
   const [formData, setFormData] = useState({
@@ -46,7 +51,7 @@ export default function ContactForm() {
 
         {/* Setting up the "First Name" field */}
         <div>
-          <label htmlFor="firstName" className="block text-sm font-semibold leading-6 text-gray-900">
+          <label htmlFor="firstName" className={`block text-sm font-semibold leading-6 ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>
             First name *
           </label>
           <div className="mt-2.5">
@@ -57,14 +62,18 @@ export default function ContactForm() {
               required
               value={formData.firstName}
               onChange={handleChange}
-              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6"
+              className={`block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 ${
+                isLabCoffee 
+                  ? 'bg-gray-900 text-white ring-gray-700 focus:ring-white' 
+                  : 'bg-white text-gray-900 ring-gray-300 focus:ring-black'
+              }`}
             />
           </div>
         </div>
 
         {/* Setting up the "Last Name" field */}
         <div>
-          <label htmlFor="lastName" className="block text-sm font-semibold leading-6 text-gray-900">
+          <label htmlFor="lastName" className={`block text-sm font-semibold leading-6 ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>
             Last name *
           </label>
           <div className="mt-2.5">
@@ -75,14 +84,18 @@ export default function ContactForm() {
               required
               value={formData.lastName}
               onChange={handleChange}
-              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6"
+              className={`block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 ${
+                isLabCoffee 
+                  ? 'bg-gray-900 text-white ring-gray-700 focus:ring-white' 
+                  : 'bg-white text-gray-900 ring-gray-300 focus:ring-black'
+              }`}
             />
           </div>
         </div>
 
         {/* Setting up the "Email" field */}
         <div className="sm:col-span-2">
-          <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
+          <label htmlFor="email" className={`block text-sm font-semibold leading-6 ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>
             Email *
           </label>
           <div className="mt-2.5">
@@ -93,14 +106,18 @@ export default function ContactForm() {
               required
               value={formData.email}
               onChange={handleChange}
-              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6"
+              className={`block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 ${
+                isLabCoffee 
+                  ? 'bg-gray-900 text-white ring-gray-700 focus:ring-white' 
+                  : 'bg-white text-gray-900 ring-gray-300 focus:ring-black'
+              }`}
             />
           </div>
         </div>
 
         {/* Setting up the "Subject" field */}
         <div className="sm:col-span-2">
-          <label htmlFor="subject" className="block text-sm font-semibold leading-6 text-gray-900">
+          <label htmlFor="subject" className={`block text-sm font-semibold leading-6 ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>
             Subject *
           </label>
           <div className="mt-2.5">
@@ -111,14 +128,18 @@ export default function ContactForm() {
               required
               value={formData.subject}
               onChange={handleChange}
-              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6"
+              className={`block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 ${
+                isLabCoffee 
+                  ? 'bg-gray-900 text-white ring-gray-700 focus:ring-white' 
+                  : 'bg-white text-gray-900 ring-gray-300 focus:ring-black'
+              }`}
             />
           </div>
         </div>
 
         {/* Setting up the "Message" field */}
         <div className="sm:col-span-2">
-          <label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-900">
+          <label htmlFor="message" className={`block text-sm font-semibold leading-6 ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>
             Message *
           </label>
           <div className="mt-2.5">
@@ -129,7 +150,11 @@ export default function ContactForm() {
               required
               value={formData.message}
               onChange={handleChange}
-              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6"
+              className={`block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 ${
+                isLabCoffee 
+                  ? 'bg-gray-900 text-white ring-gray-700 focus:ring-white' 
+                  : 'bg-white text-gray-900 ring-gray-300 focus:ring-black'
+              }`}
             />
           </div>
         </div>
@@ -139,7 +164,11 @@ export default function ContactForm() {
       <div className="mt-10">
         <button
           type="submit"
-          className="block w-full rounded-md bg-black px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
+          className={`block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 transition-colors ${
+            isLabCoffee 
+              ? 'bg-white text-black hover:bg-gray-200 focus-visible:outline-white' 
+              : 'bg-black text-white hover:bg-gray-800 focus-visible:outline-black'
+          }`}
         >
           Connect
         </button>

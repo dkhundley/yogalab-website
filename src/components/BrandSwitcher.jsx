@@ -27,7 +27,9 @@ export default function BrandSwitcher() {
   
   return (
     // Setting the brand switcher container
-    <div className="bg-black text-white relative z-50 font-montserrat">
+    <div className={`relative z-50 font-montserrat ${
+      activeBrand === BRANDS.YOGA_LAB ? 'bg-black text-white' : 'bg-white text-black'
+    }`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex items-center justify-between py-2 text-sm">
 
@@ -35,20 +37,22 @@ export default function BrandSwitcher() {
           <div className="flex items-center gap-6">
             {brands.map((brand) => {
               const isActive = brand.value === activeBrand;
+              const isYogaLab = activeBrand === BRANDS.YOGA_LAB;
               
               return (
                 <button
                   key={brand.name}
                   onClick={() => handleBrandSwitch(brand.value)}
-                  className={`font-medium transition-colors hover:text-gray-300 bg-transparent border-0 p-0 ${
-                    isActive ? 'text-white underline underline-offset-4' : 'text-gray-400'
+                  className={`font-medium transition-colors bg-transparent border-0 p-0 ${
+                    isYogaLab 
+                      ? (isActive ? 'text-white hover:text-gray-300 underline underline-offset-4' : 'text-gray-400 hover:text-gray-300')
+                      : (isActive ? 'text-black hover:text-gray-700 underline underline-offset-4' : 'text-gray-500 hover:text-gray-700')
                   }`}
                   style={{ 
                     background: 'transparent',
                     border: 'none',
                     padding: '0',
-                    borderRadius: '0',
-                    color: isActive ? '#ffffff' : '#9ca3af'
+                    borderRadius: '0'
                   }}
                   title={brand.description}
                 >

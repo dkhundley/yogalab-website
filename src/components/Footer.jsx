@@ -45,22 +45,26 @@ export default function Footer() {
   const navigation = isLabCoffee ? labCoffeeNavigation : yogaLabNavigation;
 
   return (
-    <footer className="bg-white font-montserrat">
+    <footer className={`font-montserrat ${isLabCoffee ? 'bg-black' : 'bg-white'}`}>
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
 
         {/* Setting up the main footer text */}
         <div className="mb-8 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">
+          <h2 className={`text-3xl font-bold tracking-tight sm:text-4xl mb-4 ${
+            isLabCoffee ? 'text-white' : 'text-gray-900'
+          }`}>
             REGULATE, RELATE, REASON
           </h2>
-          <p className="text-lg leading-8 text-gray-600 max-w-4xl mx-auto">
+          <p className={`text-lg leading-8 max-w-4xl mx-auto ${
+            isLabCoffee ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             We know that we work best when we are regulated and related, which is why we have set up our space to follow the sequence of the brain; regulate, relate, reason. In the yoga studio, you will experience a deeper level of physical and mental health through regulated movement and breathwork. In the coffee shop, you will meet new people and experience a sense of community wellness. In The Lab, you will have the opportunity to share your knowledge and expertise to support reasoning and critical thinking in our community.
           </p>
         </div>
 
         {/* Setting up the footer address */}
         <div className="mb-8 text-center">
-          <p className="text-gray-600">
+          <p className={isLabCoffee ? 'text-gray-300' : 'text-gray-600'}>
             207 S. Prospect Road, Suite 2<br />
             Bloomington, IL 61704
           </p>
@@ -72,7 +76,11 @@ export default function Footer() {
             <Link 
               key={item.name} 
               to={item.href} 
-              className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+              className={`text-sm leading-6 ${
+                isLabCoffee 
+                  ? 'text-gray-300 hover:text-white' 
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
             >
               {item.name}
             </Link>
@@ -82,7 +90,17 @@ export default function Footer() {
         {/* Setting up the social media icons */}
         <div className="mt-10 flex justify-center space-x-10">
           {socialNavigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500" target="_blank" rel="noopener noreferrer">
+            <a 
+              key={item.name} 
+              href={item.href} 
+              className={`${
+                isLabCoffee 
+                  ? 'text-gray-400 hover:text-gray-300' 
+                  : 'text-gray-400 hover:text-gray-500'
+              }`}
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>
@@ -90,7 +108,9 @@ export default function Footer() {
         </div>
         
         {/* Setting up the copyright text */}
-        <p className="mt-10 text-center text-xs leading-5 text-gray-500">
+        <p className={`mt-10 text-center text-xs leading-5 ${
+          isLabCoffee ? 'text-gray-400' : 'text-gray-500'
+        }`}>
           Copyright 2021 Community Wellness Lab, LLC; Yoga Lab, DBA
         </p>
       </div>
