@@ -15,6 +15,7 @@ import AboutYoga from './pages/AboutYoga';
 import AboutCoffee from './pages/AboutCoffee';
 import Classes from './pages/Classes';
 import PrivateClasses from './pages/PrivateClasses';
+import YogaTeacherTraining from './pages/YogaTeacherTraining';
 import Coffee from './pages/Coffee';
 import FAQ from './pages/FAQ';
 import Book from './pages/Book';
@@ -68,6 +69,7 @@ function AppContent() {
           <Route path="/about-coffee" element={<AboutCoffee />} />
           <Route path="/classes" element={<Classes />} />
           <Route path="/private-classes" element={<PrivateClasses />} />
+          <Route path="/teacher-training" element={<YogaTeacherTraining />} />
           <Route path="/coffee" element={<Coffee />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/book" element={<Book />} />

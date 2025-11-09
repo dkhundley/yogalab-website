@@ -1,14 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBrand, BRANDS } from '../context/BrandContext';
 
 const yogaLabNavigation = [
   { name: 'Home', href: '/' },
   { name: 'New to Yoga', href: '/new-to-yoga' },
-  { name: 'Class Offerings', href: '/classes' },
-  { name: 'Private Classes', href: '/private-classes' },
+  { 
+    name: 'Classes', 
+    href: '/classes',
+    submenu: [
+      { name: 'Class Offerings', href: '/classes' },
+      { name: 'Private Classes', href: '/private-classes' },
+      { name: 'Yoga Teacher Training', href: '/teacher-training' }
+    ]
+  },
   { name: 'FAQ', href: '/faq' },
   { name: 'About Us', href: '/about-yoga' },
 ];
@@ -25,6 +32,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [mobileExpandedItem, setMobileExpandedItem] = useState(null);
   const { activeBrand } = useBrand();
   const isLabCoffee = activeBrand === BRANDS.LAB_COFFEE;
   const navigation = isLabCoffee ? labCoffeeNavigation : yogaLabNavigation;
@@ -101,28 +110,54 @@ export default function Header() {
           </div>
           <div className="hidden lg:flex lg:gap-x-8">
             {navigation.map((item) => (
-              <Link 
-                key={item.name} 
-                to={item.href} 
-                className="relative text-sm font-semibold leading-6 text-gray-900 hover:text-black transition-colors font-montserrat tracking-wide group"
+              <div 
+                key={item.name}
+                className="relative"
+                onMouseEnter={() => item.submenu && setActiveDropdown(item.name)}
+                onMouseLeave={() => item.submenu && setActiveDropdown(null)}
               >
-                {item.name}
-                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 ease-out group-hover:w-full"></span>
-              </Link>
+                <Link 
+                  to={item.href} 
+                  className="relative text-sm font-semibold leading-6 text-gray-900 hover:text-black transition-colors font-montserrat tracking-wide group flex items-center gap-1"
+                >
+                  {item.name}
+                  {item.submenu && (
+                    <ChevronDownIcon className={`h-4 w-4 transition-transform ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
+                  )}
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 ease-out group-hover:w-full"></span>
+                </Link>
+                
+                {/* Dropdown Menu */}
+                {item.submenu && activeDropdown === item.name && (
+                  <div className="absolute left-0 top-full pt-2 z-50">
+                    <div className="bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[200px]">
+                      {item.submenu.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          to={subItem.href}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors font-montserrat"
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
           <div className="hidden lg:flex">
             {isLabCoffee ? (
               <Link
                 to="/order"
-                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
+                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
               >
                 Order Now
               </Link>
             ) : (
               <Link
                 to="/book"
-                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
+                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
               >
                 Book Your Class
               </Link>
@@ -207,13 +242,39 @@ export default function Header() {
                           duration: 0.4 
                         }}
                       >
-                        <Link
-                          to={item.href}
-                          className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 hover:translate-x-1 font-montserrat"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
+                        {item.submenu ? (
+                          <div>
+                            <button
+                              onClick={() => setMobileExpandedItem(mobileExpandedItem === item.name ? null : item.name)}
+                              className="-mx-3 w-full flex items-center justify-between rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 font-montserrat"
+                            >
+                              <span>{item.name}</span>
+                              <ChevronDownIcon className={`h-5 w-5 transition-transform ${mobileExpandedItem === item.name ? 'rotate-180' : ''}`} />
+                            </button>
+                            {mobileExpandedItem === item.name && (
+                              <div className="ml-4 mt-2 space-y-2">
+                                {item.submenu.map((subItem) => (
+                                  <Link
+                                    key={subItem.name}
+                                    to={subItem.href}
+                                    className="block rounded-lg px-3 py-2 text-sm font-medium leading-7 text-gray-700 hover:bg-gray-50 transition-all duration-200 font-montserrat"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <Link
+                            to={item.href}
+                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 hover:translate-x-1 font-montserrat"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        )}
                       </motion.div>
                     ))}
                   </div>
