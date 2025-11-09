@@ -10,9 +10,22 @@ export const BRANDS = {
   LAB_COFFEE: 'lab-coffee',
 };
 
+// Helper function to determine initial brand based on domain
+function getInitialBrand() {
+  const hostname = window.location.hostname;
+  
+  // Check if the domain is Lab Coffee domain
+  if (hostname.includes('labcoffeebn.org') || hostname.includes('labcoffee')) {
+    return BRANDS.LAB_COFFEE;
+  }
+  
+  // Default to Yoga Lab for theyogalab.org or any other domain
+  return BRANDS.YOGA_LAB;
+}
+
 // Defining the BrandProvider component to manage and provide brand state
 export function BrandProvider({ children }) {
-  const [activeBrand, setActiveBrand] = useState(BRANDS.YOGA_LAB);
+  const [activeBrand, setActiveBrand] = useState(getInitialBrand);
 
   return (
     <BrandContext.Provider value={{ activeBrand, setActiveBrand }}>
