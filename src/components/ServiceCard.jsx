@@ -6,8 +6,8 @@ export default function ServiceCard({ title, description, linkText, linkHref }) 
   const { setActiveBrand } = useBrand();
 
   const handleClick = () => {
-    // Switch to Lab Coffee brand when navigating to coffee page
-    if (linkHref === '/coffee') {
+    // Switch to Lab Coffee brand when navigating to coffee-related pages
+    if (linkHref === '/coffee' || linkHref === '/order') {
       setActiveBrand(BRANDS.LAB_COFFEE);
     }
   };
