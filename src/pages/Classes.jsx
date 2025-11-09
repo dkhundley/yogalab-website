@@ -239,12 +239,12 @@ export default function Classes() {
               key={index}
               className="relative pl-6 font-montserrat h-full"
             >
+              {/* Left vertical line - positioned to align with text */}
+              <div className="absolute left-0 top-[0.2em] bottom-[0.2em] w-[3px] bg-black"></div>
+              
               <div className="relative h-full flex flex-col">
-                {/* Left vertical line - positioned to align with text */}
-                <div className="absolute -left-6 top-0 bottom-0 w-[3px] bg-black"></div>
-                
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold uppercase text-gray-900 tracking-wide">
+                  <h3 className="text-xl font-bold uppercase text-gray-900 tracking-wide leading-tight">
                     {classItem.title}
                   </h3>
                   <span className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 whitespace-nowrap ml-4">
