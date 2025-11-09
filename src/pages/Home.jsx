@@ -449,8 +449,8 @@ export default function Home() {
                 <ServiceCard
                   title="LAB COFFEE"
                   description="Lab Coffee exists to allow our community to build relationships. Our full menu includes coffee, teas, and açai bowls."
-                  linkText="Lab Coffee"
-                  linkHref="/coffee"
+                  linkText="View Menu"
+                  linkHref="/order"
                 />
                 
                 <ServiceCard
