@@ -247,14 +247,6 @@ export default function About() {
               />
               <p className="text-sm font-semibold text-gray-900">Rachel Wells</p>
             </div>
-            <div className="text-center">
-              <img 
-                src="/images/yl-teacher-team/regulated-randy.jpg" 
-                alt="Rachel Wells" 
-                className="w-full h-auto rounded-2xl mb-2"
-              />
-              <p className="text-sm font-semibold text-gray-900">Regulated Randy</p>
-            </div>
           </div>
         </div>
 
