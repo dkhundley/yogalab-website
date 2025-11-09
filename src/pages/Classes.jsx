@@ -1,47 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useRef, useEffect, useState } from 'react';
 
 export default function Classes() {
-  const heroParallaxRef = useRef(null);
-  const [parallaxOffset, setParallaxOffset] = useState(0);
-
-  // Parallax scroll effect for hero image
-  useEffect(() => {
-    let ticking = false;
-
-    const updateParallax = () => {
-      const isMobile = window.innerWidth < 768;
-      
-      if (heroParallaxRef.current) {
-        const range = isMobile ? 50 : 150; // 50px on mobile, 150px on desktop
-        const rect = heroParallaxRef.current.getBoundingClientRect();
-        const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-        
-        if (scrollProgress >= 0 && scrollProgress <= 1) {
-          setParallaxOffset(scrollProgress * range * 2 - range);
-        }
-      }
-      
-      ticking = false;
-    };
-
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(updateParallax);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll, { passive: true });
-    updateParallax(); // Initial call
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
-  }, []);
-
   const generalClasses = [
     {
       title: 'Power + Heat Yoga',
@@ -92,29 +51,15 @@ export default function Classes() {
 
   return (
     <div className="bg-white font-montserrat">
-      {/* Hero Header Section with Image */}
-      <div ref={heroParallaxRef} className="relative bg-linear-to-b from-gray-900 to-gray-800 py-24 sm:py-32 overflow-hidden">
-        {/* Background Image with Parallax */}
-        <div className="absolute inset-0 scale-110">
-          <img 
-            src="/images/yoga/abby-starts-class.jpg" 
-            alt="Yoga class at Yoga Lab"
-            className="w-full h-full object-cover opacity-40 will-change-transform"
-            style={{
-              transform: `translateY(${parallaxOffset}px)`
-            }}
-          />
-          <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/70 to-gray-900/50"></div>
-        </div>
-        
-        {/* Content */}
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      {/* Hero Header Section */}
+      <div className="bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-white">DISCOVER</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-base font-semibold leading-7 text-black">DISCOVER</h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Class Offerings
             </p>
-            <p className="mt-6 text-lg leading-8 text-gray-200">
+            <p className="mt-6 text-lg leading-8 text-gray-600">
               At Yoga Lab, we believe yoga is for everyone—every body, every age, every journey. 
               Our diverse offerings are designed to meet you where you are and support your growth on and off the mat.
             </p>

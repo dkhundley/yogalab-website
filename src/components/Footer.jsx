@@ -1,36 +1,49 @@
 // Importing necessary libraries and components, including leveraging Lucide for social media icons
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook } from 'lucide-react';
+import { useBrand, BRANDS } from '../context/BrandContext';
 
+// Defining the navigation structure for Yoga Lab
+const yogaLabNavigation = [
+  { name: 'Home', href: '/' },
+  { name: 'New to Yoga', href: '/new-to-yoga' },
+  { name: 'Class Offerings', href: '/classes' },
+  { name: 'Private Classes', href: '/private-classes' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'About Us', href: '/about-yoga' },
+];
 
+// Defining the navigation structure for Lab Coffee
+const labCoffeeNavigation = [
+  { name: 'Home', href: '/' },
+  { name: 'Menu', href: '/coffee' },
+  { name: 'Locations', href: '/locations' },
+  { name: 'About Us', href: '/about-coffee' },
+  { name: 'Work With Us', href: '/work-with-us' },
+];
 
-// Defining the navigation structure for the footer links and social media icons
-const navigation = {
-  main: [
-    { name: 'Home', href: '/' },
-    { name: 'Classes', href: '/yoga' },
-    { name: 'Coffee', href: '/coffee' },
-    { name: 'About', href: '/about' },
-    { name: 'FAQ', href: '/faq' },
-  ],
-  social: [
-    {
-      name: 'Instagram',
-      href: 'http://www.instagram.com/yogalab.bn',
-      icon: Instagram,
-    },
-    {
-      name: 'Facebook',
-      href: 'http://www.facebook.com/yogalab.bn',
-      icon: Facebook,
-    }
-  ],
-};
+// Defining the social media icons
+const socialNavigation = [
+  {
+    name: 'Instagram',
+    href: 'http://www.instagram.com/yogalab.bn',
+    icon: Instagram,
+  },
+  {
+    name: 'Facebook',
+    href: 'http://www.facebook.com/yogalab.bn',
+    icon: Facebook,
+  }
+];
 
 
 
 // Defining the Footer component which displays the footer section of the website
 export default function Footer() {
+  const { activeBrand } = useBrand();
+  const isLabCoffee = activeBrand === BRANDS.LAB_COFFEE;
+  const navigation = isLabCoffee ? labCoffeeNavigation : yogaLabNavigation;
+
   return (
     <footer className="bg-white font-montserrat">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
@@ -54,19 +67,21 @@ export default function Footer() {
         </div>
 
         {/* Setting up the navigation links */}
-        <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-          {navigation.main.map((item) => (
-            <div key={item.name} className="pb-6">
-              <Link to={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
-                {item.name}
-              </Link>
-            </div>
+        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-3 sm:gap-x-12" aria-label="Footer">
+          {navigation.map((item) => (
+            <Link 
+              key={item.name} 
+              to={item.href} 
+              className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+            >
+              {item.name}
+            </Link>
           ))}
         </nav>
         
         {/* Setting up the social media icons */}
         <div className="mt-10 flex justify-center space-x-10">
-          {navigation.social.map((item) => (
+          {socialNavigation.map((item) => (
             <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500" target="_blank" rel="noopener noreferrer">
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
