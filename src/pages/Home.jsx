@@ -454,10 +454,10 @@ export default function Home() {
                 />
                 
                 <ServiceCard
-                  title="COMMUNITY"
-                  description="In The Lab, you will have the opportunity to share your knowledge and expertise to support reasoning and critical thinking in our community."
-                  linkText="Connect with Us"
-                  linkHref="/about"
+                  title="PRIVATE CLASSES"
+                  description="Elevate your practice with personalized instruction tailored to your goals. Perfect for individuals, couples, or small groups seeking focused attention."
+                  linkText="Learn More"
+                  linkHref="/private-classes"
                 />
               </div>
             </>
