@@ -142,6 +142,50 @@ export default function Home() {
       {/* Loading in the Hero section */}
       <Hero />
 
+      {/* Lab Coffee: Featured Video Section - Only shows for Lab Coffee */}
+      {isLabCoffee && (
+        <section className="py-16 bg-white font-montserrat">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Discover Lab Coffee
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-gray-600">
+                Experience the space where connection happens
+              </p>
+            </div>
+            
+            {/* Video Container */}
+            <div className="mx-auto max-w-5xl">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+                {/* Replace this iframe src with the actual video embed URL */}
+                {/* Option 1: For Vimeo - <iframe src="https://player.vimeo.com/video/YOUR_VIDEO_ID" ... */}
+                {/* Option 2: For YouTube - <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" ... */}
+                {/* Option 3: For direct video file, replace iframe with video element */}
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://player.vimeo.com/video/YOUR_VIDEO_ID?title=0&byline=0&portrait=0"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Lab Coffee Introduction"
+                ></iframe>
+                {/* Alternative: Direct video file
+                <video
+                  className="absolute top-0 left-0 w-full h-full"
+                  controls
+                  poster="/images/lab-coffee/video-thumbnail.jpg"
+                >
+                  <source src="/videos/lab-coffee-intro.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                */}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Lab Coffee: Featured Images Carousel - Only shows for Lab Coffee */}
       {isLabCoffee && (
         <section className="py-16 bg-white font-montserrat overflow-hidden">
