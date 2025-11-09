@@ -246,7 +246,7 @@ export default function Header() {
                           <div>
                             <button
                               onClick={() => setMobileExpandedItem(mobileExpandedItem === item.name ? null : item.name)}
-                              className="-mx-3 w-full flex items-center justify-between rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 font-montserrat"
+                              className="-mx-3 w-full flex items-center gap-1 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-all duration-200 font-montserrat"
                             >
                               <span>{item.name}</span>
                               <ChevronDownIcon className={`h-5 w-5 transition-transform ${mobileExpandedItem === item.name ? 'rotate-180' : ''}`} />
