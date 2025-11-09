@@ -98,12 +98,12 @@ export default function FAQ() {
               We're here to help! Reach out to us and we'll get back to you as soon as possible.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
+              <Link
+                to="/contact-us"
                 className="rounded-md bg-black px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors"
               >
                 Contact Us
-              </a>
+              </Link>
               <a
                 href="mailto:info@theyogalab.org"
                 className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-black shadow-sm ring-1 ring-inset ring-black hover:bg-gray-50 transition-colors"

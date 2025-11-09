@@ -522,7 +522,7 @@ export default function Classes() {
         <div className="mx-auto max-w-3xl text-center px-6">
           <p className="text-sm text-gray-600">
             Not sure which class is right for you? We're here to help!{' '}
-            <Link to="/#contact" className="font-semibold text-gray-900 hover:text-black underline">
+            <Link to="/contact-us" className="font-semibold text-gray-900 hover:text-black underline">
               Contact us
             </Link>{' '}
             with any questions or to schedule a consultation with one of our instructors.

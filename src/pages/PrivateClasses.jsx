@@ -271,7 +271,7 @@ export default function PrivateClasses() {
               Reach out today to schedule your first private session.
             </p>
             <Link
-              to="/#contact"
+              to="/contact-us"
               className="inline-block rounded-md bg-white px-8 py-3 text-base font-semibold text-black shadow-sm hover:bg-gray-50 transition-colors"
             >
               Contact Us

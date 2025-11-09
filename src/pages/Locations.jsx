@@ -183,15 +183,15 @@ export default function Locations() {
             Each location has its own unique charm and community. Feel free to reach out if you'd like 
             to learn more about hosting events, booking our private spaces, or anything else.
           </p>
-          <a
-            href="mailto:hello@labcoffee.com"
+          <Link
+            to="/contact-us"
             className="inline-flex items-center gap-2 text-black font-semibold hover:underline"
           >
             Contact Us
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
