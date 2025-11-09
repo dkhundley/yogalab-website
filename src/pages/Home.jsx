@@ -401,7 +401,7 @@ export default function Home() {
               </div>
               
               {/* Displaying the various services offered by Lab Coffee */}
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
                 <ServiceCard
                   title="ARTISAN COFFEE"
                   description="From expertly crafted espresso drinks to smooth cold brew, we serve quality coffee that brings people together."
@@ -438,7 +438,7 @@ export default function Home() {
               </div>
               
               {/* Displaying the various services offered by Yoga Lab */}
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
                 <ServiceCard
                   title="YOGA CLASSES"
                   description="Your yoga mat is a laboratory. How you show up on your yoga mat, is how you show up in your life. Strength in your yoga practice translates to strength in your life."

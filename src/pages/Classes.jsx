@@ -233,23 +233,28 @@ export default function Classes() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 items-stretch">
           {generalClasses.map((classItem, index) => (
             <div 
               key={index}
-              className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:border-gray-300 transition-all group"
+              className="relative pl-6 font-montserrat h-full"
             >
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-black transition-colors">
-                  {classItem.title}
-                </h3>
-                <span className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 whitespace-nowrap ml-2">
-                  {classItem.temperature}
-                </span>
+              <div className="relative h-full flex flex-col">
+                {/* Left vertical line - positioned to align with text */}
+                <div className="absolute -left-6 top-0 bottom-0 w-[3px] bg-black"></div>
+                
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-xl font-bold uppercase text-gray-900 tracking-wide">
+                    {classItem.title}
+                  </h3>
+                  <span className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 whitespace-nowrap ml-4">
+                    {classItem.temperature}
+                  </span>
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  {classItem.description}
+                </p>
               </div>
-              <p className="text-gray-600 leading-relaxed text-sm">
-                {classItem.description}
-              </p>
             </div>
           ))}
         </div>
