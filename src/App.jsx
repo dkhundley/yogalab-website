@@ -1,9 +1,28 @@
 // Importing the general React libraries and hooks
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 // Importing the Brand Context to manage active brand state
 import { BrandProvider, useBrand, BRANDS } from './context/BrandContext';
+
+const coffeeRoutes = new Set([
+  '/coffee',
+  '/about-coffee',
+  '/locations',
+  '/work-with-us',
+  '/order',
+]);
+
+const yogaRoutes = new Set([
+  '/classes',
+  '/private-classes',
+  '/teacher-training',
+  '/about-yoga',
+  '/new-to-yoga',
+  '/faq',
+  '/book',
+  '/contact-us',
+]);
 
 // Importing various components and pages used in the application
 import BrandSwitcher from './components/BrandSwitcher';
@@ -31,7 +50,19 @@ import Contact from './pages/Contact';
 function AppContent() {
 
   // Setting the context of which brand is active
-  const { activeBrand } = useBrand();
+  const { activeBrand, setActiveBrand } = useBrand();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (coffeeRoutes.has(location.pathname) && activeBrand !== BRANDS.LAB_COFFEE) {
+      setActiveBrand(BRANDS.LAB_COFFEE);
+      return;
+    }
+
+    if (yogaRoutes.has(location.pathname) && activeBrand !== BRANDS.YOGA_LAB) {
+      setActiveBrand(BRANDS.YOGA_LAB);
+    }
+  }, [location.pathname, activeBrand, setActiveBrand]);
 
   // Updating the site title and favicon based on the active brand
   useEffect(() => {
