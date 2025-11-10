@@ -67,8 +67,46 @@ export default function Classes() {
         </div>
       </div>
 
+      {/* Section Anchor Navigation */}
+      <div className="border-y border-gray-100 bg-gray-50 py-6">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <p className="mb-4 text-center text-sm uppercase tracking-[0.18em] text-gray-500">
+            Jump straight to the offering that speaks to you
+          </p>
+          <nav
+            aria-label="On this page"
+            className="flex flex-wrap items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.15em] text-gray-600"
+          >
+            <a
+              href="#general-class-offerings"
+              className="rounded-full border border-gray-200 bg-white px-4 py-2 text-gray-800 transition hover:border-black hover:text-black"
+            >
+              General Class Offerings
+            </a>
+            <a
+              href="#fitness-lab"
+              className="rounded-full border border-gray-200 bg-white px-4 py-2 text-gray-800 transition hover:border-black hover:text-black"
+            >
+              Fitness Lab
+            </a>
+            <a
+              href="#masterclass-offerings"
+              className="rounded-full border border-gray-200 bg-white px-4 py-2 text-gray-800 transition hover:border-black hover:text-black"
+            >
+              Masterclass Offerings
+            </a>
+            <a
+              href="#on-demand-offerings"
+              className="rounded-full border border-gray-200 bg-white px-4 py-2 text-gray-800 transition hover:border-black hover:text-black"
+            >
+              On-Demand Offerings
+            </a>
+          </nav>
+        </div>
+      </div>
+
       {/* General Class Offerings Section */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+      <section id="general-class-offerings" className="mx-auto max-w-7xl px-6 lg:px-8 py-16 scroll-mt-32">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-2xl font-heading text-gray-900 sm:text-3xl">
             General Class Offerings
@@ -203,10 +241,10 @@ export default function Classes() {
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Fitness Lab Section - Bold Full Width Design */}
-      <div className="bg-black text-white py-24">
+      <section id="fitness-lab" className="bg-black text-white py-24 scroll-mt-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -280,10 +318,10 @@ export default function Classes() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Masterclasses Section - Elegant Centered Design */}
-      <div className="bg-white py-24">
+      <section id="masterclass-offerings" className="bg-white py-24 scroll-mt-32">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-block">
@@ -331,10 +369,10 @@ export default function Classes() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* On-Demand Section - Full Width Dark */}
-      <div className="bg-linear-to-b from-gray-900 to-black text-white py-24">
+      <section id="on-demand-offerings" className="bg-linear-to-b from-gray-900 to-black text-white py-24 scroll-mt-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -397,7 +435,7 @@ export default function Classes() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Community Welcome Image Section */}
       <div className="bg-gray-50 py-16">
