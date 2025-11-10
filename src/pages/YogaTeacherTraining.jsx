@@ -74,7 +74,7 @@ export default function YogaTeacherTraining() {
   ];
 
   return (
-    <div className="bg-white font-montserrat">
+    <div className="bg-white font-body">
       {/* Hero Section with Image */}
       <div className="relative bg-gray-900">
         <div className="absolute inset-0">

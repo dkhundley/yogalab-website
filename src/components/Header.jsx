@@ -79,7 +79,7 @@ export default function Header() {
                     alt="Lab Coffee Logo" 
                     className="h-8 w-auto -mt-1"
                   />
-                  <span className="text-2xl font-lulo-bold text-white">
+                  <span className="text-2xl font-heading text-white">
                     Lab Coffee
                   </span>
                 </div>
@@ -90,7 +90,7 @@ export default function Header() {
                     alt="Yoga Lab Logo" 
                     className="h-10 w-auto -mt-1"
                   />
-                  <span className="text-2xl font-lulo-bold text-gray-900">
+                  <span className="text-2xl font-heading text-gray-900">
                     Yoga Lab
                   </span>
                 </div>
@@ -122,7 +122,7 @@ export default function Header() {
               >
                 <Link 
                   to={item.href} 
-                  className={`relative text-sm font-semibold leading-6 transition-colors font-montserrat tracking-wide group flex items-center gap-1 ${
+                  className={`relative text-sm font-semibold leading-6 transition-colors font-body tracking-wide group flex items-center gap-1 ${
                     isLabCoffee 
                       ? 'text-white hover:text-gray-300' 
                       : 'text-gray-900 hover:text-black'
@@ -149,7 +149,7 @@ export default function Header() {
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          className={`block px-4 py-2 text-sm transition-colors font-montserrat ${
+                          className={`block px-4 py-2 text-sm transition-colors font-body ${
                             isLabCoffee 
                               ? 'text-white hover:bg-gray-900 hover:text-gray-300' 
                               : 'text-gray-700 hover:bg-gray-50 hover:text-black'
@@ -168,14 +168,14 @@ export default function Header() {
             {isLabCoffee ? (
               <Link
                 to="/order"
-                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors font-montserrat"
+                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors font-body"
               >
                 Order Now
               </Link>
             ) : (
               <Link
                 to="/book"
-                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
+                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-body"
               >
                 Book Your Class
               </Link>
@@ -225,7 +225,7 @@ export default function Header() {
                         alt="Lab Coffee Logo" 
                         className="h-7 w-auto -mt-1"
                       />
-                      <span className="text-xl font-lulo-bold text-white">
+                      <span className="text-xl font-heading text-white">
                         Lab Coffee
                       </span>
                     </div>
@@ -236,7 +236,7 @@ export default function Header() {
                         alt="Yoga Lab Logo" 
                         className="h-9 w-auto -mt-1"
                       />
-                      <span className="text-xl font-lulo-bold text-gray-900">
+                      <span className="text-xl font-heading text-gray-900">
                         Yoga Lab
                       </span>
                     </div>
@@ -272,7 +272,7 @@ export default function Header() {
                           <div>
                             <button
                               onClick={() => setMobileExpandedItem(mobileExpandedItem === item.name ? null : item.name)}
-                              className={`-mx-3 w-full flex items-center gap-1 rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-all duration-200 font-montserrat ${
+                              className={`-mx-3 w-full flex items-center gap-1 rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-all duration-200 font-body ${
                                 isLabCoffee 
                                   ? 'text-white hover:bg-gray-900' 
                                   : 'text-gray-900 hover:bg-gray-50'
@@ -287,7 +287,7 @@ export default function Header() {
                                   <Link
                                     key={subItem.name}
                                     to={subItem.href}
-                                    className={`block rounded-lg px-3 py-2 text-sm font-medium leading-7 transition-all duration-200 font-montserrat ${
+                                    className={`block rounded-lg px-3 py-2 text-sm font-medium leading-7 transition-all duration-200 font-body ${
                                       isLabCoffee 
                                         ? 'text-gray-300 hover:bg-gray-900' 
                                         : 'text-gray-700 hover:bg-gray-50'
@@ -303,7 +303,7 @@ export default function Header() {
                         ) : (
                           <Link
                             to={item.href}
-                            className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-all duration-200 hover:translate-x-1 font-montserrat ${
+                            className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-all duration-200 hover:translate-x-1 font-body ${
                               isLabCoffee 
                                 ? 'text-white hover:bg-gray-900' 
                                 : 'text-gray-900 hover:bg-gray-50'
@@ -328,7 +328,7 @@ export default function Header() {
                     {isLabCoffee ? (
                       <Link
                         to="/order"
-                        className={`-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 transition-all duration-200 hover:translate-x-1 font-montserrat ${
+                        className={`-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 transition-all duration-200 hover:translate-x-1 font-body ${
                           isLabCoffee 
                             ? 'text-white hover:bg-gray-900' 
                             : 'text-gray-900 hover:bg-gray-50'
@@ -340,7 +340,7 @@ export default function Header() {
                     ) : (
                       <Link
                         to="/book"
-                        className={`-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 transition-all duration-200 hover:translate-x-1 font-montserrat ${
+                        className={`-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 transition-all duration-200 hover:translate-x-1 font-body ${
                           isLabCoffee 
                             ? 'text-white hover:bg-gray-900' 
                             : 'text-gray-900 hover:bg-gray-50'

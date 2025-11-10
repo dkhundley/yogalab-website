@@ -29,13 +29,13 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 bg-white/60" />
       
   { /* Setting the main text content of the hero section */ }
-  <div className="max-w-5xl py-32 sm:py-48 lg:py-56 px-4 sm:px-8 md:px-16 lg:pl-40 font-montserrat">
+  <div className="max-w-5xl py-32 sm:py-48 lg:py-56 px-4 sm:px-8 md:px-16 lg:pl-40 font-body">
         <div className="text-left">
           {isLabCoffee ? (
 
             // Setting the rendering for the Lab Coffee brand
             <>
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-lulo-bold">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-heading">
                 EVERY INTERACTION IS A LAB FOR SOMETHING GREATER
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -44,11 +44,11 @@ export default function Hero() {
               <div className="mt-10 flex items-center justify-start gap-x-6">
                 <Link
                   to="/order"
-                  className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
+                  className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-body"
                 >
                   Order Now
                 </Link>
-                <Link to="/locations" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500 transition-colors font-montserrat">
+                <Link to="/locations" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500 transition-colors font-body">
                   Sit with Us <ArrowRightIcon className="h-4 w-4" />
                 </Link>
               </div>
@@ -57,7 +57,7 @@ export default function Hero() {
           ) : (
             // Setting the rendering for the Yoga Lab brand
             <>
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-lulo-bold">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-heading">
                 YOUR EXPERIENCE AT THE LAB
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -66,11 +66,11 @@ export default function Hero() {
               <div className="mt-10 flex items-center justify-start gap-x-6">
                 <Link
                   to="/book"
-                  className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-montserrat"
+                  className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors font-body"
                 >
                   Book Your Class
                 </Link>
-                <Link to="/new-to-yoga" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500 transition-colors font-montserrat">
+                <Link to="/new-to-yoga" className="text-sm font-semibold leading-6 text-gray-900 flex items-center gap-1 hover:text-gray-500 transition-colors font-body">
                   Learn more <ArrowRightIcon className="h-4 w-4" />
                 </Link>
               </div>

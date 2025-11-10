@@ -14,7 +14,7 @@ export default function ServiceCard({ title, description, linkText, linkHref }) 
   };
 
   return (
-    <div className="relative pl-6 font-montserrat h-full">
+    <div className="relative pl-6 font-body h-full">
       {/* Left vertical line - positioned to align with text */}
       <div className={`absolute left-0 top-[0.2em] bottom-[0.2em] w-[3px] ${
         isLabCoffee ? 'bg-white' : 'bg-black'

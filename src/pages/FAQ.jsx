@@ -37,7 +37,7 @@ export default function FAQ() {
   };
 
   return (
-    <div className="bg-white py-24 sm:py-32 font-montserrat">
+    <div className="bg-white py-24 sm:py-32 font-body">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">

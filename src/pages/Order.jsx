@@ -70,7 +70,7 @@ export default function Order() {
   };
 
   return (
-    <div className="bg-black font-montserrat">
+    <div className="bg-black font-body">
       <div className="py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center mb-12">

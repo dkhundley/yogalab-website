@@ -46,7 +46,7 @@ export default function ContactForm() {
 
   // Setting up the contact form structure
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-xl font-montserrat">
+    <form onSubmit={handleSubmit} className="mx-auto max-w-xl font-body">
       <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 
         {/* Setting up the "First Name" field */}

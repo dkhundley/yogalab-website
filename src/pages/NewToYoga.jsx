@@ -3,12 +3,12 @@ import { CheckCircleIcon } from '@heroicons/react/24/outline';
 
 export default function NewToYoga() {
   return (
-    <div className="bg-white font-montserrat">
+    <div className="bg-white font-body">
       {/* Hero Section */}
       <div className="relative isolate px-6 pt-14 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="mx-auto max-w-4xl py-16 sm:py-24">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-lulo-bold">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-heading">
               NEW TO YOGA?
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-600 max-w-3xl mx-auto">

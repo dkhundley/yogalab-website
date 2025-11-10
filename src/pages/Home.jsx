@@ -144,7 +144,7 @@ export default function Home() {
 
       {/* Lab Coffee: Featured Video Section - Only shows for Lab Coffee */}
       {isLabCoffee && (
-        <section className="py-16 bg-black font-montserrat">
+        <section className="py-16 bg-black font-body">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -188,7 +188,7 @@ export default function Home() {
 
       {/* Lab Coffee: Featured Images Carousel - Only shows for Lab Coffee */}
       {isLabCoffee && (
-        <section className="py-16 bg-black font-montserrat overflow-hidden">
+        <section className="py-16 bg-black font-body overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -278,7 +278,7 @@ export default function Home() {
 
       {/* Yoga Lab: Featured Community Carousel - Only shows for Yoga Lab */}
       {!isLabCoffee && (
-        <section className="py-16 bg-white font-montserrat overflow-hidden">
+        <section className="py-16 bg-white font-body overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -427,7 +427,7 @@ export default function Home() {
       )}
       
       {/* Setting the rendering of the homepage screen based on the brand selected (Yoga Lab vs. Lab Coffee) */}
-      <section className={`py-24 font-montserrat ${isLabCoffee ? 'bg-black' : 'bg-gray-50'}`}>
+      <section className={`py-24 font-body ${isLabCoffee ? 'bg-black' : 'bg-gray-50'}`}>
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -511,7 +511,7 @@ export default function Home() {
 
       {/* Lab Coffee: Parallax Image - Only shows for Lab Coffee */}
       {isLabCoffee && (
-        <section ref={coffeeParallaxRef} className="bg-black font-montserrat overflow-hidden">
+        <section ref={coffeeParallaxRef} className="bg-black font-body overflow-hidden">
           <div className="relative h-[500px] md:h-[700px]">
             <div className="absolute inset-0 scale-110">
               <img 
@@ -530,7 +530,7 @@ export default function Home() {
 
       {/* Yoga Lab: Practice & Community Images - Only shows for Yoga Lab */}
       {!isLabCoffee && (
-        <section ref={parallaxPairRef} className="relative bg-white font-montserrat overflow-hidden">
+        <section ref={parallaxPairRef} className="relative bg-white font-body overflow-hidden">
           <div className="absolute inset-0 scale-110">
             <div 
               className="grid grid-cols-1 md:grid-cols-2 h-full will-change-transform"
@@ -567,7 +567,7 @@ export default function Home() {
 
       {/* Setting up the Reviews section (only displays when active brand is Yoga Lab) */}
       {!isLabCoffee && (
-        <section className="py-24 bg-white font-montserrat">
+        <section className="py-24 bg-white font-body">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -603,7 +603,7 @@ export default function Home() {
 
       {/* Yoga Lab: Welcoming Community Image with Parallax - Only shows for Yoga Lab */}
       {!isLabCoffee && (
-        <section ref={parallaxRef} className="bg-gray-50 font-montserrat overflow-hidden">
+        <section ref={parallaxRef} className="bg-gray-50 font-body overflow-hidden">
           <div className="relative h-[500px] md:h-[700px]">
             <div className="absolute inset-0 scale-110">
               <img 
@@ -621,7 +621,7 @@ export default function Home() {
       )}
 
       {/* Setting the Location & Contact Section */}
-      <section id="contact" className={`py-24 font-montserrat ${isLabCoffee ? 'bg-black' : 'bg-gray-50'}`}>
+      <section id="contact" className={`py-24 font-body ${isLabCoffee ? 'bg-black' : 'bg-gray-50'}`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className={`text-3xl font-bold tracking-tight sm:text-4xl ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>

@@ -50,7 +50,7 @@ export default function Classes() {
   ];
 
   return (
-    <div className="bg-white font-montserrat">
+    <div className="bg-white font-body">
       {/* Hero Header Section */}
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -182,7 +182,7 @@ export default function Classes() {
           {generalClasses.map((classItem, index) => (
             <div 
               key={index}
-              className="relative pl-6 font-montserrat h-full"
+              className="relative pl-6 font-body h-full"
             >
               {/* Left vertical line - positioned to align with text */}
               <div className="absolute left-0 top-[0.2em] bottom-[0.2em] w-[3px] bg-black"></div>

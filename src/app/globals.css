@@ -1,35 +1,50 @@
 /* Importing Tailwind CSS base styles */
 @import "tailwindcss";
 
-/* Defining the custom Lulu Clean One Bold font */
+/* Defining the custom Gotham Bold font */
 @font-face {
-	font-family: 'LuloCleanOneBold';
-	src: url('/fonts/LuloCleanOneBold.otf') format('opentype');
-	font-weight: bold;
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Bold.otf') format('opentype');
+	font-weight: 700;
 	font-style: normal;
 }
 
-/* Defining the custom Lulu Clean One font */
+/* Defining the custom Gotham Medium font */
 @font-face {
-	font-family: 'LuloCleanOne';
-	src: url('/fonts/LuloCleanOne.otf') format('opentype');
-	font-weight: normal;
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Medium.otf') format('opentype');
+	font-weight: 500;
 	font-style: normal;
 }
 
-/* Defining a CSS class for the Lulu Clean One font */
-.font-lulo {
-	font-family: 'LuloCleanOne', sans-serif;
+/* Defining the custom Gotham Book font */
+@font-face {
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Book.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
 }
 
-/* Defining a CSS class for the Lulu Clean One Bold font */
-.font-lulo-bold {
-	font-family: 'LuloCleanOneBold', sans-serif;
+/* Headings - Gotham Bold in all-caps with letter spacing */
+.font-heading {
+	font-family: 'Gotham', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
 }
 
-/* Defining a CSS class for the Montserrat font */
-.font-montserrat {
-	font-family: 'Montserrat', sans-serif;
+/* Subheadings - Gotham Medium in all-caps with letter spacing */
+.font-subheading {
+	font-family: 'Gotham', sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+/* Body Copy - Gotham Book in sentence case */
+.font-body {
+	font-family: 'Gotham', sans-serif;
+	font-weight: 400;
 }
 
 /* Hide scrollbar for horizontal carousel */

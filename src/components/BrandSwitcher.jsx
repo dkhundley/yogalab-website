@@ -27,7 +27,7 @@ export default function BrandSwitcher() {
   
   return (
     // Setting the brand switcher container
-    <div className={`relative z-50 font-montserrat ${
+    <div className={`relative z-50 font-body ${
       activeBrand === BRANDS.YOGA_LAB ? 'bg-black text-white' : 'bg-white text-black'
     }`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
