@@ -75,7 +75,7 @@ export default function Header() {
               {isLabCoffee ? (
                 <div className="flex items-center gap-4">
                   <img 
-                    src="/icons/lab-coffee-logo-white.png" 
+                    src="/icons/lab-coffee-logo-white.svg" 
                     alt="Lab Coffee Logo" 
                     className="h-8 w-auto -mt-1"
                   />
@@ -86,7 +86,7 @@ export default function Header() {
               ) : (
                 <div className="flex items-center gap-4">
                   <img 
-                    src="/icons/yoga-lab-logo.png" 
+                    src="/icons/yoga-lab-logo.svg" 
                     alt="Yoga Lab Logo" 
                     className="h-10 w-auto -mt-1"
                   />
@@ -221,7 +221,7 @@ export default function Header() {
                   {isLabCoffee ? (
                     <div className="flex items-center gap-3">
                       <img 
-                        src="/icons/lab-coffee-logo-white.png" 
+                        src="/icons/lab-coffee-logo-white.svg" 
                         alt="Lab Coffee Logo" 
                         className="h-7 w-auto -mt-1"
                       />
@@ -232,7 +232,7 @@ export default function Header() {
                   ) : (
                     <div className="flex items-center gap-3">
                       <img 
-                        src="/icons/yoga-lab-logo.png" 
+                        src="/icons/yoga-lab-logo.svg" 
                         alt="Yoga Lab Logo" 
                         className="h-9 w-auto -mt-1"
                       />
