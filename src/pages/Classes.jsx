@@ -55,8 +55,8 @@ export default function Classes() {
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-black">DISCOVER</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="text-base font-subheading leading-7 text-black">DISCOVER</h2>
+            <p className="mt-2 text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
               Class Offerings
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -70,7 +70,7 @@ export default function Classes() {
       {/* General Class Offerings Section */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-2xl font-heading text-gray-900 sm:text-3xl">
             General Class Offerings
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
@@ -210,7 +210,7 @@ export default function Classes() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold sm:text-4xl mb-6">
+              <h2 className="text-3xl font-heading sm:text-4xl mb-6">
                 Fitness Lab
               </h2>
               <p className="text-lg text-gray-300 mb-8">
@@ -219,7 +219,7 @@ export default function Classes() {
                 functional strength, endurance, and mobility.
               </p>
               <div className="border-l-4 border-white pl-6">
-                <h3 className="text-2xl font-bold mb-4">Strength & Conditioning</h3>
+                <h3 className="text-2xl font-heading mb-4">Strength & Conditioning</h3>
                 <p className="text-gray-300 leading-relaxed">
                   Strength & Conditioning is a high-energy, full-body workout designed to build strength, endurance, 
                   and confidence through functional movement. Led by an experienced coach, this class combines weight 
@@ -287,7 +287,7 @@ export default function Classes() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-block">
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+              <h2 className="text-3xl font-heading text-gray-900 sm:text-4xl mb-4">
                 Masterclass Offerings
               </h2>
               <div className="h-1 w-24 bg-black mx-auto mb-6"></div>
@@ -381,7 +381,7 @@ export default function Classes() {
             </div>
             
             <div className="order-1 lg:order-2">
-              <h2 className="text-3xl font-bold sm:text-4xl mb-6">
+              <h2 className="text-3xl font-heading sm:text-4xl mb-6">
                 On-Demand Offerings
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
@@ -415,7 +415,7 @@ export default function Classes() {
       {/* CTA Section */}
       <div className="bg-black text-white py-20">
         <div className="mx-auto max-w-2xl text-center px-6">
-          <h3 className="text-3xl font-bold mb-4">Ready to Begin?</h3>
+          <h3 className="text-3xl font-heading mb-4">Ready to Begin?</h3>
           <p className="text-gray-300 text-lg mb-8">
             Book your first class today and experience the transformative power of yoga.
           </p>

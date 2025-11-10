@@ -35,7 +35,7 @@ export default function Hero() {
 
             // Setting the rendering for the Lab Coffee brand
             <>
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-heading">
+              <h1 className="text-4xl font-heading tracking-tight text-gray-900 sm:text-5xl">
                 EVERY INTERACTION IS A LAB FOR SOMETHING GREATER
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -57,7 +57,7 @@ export default function Hero() {
           ) : (
             // Setting the rendering for the Yoga Lab brand
             <>
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-heading">
+              <h1 className="text-4xl font-heading tracking-tight text-gray-900 sm:text-5xl">
                 YOUR EXPERIENCE AT THE LAB
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">

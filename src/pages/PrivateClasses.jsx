@@ -88,8 +88,8 @@ export default function PrivateClasses() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header Section */}
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-black">PERSONALIZED PRACTICE</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-base font-subheading leading-7 text-black">PERSONALIZED PRACTICE</h2>
+          <p className="mt-2 text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
             Private Classes
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -120,7 +120,7 @@ export default function PrivateClasses() {
 
         {/* Private Options Section */}
         <div className="mx-auto max-w-2xl text-center mt-24 mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-2xl font-heading text-gray-900 sm:text-3xl">
             Choose Your Experience
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
@@ -186,7 +186,7 @@ export default function PrivateClasses() {
         {/* How It Works Section */}
         <div className="mx-auto max-w-5xl mt-24">
           <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-2xl font-heading text-gray-900 mb-8 text-center">
               How Private Classes Work
             </h2>
             
@@ -265,7 +265,7 @@ export default function PrivateClasses() {
         {/* CTA Section */}
         <div className="mx-auto max-w-2xl mt-16 text-center">
           <div className="bg-black rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Start Your Private Practice?</h3>
+            <h3 className="text-2xl font-heading mb-4">Ready to Start Your Private Practice?</h3>
             <p className="mb-6">
               Let's create a personalized yoga experience designed just for you. 
               Reach out today to schedule your first private session.

@@ -41,7 +41,7 @@ export default function FAQ() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h1 className="text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
               Frequently Asked Questions
             </h1>
             <p className="mt-4 text-lg text-gray-600">
@@ -91,7 +91,7 @@ export default function FAQ() {
           </dl>
 
           <div className="mt-16 text-center bg-gray-50 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-heading text-gray-900 mb-4">
               Still have questions?
             </h2>
             <p className="text-lg text-gray-600 mb-6">

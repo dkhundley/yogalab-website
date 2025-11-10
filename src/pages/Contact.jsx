@@ -6,7 +6,7 @@ export default function Contact() {
     <div className="bg-white py-24 sm:py-32 font-body">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
             Contact Us
           </h1>
           <p className="mt-4 text-lg leading-8 text-gray-600">
@@ -21,7 +21,7 @@ export default function Contact() {
               {/* Left vertical line */}
               <div className="absolute left-0 top-[0.2em] bottom-[0.2em] w-[3px] bg-black"></div>
               
-              <h2 className="text-2xl font-bold tracking-tight text-gray-900">Visit Us</h2>
+              <h2 className="text-2xl font-heading tracking-tight text-gray-900">Visit Us</h2>
               <p className="mt-4 text-lg leading-8 text-gray-600">
                 Come experience our yoga studio and coffee shop in person.
               </p>
@@ -95,7 +95,7 @@ export default function Contact() {
 
           {/* Contact Form */}
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-6">Send us a message</h2>
+            <h2 className="text-2xl font-heading tracking-tight text-gray-900 mb-6">Send us a message</h2>
             <ContactForm />
           </div>
         </div>

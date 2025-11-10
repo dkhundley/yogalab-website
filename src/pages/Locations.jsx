@@ -46,8 +46,8 @@ export default function Locations() {
     <div className="bg-white py-24 sm:py-32 font-body">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-black">VISIT US</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-base font-subheading leading-7 text-black">VISIT US</h2>
+          <p className="mt-2 text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
             Our Locations
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -151,7 +151,7 @@ export default function Locations() {
         {/* Additional Info Section */}
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="bg-black text-white rounded-2xl p-8 lg:p-12 text-center">
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-2xl font-heading mb-4">
               Can't Visit In Person?
             </h3>
             <p className="text-lg text-gray-200 mb-8">

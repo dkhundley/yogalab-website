@@ -98,8 +98,8 @@ export default function WorkWithUs() {
     <div className="bg-white py-24 sm:py-32 font-body">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-black">CAREERS</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-base font-subheading leading-7 text-black">CAREERS</h2>
+          <p className="mt-2 text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
             Work With Us
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -111,7 +111,7 @@ export default function WorkWithUs() {
         {/* Why Work Here Section */}
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            <h3 className="text-2xl font-heading text-gray-900 mb-6 text-center">
               Why Lab Coffee?
             </h3>
             <p className="text-gray-600 text-center mb-8">
@@ -188,7 +188,7 @@ export default function WorkWithUs() {
         {/* What We're Looking For */}
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="bg-black text-white rounded-2xl p-8 lg:p-12">
-            <h3 className="text-2xl font-bold mb-6 text-center">
+            <h3 className="text-2xl font-heading mb-6 text-center">
               What We're Looking For
             </h3>
             <p className="text-gray-200 text-center mb-8">
@@ -211,7 +211,7 @@ export default function WorkWithUs() {
         {/* Application Section */}
         <div id="apply" className="mx-auto mt-16 max-w-4xl">
           <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+            <h3 className="text-2xl font-heading text-gray-900 mb-4 text-center">
               Ready to Apply?
             </h3>
             <p className="text-gray-600 text-center mb-8">

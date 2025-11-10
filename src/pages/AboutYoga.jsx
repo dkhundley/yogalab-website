@@ -5,8 +5,8 @@ export default function About() {
     <div className="bg-white py-24 sm:py-32 font-body">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-black">ABOUT US</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-base font-subheading leading-7 text-black">ABOUT US</h2>
+          <p className="mt-2 text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
             People over poses. Transformation over transaction.
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -55,7 +55,7 @@ export default function About() {
         {/* How Our Space Works */}
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="bg-gray-50 rounded-2xl p-8 lg:p-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+            <h3 className="text-2xl font-heading text-gray-900 mb-8 text-center">
               Our space is designed around how the brain works.
             </h3>
             <div className="space-y-6 text-center">
@@ -93,7 +93,7 @@ export default function About() {
 
         {/* Teacher Team Gallery */}
         <div className="mx-auto mt-16 max-w-7xl">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Our Teacher Team</h3>
+          <h3 className="text-2xl font-heading text-gray-900 mb-8 text-center">Our Teacher Team</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             <div className="text-center">
               <img 
@@ -253,7 +253,7 @@ export default function About() {
         {/* Location */}
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="bg-white rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Visit Us</h3>
+            <h3 className="text-2xl font-heading text-gray-900 mb-4">Visit Us</h3>
             <p className="text-lg text-gray-700 mb-2">207 S. Prospect Road, Suite 2</p>
             <p className="text-lg text-gray-700 mb-6">Bloomington, IL 61704</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

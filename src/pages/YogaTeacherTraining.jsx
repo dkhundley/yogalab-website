@@ -87,10 +87,10 @@ export default function YogaTeacherTraining() {
         </div>
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-base font-semibold leading-7 text-white/90 uppercase tracking-wider">
+            <h2 className="text-base font-subheading leading-7 text-white/90 uppercase tracking-wider">
               Transform Your Practice
             </h2>
-            <h1 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+            <h1 className="mt-2 text-4xl font-heading tracking-tight text-white sm:text-6xl">
               Yoga Teacher Training
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-200">
@@ -106,7 +106,7 @@ export default function YogaTeacherTraining() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-6">
+              <h2 className="text-3xl font-heading text-gray-900 sm:text-4xl mb-6">
                 A Journey of Transformation
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -153,7 +153,7 @@ export default function YogaTeacherTraining() {
       <div className="bg-gray-50 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+            <h2 className="text-3xl font-heading text-gray-900 sm:text-4xl mb-4">
               What You'll Learn
             </h2>
             <p className="text-lg text-gray-600">
@@ -186,7 +186,7 @@ export default function YogaTeacherTraining() {
       <div className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+            <h2 className="text-3xl font-heading text-gray-900 sm:text-4xl mb-4">
               Training Formats
             </h2>
             <p className="text-lg text-gray-600">
@@ -224,7 +224,7 @@ export default function YogaTeacherTraining() {
       <div className="bg-black text-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="text-3xl font-bold sm:text-4xl mb-6">
+            <h2 className="text-3xl font-heading sm:text-4xl mb-6">
               Is This Training Right for You?
             </h2>
             <p className="text-xl text-gray-300">
@@ -295,7 +295,7 @@ export default function YogaTeacherTraining() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-heading text-gray-900 mb-6">
                 Investment in Your Future
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -332,7 +332,7 @@ export default function YogaTeacherTraining() {
 
             <div>
               <div className="bg-black text-white rounded-2xl p-8 mb-8">
-                <h2 className="text-3xl font-bold mb-6">
+                <h2 className="text-3xl font-heading mb-6">
                   Ready to Begin?
                 </h2>
                 <p className="text-gray-300 mb-8 leading-relaxed">
@@ -364,7 +364,7 @@ export default function YogaTeacherTraining() {
       <div className="bg-gray-50 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+            <h2 className="text-3xl font-heading text-gray-900 sm:text-4xl mb-4">
               Graduate Stories
             </h2>
             <p className="text-lg text-gray-600">
@@ -400,7 +400,7 @@ export default function YogaTeacherTraining() {
       <div className="bg-white py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-heading text-gray-900 mb-4">
               Common Questions
             </h2>
           </div>

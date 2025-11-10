@@ -5,8 +5,8 @@ export default function AboutCoffee() {
     <div className="bg-black py-24 sm:py-32 font-body">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-white">ABOUT LAB COFFEE</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-base font-subheading leading-7 text-white">ABOUT LAB COFFEE</h2>
+          <p className="mt-2 text-3xl font-heading tracking-tight text-white sm:text-4xl">
             Where connection happens, one cup at a time.
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-300">
@@ -30,7 +30,7 @@ export default function AboutCoffee() {
             </div>
             {/* Text on the left on desktop, but second on mobile - takes up 3 columns */}
             <div className="lg:col-span-3 lg:order-1 prose prose-lg">
-              <h3 className="text-2xl font-bold text-white mb-4">Our Story</h3>
+              <h3 className="text-2xl font-heading text-white mb-4">Our Story</h3>
               <p className="text-gray-300 mb-6">
                 Lab Coffee was born from a simple understanding: meaningful connection requires the right environment. 
                 We recognized that people need more than just a place to grab coffee—they need a space where they can 
@@ -52,7 +52,7 @@ export default function AboutCoffee() {
         {/* Our Values */}
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="bg-gray-900 rounded-2xl p-8 lg:p-16">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">
+            <h3 className="text-2xl font-heading text-white mb-8 text-center">
               What We Believe
             </h3>
             <div className="space-y-6">
@@ -112,7 +112,7 @@ export default function AboutCoffee() {
 
         {/* Our Offerings */}
         <div className="mx-auto mt-16 max-w-4xl">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">What We Offer</h3>
+          <h3 className="text-2xl font-heading text-white mb-8 text-center">What We Offer</h3>
           <div className="prose prose-lg mx-auto">
             <p className="text-gray-300 mb-6">
               Lab Coffee serves thoughtfully crafted beverages and nourishing food to fuel your body and support your 
@@ -142,7 +142,7 @@ export default function AboutCoffee() {
         {/* Connection to Yoga Lab */}
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="bg-gray-900 text-white rounded-2xl p-8 lg:p-16">
-            <h3 className="text-2xl font-bold mb-6 text-center">
+            <h3 className="text-2xl font-heading mb-6 text-center">
               Part of the Yoga Lab Experience
             </h3>
             <p className="text-lg text-gray-300 mb-6 text-center">
@@ -168,7 +168,7 @@ export default function AboutCoffee() {
         {/* Location & CTA */}
         <div className="mx-auto mt-16 max-w-4xl">
           <div className="bg-gray-900 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">Visit Us</h3>
+            <h3 className="text-2xl font-heading text-white mb-4">Visit Us</h3>
             <p className="text-lg text-gray-300 mb-2">207 S. Prospect Road, Suite 2</p>
             <p className="text-lg text-gray-300 mb-6">Bloomington, IL 61704</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

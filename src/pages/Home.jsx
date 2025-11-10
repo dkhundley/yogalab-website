@@ -145,9 +145,9 @@ export default function Home() {
       {/* Lab Coffee: Featured Video Section - Only shows for Lab Coffee */}
       {isLabCoffee && (
         <section className="py-16 bg-black font-body">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-heading tracking-tight text-white sm:text-4xl">
                 Discover Lab Coffee
               </h2>
               <p className="mt-4 text-lg leading-8 text-gray-300">
@@ -191,7 +191,7 @@ export default function Home() {
         <section className="py-16 bg-black font-body overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <h2 className="text-3xl font-heading tracking-tight text-white sm:text-4xl">
                 Experience Lab Coffee
               </h2>
               <p className="mt-4 text-lg leading-8 text-gray-300">
@@ -281,7 +281,7 @@ export default function Home() {
         <section className="py-16 bg-white font-body overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-12">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <h2 className="text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
                 Experience The Lab
               </h2>
               <p className="mt-4 text-lg leading-8 text-gray-600">
@@ -436,7 +436,7 @@ export default function Home() {
             <>
               {/* Setting the "header" text over the various services offered by Lab Coffee */}
               <div className="mx-auto max-w-2xl text-center mb-16">
-                <h2 className={`text-3xl font-bold tracking-tight sm:text-4xl ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>
+                <h2 className={`text-3xl font-heading tracking-tight sm:text-4xl ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>
                   What We Offer
                 </h2>
                 <p className={`mt-4 text-lg leading-8 ${isLabCoffee ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -473,7 +473,7 @@ export default function Home() {
             <>
               {/* Setting the "header" text over the various services offered by Yoga Lab */}
               <div className="mx-auto max-w-2xl text-center mb-16">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                <h2 className="text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
                   Our Services
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-gray-600">
@@ -570,7 +570,7 @@ export default function Home() {
         <section className="py-24 bg-white font-body">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <h2 className="text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
                 What Our Community Says
               </h2>
               <p className="mt-4 text-lg leading-8 text-gray-600">
@@ -624,7 +624,7 @@ export default function Home() {
       <section id="contact" className={`py-24 font-body ${isLabCoffee ? 'bg-black' : 'bg-gray-50'}`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className={`text-3xl font-bold tracking-tight sm:text-4xl ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>
+            <h2 className={`text-3xl font-heading tracking-tight sm:text-4xl ${isLabCoffee ? 'text-white' : 'text-gray-900'}`}>
               {isLabCoffee ? 'Visit Us' : 'Find Us & Connect'}
             </h2>
             <p className={`mt-4 text-lg leading-8 ${isLabCoffee ? 'text-gray-300' : 'text-gray-600'}`}>
