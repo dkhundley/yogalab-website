@@ -9,6 +9,7 @@ const yogaLabNavigation = [
   { name: 'New to Yoga', href: '/new-to-yoga' },
   { name: 'Class Offerings', href: '/classes' },
   { name: 'Private Classes', href: '/private-classes' },
+  { name: 'Gift Cards', href: '/gift-cards' },
   { name: 'FAQ', href: '/faq' },
   { name: 'About Us', href: '/about-yoga' },
 ];

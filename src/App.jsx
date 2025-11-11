@@ -22,6 +22,7 @@ const yogaRoutes = new Set([
   '/faq',
   '/book',
   '/contact-us',
+  '/gift-cards',
 ]);
 
 // Importing various components and pages used in the application
@@ -43,6 +44,7 @@ import NewToYoga from './pages/NewToYoga';
 import Locations from './pages/Locations';
 import WorkWithUs from './pages/WorkWithUs';
 import Contact from './pages/Contact';
+import GiftCards from './pages/GiftCards';
 
 
 
@@ -109,6 +111,7 @@ function AppContent() {
           <Route path="/locations" element={<Locations />} />
           <Route path="/work-with-us" element={<WorkWithUs />} />
           <Route path="/contact-us" element={<Contact />} />
+          <Route path="/gift-cards" element={<GiftCards />} />
         </Routes>
       </main>
 
