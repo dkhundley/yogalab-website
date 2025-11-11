@@ -156,30 +156,18 @@ export default function Home() {
             </div>
             
             {/* Video Container */}
-            <div className="mx-auto max-w-5xl">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
-                {/* Replace this iframe src with the actual video embed URL */}
-                {/* Option 1: For Vimeo - <iframe src="https://player.vimeo.com/video/YOUR_VIDEO_ID" ... */}
-                {/* Option 2: For YouTube - <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" ... */}
-                {/* Option 3: For direct video file, replace iframe with video element */}
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://player.vimeo.com/video/YOUR_VIDEO_ID?title=0&byline=0&portrait=0"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  title="Lab Coffee Introduction"
-                ></iframe>
-                {/* Alternative: Direct video file
-                <video
-                  className="absolute top-0 left-0 w-full h-full"
-                  controls
-                  poster="/images/lab-coffee/video-thumbnail.jpg"
-                >
-                  <source src="/videos/lab-coffee-intro.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                */}
+            <div className="mx-auto max-w-5xl mt-12 mb-12">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20" style={{ paddingBottom: '56.25%' }}>
+                <div className="absolute inset-4 sm:inset-6 rounded-2xl overflow-hidden bg-black">
+                  <video
+                    className="absolute inset-0 h-full w-full"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src="/videos/about-lab-coffee.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </div>
             </div>
           </div>
