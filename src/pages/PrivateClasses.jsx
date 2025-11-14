@@ -3,36 +3,37 @@ import { Link } from 'react-router-dom';
 export default function PrivateClasses() {
   const privateOptions = [
     {
-      title: 'One-on-One Sessions',
+      title: 'Individual Private Classes',
       duration: '60 or 90 minutes',
       participants: '1 Person',
-      description: 'Experience deeply personalized yoga instruction tailored specifically to your body, goals, and experience level. Whether you\'re recovering from an injury, preparing for a specific event, or simply want undivided attention to refine your practice, private sessions offer the ultimate in customized guidance.',
+      description: 'Experience deeply personalized yoga instruction tailored specifically to your body, goals, and experience level. Whether you\'re recovering from an injury, are pregnant or in postpartum, or simply want undivided attention to refine your practice, private sessions offer the ultimate in customized guidance.',
       idealFor: [
         'Beginners seeking a solid foundation',
-        'Injury recovery and therapeutic needs',
+        'Injury recovery',
         'Advanced practitioners refining technique',
         'Athletes cross-training with yoga',
         'Prenatal and postnatal students'
       ]
     },
     {
-      title: 'Small Group Sessions',
+      title: 'Group Private Classes',
       duration: '60 or 90 minutes',
-      participants: '2-6 People',
-      description: 'Gather your friends, family, or colleagues for a semi-private yoga experience. Small group sessions combine the benefits of personalized attention with the energy and motivation of practicing together. Perfect for bonding while working toward shared wellness goals.',
+      participants: '2+ People',
+      description: 'Gather your friends, family, or colleagues for a semi-private yoga experience. Group sessions combine the benefits of personalized attention with the energy and motivation of practicing together. Perfect for connecting while working toward shared wellness goals.',
       idealFor: [
         'Friends wanting to practice together',
-        'Corporate wellness programs',
+        'Corporate groups',
         'Wedding parties and special events',
-        'Family bonding experiences',
-        'Study groups and sports teams'
+        'Atheltic teams',
+        'Families',
+        'Study groups'
       ]
     },
     {
       title: 'Special Events & Workshops',
       duration: 'Customizable',
       participants: 'Flexible',
-      description: 'Create a memorable experience with a custom yoga event tailored to your occasion. From birthday celebrations and bridal showers to corporate retreats and community gatherings, we design unique sessions that blend movement, mindfulness, and connection.',
+      description: 'Create a memorable experience with a custom yoga event tailored to your occasion. From birthday celebrations and bridal showers to corporate retreats and community gatherings, we design unique sessions that include movement, acai + coffee, and connection.',
       idealFor: [
         'Birthday and milestone celebrations',
         'Bachelorette and bridal parties',
@@ -55,7 +56,7 @@ export default function PrivateClasses() {
     },
     {
       title: 'Flexible Scheduling',
-      description: 'Choose times that work best for your schedule. We accommodate early mornings, lunch breaks, evenings, and weekends.',
+      description: 'Choose times that work best for your schedule. We accommodate daytime, week night, or weekend class times.',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
@@ -64,7 +65,7 @@ export default function PrivateClasses() {
     },
     {
       title: 'Custom Focus Areas',
-      description: 'Work on specific goals like flexibility, strength, stress management, or therapeutic needs with targeted guidance.',
+      description: 'Work on specific goals like flexibility, strength, and stress management with targeted guidance.',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
@@ -73,7 +74,7 @@ export default function PrivateClasses() {
     },
     {
       title: 'Your Location or Ours',
-      description: 'Practice in the comfort of our studio or we can come to you - your home, office, or preferred outdoor space.',
+      description: 'Practice at the Yoga Lab or we can come to you - your home, office, or preferred outdoor location.',
       icon: (
         <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -277,21 +278,6 @@ export default function PrivateClasses() {
               Contact Us
             </Link>
           </div>
-        </div>
-
-        {/* FAQ Quick Links */}
-        <div className="mx-auto max-w-3xl mt-12 text-center">
-          <p className="text-sm text-gray-600">
-            Have questions about private classes?{' '}
-            <Link to="/faq" className="font-semibold text-gray-900 hover:text-black underline">
-              Check our FAQ
-            </Link>{' '}
-            or{' '}
-            <Link to="/#contact" className="font-semibold text-gray-900 hover:text-black underline">
-              get in touch directly
-            </Link>
-            . We're here to help you find the perfect fit for your practice.
-          </p>
         </div>
       </div>
     </div>
