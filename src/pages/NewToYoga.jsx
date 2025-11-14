@@ -5,7 +5,7 @@ export default function NewToYoga() {
   return (
     <div className="bg-white font-body">
       {/* Hero Section */}
-      <div className="relative isolate px-6 pt-14 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+      <div className="relative isolate px-6 pt-14 lg:px-8 bg-linear-to-b from-gray-50 to-white">
         <div className="mx-auto max-w-4xl py-16 sm:py-24">
           <div className="text-center">
             <h1 className="text-4xl font-heading tracking-tight text-gray-900 sm:text-5xl">
@@ -35,7 +35,7 @@ export default function NewToYoga() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="bg-gray-50 rounded-2xl p-8">
                 <div className="flex items-start">
-                  <CheckCircleIcon className="h-6 w-6 text-black mt-1 mr-3 flex-shrink-0" />
+                  <CheckCircleIcon className="h-6 w-6 text-black mt-1 mr-3 shrink-0" />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Arrive Early</h3>
                     <p className="text-gray-600">
@@ -48,7 +48,7 @@ export default function NewToYoga() {
 
               <div className="bg-gray-50 rounded-2xl p-8">
                 <div className="flex items-start">
-                  <CheckCircleIcon className="h-6 w-6 text-black mt-1 mr-3 flex-shrink-0" />
+                  <CheckCircleIcon className="h-6 w-6 text-black mt-1 mr-3 shrink-0" />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">What to Bring</h3>
                     <p className="text-gray-600">
@@ -61,12 +61,11 @@ export default function NewToYoga() {
 
               <div className="bg-gray-50 rounded-2xl p-8">
                 <div className="flex items-start">
-                  <CheckCircleIcon className="h-6 w-6 text-black mt-1 mr-3 flex-shrink-0" />
+                  <CheckCircleIcon className="h-6 w-6 text-black mt-1 mr-3 shrink-0" />
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Listen to Your Body</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Yoga for Regulation</h3>
                     <p className="text-gray-600">
-                      Yoga is not about perfect poses. It's about connecting with your body and breath. 
-                      Take breaks anytime, modify as needed, and honor where you are today.
+                      Our classes are designed with predicatability, consistency, and sustainability in mind. These three elements produce regulation in your brain and body. When you are on your mat, take what you need. We are building a practice for a lifetime.
                     </p>
                   </div>
                 </div>
@@ -74,7 +73,7 @@ export default function NewToYoga() {
 
               <div className="bg-gray-50 rounded-2xl p-8">
                 <div className="flex items-start">
-                  <CheckCircleIcon className="h-6 w-6 text-black mt-1 mr-3 flex-shrink-0" />
+                  <CheckCircleIcon className="h-6 w-6 text-black mt-1 mr-3 shrink-0" />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Ask Questions</h3>
                     <p className="text-gray-600">
@@ -84,70 +83,16 @@ export default function NewToYoga() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Recommended Classes Section */}
-      <section className="py-16 sm:py-24 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-12">
-            <h2 className="text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
-              Classes for Beginners
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-gray-600">
-              These classes are perfect starting points for your yoga journey.
-            </p>
-          </div>
-
-          <div className="mx-auto max-w-4xl">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Foundations</h3>
-                <p className="text-gray-600 mb-4">
-                  A slower-paced class focused on learning the basic postures and breathing techniques. 
-                  Perfect for building confidence and understanding proper alignment.
-                </p>
-                <div className="text-sm text-gray-500">
-                  <p><span className="font-semibold">Duration:</span> 60 minutes</p>
-                  <p><span className="font-semibold">Level:</span> All Levels Welcome</p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Gentle Flow</h3>
-                <p className="text-gray-600 mb-4">
-                  A mindful practice that connects breath with gentle movement. Great for those new to 
-                  yoga or anyone looking for a more relaxed class.
-                </p>
-                <div className="text-sm text-gray-500">
-                  <p><span className="font-semibold">Duration:</span> 60 minutes</p>
-                  <p><span className="font-semibold">Level:</span> Beginner-Friendly</p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Restorative Yoga</h3>
-                <p className="text-gray-600 mb-4">
-                  A deeply relaxing practice using props to support your body in restful poses. Perfect 
-                  for stress relief and learning to slow down.
-                </p>
-                <div className="text-sm text-gray-500">
-                  <p><span className="font-semibold">Duration:</span> 60-75 minutes</p>
-                  <p><span className="font-semibold">Level:</span> All Levels</p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Yoga Basics</h3>
-                <p className="text-gray-600 mb-4">
-                  An introductory class designed specifically for beginners. Learn foundational poses, 
-                  breathing techniques, and yoga terminology in a supportive environment.
-                </p>
-                <div className="text-sm text-gray-500">
-                  <p><span className="font-semibold">Duration:</span> 45-60 minutes</p>
-                  <p><span className="font-semibold">Level:</span> Beginner</p>
+              <div className="bg-gray-50 rounded-2xl p-8">
+                <div className="flex items-start">
+                  <CheckCircleIcon className="h-6 w-6 text-black mt-1 mr-3 shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Classes for Beginners</h3>
+                    <p className="text-gray-600">
+                      Almost all of our classess are accessible to beginners. The only classes we do not recommend are listed on our booking page as "90 Minute Power + Heat" and any class that says "Masterclass" (i.e. Warm Yin Masterclass, Power + Heat Masterclass, etc.). Every other class is taught by our teachers with the intention of being a class for anyone, including YOU!
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -172,7 +117,6 @@ export default function NewToYoga() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Do I need to be flexible to do yoga?</h3>
               <p className="text-gray-600">
                 Absolutely not! Flexibility is something you develop through practice, not a prerequisite. 
-                Yoga meets you where you are, and every pose can be modified to suit your body.
               </p>
             </div>
 
@@ -180,7 +124,7 @@ export default function NewToYoga() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">What should I wear?</h3>
               <p className="text-gray-600">
                 Wear comfortable, breathable clothing that allows you to move freely. Think athletic wear or 
-                stretchy clothes. Avoid anything too baggy that might get in the way during inversions.
+                stretchy clothes.
               </p>
             </div>
 
@@ -188,23 +132,21 @@ export default function NewToYoga() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">How often should I practice?</h3>
               <p className="text-gray-600">
                 Even once a week can make a difference! As you build your practice, aim for 2-3 times per week. 
-                The most important thing is consistency over frequency.
+                The most important things are consistency and sustainability. We want you to be able to practice for a lifetime!
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">What if I can't keep up with the class?</h3>
               <p className="text-gray-600">
-                That's completely okay! Take child's pose anytime you need a break. Remember, yoga is about 
-                your personal practice, not comparing yourself to others in the room.
+                That's completely okay! Take child's pose anytime you need a break (Your class will start with child’s pose so your teacher will tell you exactly what that is!). Remember, yoga is about your personal practice, not comparing yourself to others in the room.
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Can I practice if I have injuries or health conditions?</h3>
               <p className="text-gray-600">
-                Please inform your teacher before class about any injuries, health conditions, or concerns. 
-                They can offer modifications and ensure your practice is safe and beneficial for your body.
+                You are responsible for you, on and off your mat! We recommend you speak with your doctor if you are concerned about injuries or health conditions. We provide modifications in our teaching and you are always free to take what you need, or forego any poses we cue. 
               </p>
             </div>
           </div>
@@ -230,15 +172,41 @@ export default function NewToYoga() {
                 But the benefits go much deeper than the physical. Yoga teaches you to regulate your nervous system, 
                 manage stress, and cultivate mindfulness.
               </p>
+              <br />
               <p>
                 At Yoga Lab, we understand that yoga is a tool for transformation. Through breath work, movement, 
                 and meditation, you'll learn to connect more deeply with yourself and show up more fully in your 
                 relationships and daily life.
               </p>
-              <p>
-                Whether you're looking to reduce stress, build strength, increase flexibility, or simply find a 
-                moment of peace in your busy day, yoga has something to offer you.
-              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pose Breakdowns Section */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center mb-12">
+            <h2 className="text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
+              Pose Breakdowns
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              Explore foundational alignment tips and breath cues with short videos from our teachers.
+            </p>
+          </div>
+
+          <div className="mx-auto max-w-3xl">
+            <div className="mx-auto w-full max-w-md overflow-hidden rounded-2xl shadow-lg">
+              <div className="relative pt-[177.78%]">
+                <iframe
+                  className="absolute left-0 top-0 h-full w-full"
+                  src="https://www.instagram.com/reel/DQ_56f_kY9q/embed"
+                  title="Instagram Reel Pose Breakdown"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -249,15 +217,15 @@ export default function NewToYoga() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-heading tracking-tight text-gray-900 sm:text-4xl">
-              Ready to Start Your Journey?
+              You are Ready Now!
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
-              We're here to support you every step of the way. Join us on the mat and discover what yoga can do for you.
+              We're here to support you, on and off your mat. Join us on the mat and discover the transformational tools of yoga.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 to="/book"
-                className="rounded-md bg-black px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors w-full sm:w-auto"
+                className="rounded-md bg-black px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black transition-colors w-full sm:w-auto"
               >
                 Book Your First Class
               </Link>
